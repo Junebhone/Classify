@@ -29,7 +29,7 @@
             x-data="{ open: false }">
             <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
                 <a href="#"
-                    class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Estify
+                    class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Classify
                     Admin</a>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                     <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
@@ -59,6 +59,8 @@
                     Countries</x-app-link>
                 <x-app-link href="{{ route('states.index') }}" :active="request()->routeIs('states.index')">
                     States</x-app-link>
+                <x-app-link href="{{ route('cities.index') }}" :active="request()->routeIs('cities.index')">
+                    Cities</x-app-link>
                 {{-- Profile --}}
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
