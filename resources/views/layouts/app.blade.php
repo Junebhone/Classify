@@ -45,6 +45,9 @@
             <nav :class="{'block': open, 'hidden': !open}"
                 class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">
                 {{-- Dashboard Navigation links --}}
+                <x-app-link class="bg-green-500 hover:bg-green-700" href="{{ route('listings.create') }}"
+                    :active="request()->routeIs('listings.create')">New Listing
+                </x-app-link>
                 <x-app-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard
                 </x-app-link>
                 <x-app-link href="{{ route('categories.index') }}" :active="request()->routeIs('categories.index')">

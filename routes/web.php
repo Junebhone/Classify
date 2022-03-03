@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CityContoller;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\StateController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,6 @@ Route::resource('childcategories', ChildCategoryController::class);
 Route::resource('countries', CountryController::class);
 Route::resource('states', StateController::class);
 Route::resource('cities', CityContoller::class);
+
+
+Route::resource('listings', ListingController::class)->middleware('auth');
