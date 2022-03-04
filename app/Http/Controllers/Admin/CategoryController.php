@@ -47,7 +47,8 @@ class CategoryController extends Controller
                 'image' => $path
             ]);
 
-            return redirect()->route('categories.index')->with('message', 'Category Created with Image.');
+
+            return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Successfully Created"]);
         }
         return redirect()->route('categories.index');
     }

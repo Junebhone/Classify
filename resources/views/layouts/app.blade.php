@@ -13,11 +13,10 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
+
 </head>
 
 <body class="font-sans antialiased">
@@ -118,6 +117,31 @@
     @stack('modals')
 
     @livewireScripts
+    <script src="{{ mix('js/app.js') }}"></script>
+    @if (session('noti'))
+    <script>
+        let toastInfo = @json(session('noti'));
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        setTimeout(() => {
+            Toast.fire({
+                icon: toastInfo.icon,
+                title: toastInfo.title
+            })
+        }, 1000);
+    </script>
+    @endif
+
 </body>
 
 </html>
