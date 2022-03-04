@@ -47,7 +47,7 @@ class ChildCategoryController extends Controller
                 'image' => $path
             ]);
 
-            return redirect()->route('childcategories.index')->with('message', 'Child Category Created with Image.');
+            return redirect()->route('childcategories.index')->with('noti', ["icon" => "success", "title" => "Child Category Successfully Created"]);
         }
         dd('no image');
     }
@@ -84,14 +84,14 @@ class ChildCategoryController extends Controller
                 'category_id' => $request->category_id,
                 'image' => $path
             ]);
-            return redirect()->route('childcategories.index')->with('message', 'Child category Updated with image.');
+            return redirect()->route('childcategories.index')->with('noti', ["icon" => "success", "title" => "Child Category Successfully Edited"]);
         } else {
             $child_category->update([
                 'name' => $request->name,
                 'slug' => Str::slug($request->name),
                 'category_id' => $request->category_id,
             ]);
-            return redirect()->route('childcategories.index')->with('message', 'Child Category Updated.');
+            return redirect()->route('childcategories.index')->with('noti', ["icon" => "success", "title" => "Child Category Successfully Edited"]);
         }
     }
 
@@ -106,6 +106,6 @@ class ChildCategoryController extends Controller
         $child_category = ChildCategory::findOrFail($id);
         $child_category->delete();
 
-        return redirect()->route('childcategories.index')->with('message', 'Child Category Deleted');
+        return redirect()->route('childcategories.index')->with('noti', ["icon" => "success", "title" => "Child Category Successfully Deleted"]);
     }
 }

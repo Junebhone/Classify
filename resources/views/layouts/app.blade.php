@@ -24,7 +24,7 @@
 
     <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
         <div @click.away="open = false"
-            class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-white md:w-64 dark-mode:text-gray-200 dark-mode:bg-gray-800"
+            class="flex flex-col flex-shrink-0 w-full shadow-md text-gray-700 bg-white md:w-64 dark-mode:text-gray-200 dark-mode:bg-gray-800"
             x-data="{ open: false }">
             <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
                 <a href="#"
@@ -46,6 +46,9 @@
                 {{-- Dashboard Navigation links --}}
                 <x-app-link class="bg-green-500 hover:bg-green-700" href="{{ route('listings.create') }}"
                     :active="request()->routeIs('listings.create')">New Listing
+                </x-app-link>
+                <x-app-link href="{{ route('listings.index') }}" :active="request()->routeIs('listing.index')">My
+                    Listings
                 </x-app-link>
                 <x-app-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard
                 </x-app-link>
@@ -118,29 +121,7 @@
 
     @livewireScripts
     <script src="{{ mix('js/app.js') }}"></script>
-    @if (session('noti'))
-    <script>
-        let toastInfo = @json(session('noti'));
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-
-        setTimeout(() => {
-            Toast.fire({
-                icon: toastInfo.icon,
-                title: toastInfo.title
-            })
-        }, 1000);
-    </script>
-    @endif
+    <x-main-alert></x-main-alert>
 
 </body>
 

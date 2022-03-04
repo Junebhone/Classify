@@ -48,7 +48,7 @@ class CategoryController extends Controller
             ]);
 
 
-            return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Successfully Created"]);
+            return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Created"]);
         }
         return redirect()->route('categories.index');
     }
@@ -82,13 +82,13 @@ class CategoryController extends Controller
                 'slug' => Str::slug($request->name),
                 'image' => $path
             ]);
-            return redirect()->route('categories.index')->with('message', 'Category Updated with image.');
+            return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Edited"]);
         } else {
             $category->update([
                 'name' => $request->name,
                 'slug' => Str::slug($request->name),
             ]);
-            return redirect()->route('categories.index')->with('message', 'Category Updated.');
+            return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Edited"]);
         }
     }
 
@@ -102,6 +102,6 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('categories.index')->with('message', 'Category Deleted.');
+        return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Deleted"]);
     }
 }
