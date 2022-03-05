@@ -25,6 +25,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    // auth()->user()->assignRole('admin');
     return view('dashboard');
 })->name('dashboard');
 
