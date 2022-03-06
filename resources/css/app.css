@@ -1,7 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-
+@import "../../node_modules/filepond/dist/filepond.css";
+@import "../../node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
 
 @layer base{
     .swal2-toast.swal2-icon-success{

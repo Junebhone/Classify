@@ -124,7 +124,27 @@
     @livewireScripts
     <script src="{{ mix('js/app.js') }}"></script>
     <x-main-alert></x-main-alert>
-
+    <script>
+        FilePond.registerPlugin(
+        
+            // encodes the file as base64 data
+          FilePondPluginFileEncode,
+        
+            // validates the size of the file
+            FilePondPluginFileValidateSize,
+        
+            // corrects mobile image orientation
+            FilePondPluginImageExifOrientation,
+        
+            // previews dropped images
+          FilePondPluginImagePreview
+        );
+        
+        // Select the file input and use create() to turn it into a pond
+        FilePond.create(
+            document.querySelector("input[id='user_avater']")
+        );
+    </script>
 </body>
 
 </html>
