@@ -57,7 +57,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="file" id="user_avater">
+                                            <input type="file" class="filepond" id="user_avater" name="filepond"
+                                                multiple data-max-file-size="3MB" data-max-files="3" />
                                         </div>
                                         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                                             <button type="submit"
