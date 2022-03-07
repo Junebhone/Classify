@@ -49,16 +49,16 @@
                                                         <label for="image"
                                                             class="block text-sm font-medium text-gray-700">Image</label>
                                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                                            {{-- <input
+                                                            <input
                                                                 class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-md transition ease-in-out m-0 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                                                 aria-describedby="user_avatar_help" id="user_avatar"
-                                                                name="image" type="file"> --}}
+                                                                name="image" type="file">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="file" class="filepond" id="user_avater" name="filepond"
-                                                multiple data-max-file-size="3MB" data-max-files="3" />
+
+
                                         </div>
                                         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                                             <button type="submit"
