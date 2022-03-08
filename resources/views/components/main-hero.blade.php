@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="flex justify-center"><button
-                                class="p-2 border w-1/4 rounded-md bg-gray-800 text-white">Search</button></div>
+                                class="p-2 border w-1/4 rounded-md bg-gray-800 text-white">Filter</button></div>
                     </form>
 
                 </div>

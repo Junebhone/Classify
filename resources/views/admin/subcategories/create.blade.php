@@ -72,15 +72,12 @@
                                                     <div class="col-span-3 sm:col-span-2">
                                                         <label for="image"
                                                             class="block text-sm font-medium text-gray-700">Image</label>
-                                                        <div class="mt-1 flex rounded-md shadow-sm">
-                                                            <input
-                                                                class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  transition ease-in-out m-0 focus:ring-indigo-500 focus:border-indigo-500 rounded-md sm:text-sm"
-                                                                aria-describedby="user_avatar_help" id="user_avatar"
-                                                                name="image" id="image" type="file">
-                                                            @error('image')
-                                                            <span class="error">{{ $message }}</span>
-                                                            @enderror
-                                                        </div>
+
+                                                        <input type="file" name="image" id="user_avater">
+                                                        @error('image')
+                                                        <span class="error">{{ $message }}</span>
+                                                        @enderror
+
                                                     </div>
                                                 </div>
                                             </div>

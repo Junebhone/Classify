@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\StateController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Frontend\ListingController as FrontendListingController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +42,7 @@ Route::resource('cities', CityContoller::class);
 
 
 Route::resource('listings', ListingController::class)->middleware('auth');
+
+
+Route::post('upload', [UploadController::class, 'store'])->name('upload');
+Route::delete('upload/delete', [UploadController::class, 'delete'])->name('delete');

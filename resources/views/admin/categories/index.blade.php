@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="overflow-x-auto sm:-mx-6 lg:mx-8">
-                <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
+                <div class="align-middle inline-block w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                         <table class="w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
@@ -50,10 +50,10 @@
                                             {{ $category->slug }}
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="flex items-center">
-                                            <img class="h-12 w-12 rounded-md"
-                                                src="{{ Storage::url($category->image) }}">
+                                    <td class="p-6 whitespace-nowrap">
+                                        <div class="flex items-center w-24">
+                                            <img class="rounded-lg"
+                                                src="{{ asset('storage/categories/' . $category->image)}}">
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

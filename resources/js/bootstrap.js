@@ -10,7 +10,6 @@ window.axios = require('axios');
 window.FilePond = require('filepond/dist/filepond');
 window.FilePondPluginImagePreview = require('filepond-plugin-image-preview');
 window.FilePondPluginImageExifOrientation = require('filepond-plugin-image-exif-orientation');
-window.FilePondPluginFileEncode = require('filepond-plugin-file-encode');
 window.FilePondPluginFileValidateSize = require('filepond-plugin-file-validate-size');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

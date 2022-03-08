@@ -1,16 +1,10 @@
 <script>
     FilePond.registerPlugin(
     
-      
-        //  FilePondPluginFileEncode,
-    
-
-        // FilePondPluginFileValidateSize,
-    
-      
-        FilePondPluginImageExifOrientation,
-
-        FilePondPluginImagePreview
+    FilePondPluginImagePreview,
+    FilePondPluginImageExifOrientation,
+    // FilePondPluginFileValidateSize,
+    // // FilePondPluginImageEdit
     );
     
     const inputElement = document.querySelector('#user_avater');

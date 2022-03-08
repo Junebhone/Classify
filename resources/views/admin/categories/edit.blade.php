@@ -49,12 +49,10 @@
                                                             class="block text-sm font-medium text-gray-700">Image</label>
                                                         <div class="w-full m-2 p-2">
                                                             <img class="rounded-md bg-auto"
-                                                                src="{{ Storage::url($category->image) }}">
+                                                                src="{{ asset('storage/categories/' . $category->image)}}">
                                                         </div>
 
-                                                        <input
-                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:ring-indigo-500 focus:border-indigo-500 rounded-none rounded-r-md sm:text-sm"
-                                                            type="file" id="image" name="image">
+                                                        <input type="file" name="image" id="user_avater">
 
                                                     </div>
                                                 </div>

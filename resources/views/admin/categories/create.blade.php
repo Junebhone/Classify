@@ -48,12 +48,9 @@
                                                     <div class="col-span-3 sm:col-span-2">
                                                         <label for="image"
                                                             class="block text-sm font-medium text-gray-700">Image</label>
-                                                        <div class="mt-1 flex rounded-md shadow-sm">
-                                                            <input
-                                                                class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-md transition ease-in-out m-0 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                                                aria-describedby="user_avatar_help" id="user_avatar"
-                                                                name="image" type="file">
-                                                        </div>
+
+                                                        <input type="file" name="image" id="user_avater">
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -76,5 +73,4 @@
             </div>
         </div>
     </div>
-
 </x-app-layout>

@@ -73,17 +73,14 @@
                                                 </div>
                                                 <div class="grid grid-cols-3 gap-6">
                                                     <div class="col-span-3 sm:col-span-2">
-                                                        <label for="image"
+                                                        <label for="name"
                                                             class="block text-sm font-medium text-gray-700">Image</label>
-
                                                         <div class="w-full m-2 p-2">
                                                             <img class="rounded-md bg-auto"
-                                                                src="{{ Storage::url($sub_category->image) }}">
+                                                                src="{{ asset('storage/subcategories/' . $sub_category->image)}}">
                                                         </div>
-                                                        <input
-                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  transition ease-in-out m-0 focus:ring-indigo-500 focus:border-indigo-500 rounded-md sm:text-sm"
-                                                            aria-describedby="user_avatar_help" id="user_avatar"
-                                                            name="image" id="image" type="file">
+
+                                                        <input type="file" name="image" id="user_avater">
                                                         @error('image')
                                                         <span class="text-red-500">{{ $message }}</span>
                                                         @enderror

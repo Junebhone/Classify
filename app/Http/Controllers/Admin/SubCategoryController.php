@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubCategoryRequest;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class SubCategoryController extends Controller
@@ -40,18 +41,31 @@ class SubCategoryController extends Controller
      */
     public function store(StoreSubCategoryRequest $request)
     {
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('public/subcategories');
-            SubCategory::create([
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
-                'category_id' => $request->category_id,
-                'image' => $path
-            ]);
+        // if ($request->hasFile('image')) {
+        //     $path = $request->file('image')->store('public/subcategories');
+        //     SubCategory::create([
+        //         'name' => $request->name,
+        //         'slug' => Str::slug($request->name),
+        //         'category_id' => $request->category_id,
+        //         'image' => $path
+        //     ]);
 
-            return redirect()->route('subcategories.index')->with('message', 'Sub Category Created with Image.');
+        //     return redirect()->route('subcategories.index')->with('message', 'Sub Category Created with Image.');
+        // }
+        // dd('no image');
+
+        if (Storage::exists('public/temp/' . $request->image)) {
+            Storage::move('public/temp/' . $request->image, 'public/subcategories/' . Str::remove('tmp-', $request->image));
         }
-        dd('no image');
+        SubCategory::create([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'category_id' => $request->category_id,
+            'image' => Str::remove('tmp-', $request->image)
+        ]);
+
+
+        return redirect()->route('subcategories.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Created"]);
     }
 
 
