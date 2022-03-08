@@ -75,7 +75,6 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $category = Category::find($id);
         if (Storage::exists('public/temp/' . $request->image)) {
             Storage::move('public/temp/' . $request->image, 'public/categories/' . Str::remove('tmp-', $request->image));
@@ -90,7 +89,7 @@ class CategoryController extends Controller
             $category->update([
                 'name' => $request->name,
                 'slug' => Str::slug($request->name),
-                
+
 
             ]);
             return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Edited"]);

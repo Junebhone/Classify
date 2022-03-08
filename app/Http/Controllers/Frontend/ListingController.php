@@ -18,7 +18,7 @@ class ListingController extends Controller
                 'title',
                 AllowedFilter::exact('country_id'),
                 AllowedFilter::exact('category_id'),
-
+                AllowedFilter::scope('max_price'),
             ])
             ->get();
 
