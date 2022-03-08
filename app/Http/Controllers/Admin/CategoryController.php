@@ -73,19 +73,28 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
+
+        $category = Category::find($id);
         if (Storage::exists('public/temp/' . $request->image)) {
             Storage::move('public/temp/' . $request->image, 'public/categories/' . Str::remove('tmp-', $request->image));
+
+            $category->update([
+                'name' => $request->name,
+                'slug' => Str::slug($request->name),
+                'image' => Str::remove('tmp-', $request->image)
+            ]);
+            return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Edited"]);
+        } else {
+            $category->update([
+                'name' => $request->name,
+                'slug' => Str::slug($request->name),
+                
+
+            ]);
+            return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Edited"]);
         }
-        $category->update([
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
-            'image' => Str::remove('tmp-', $request->image)
-        ]);
-
-
-        return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Created"]);
     }
 
     /**

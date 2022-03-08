@@ -14,7 +14,12 @@ class ListingController extends Controller
     {
 
         $listings = QueryBuilder::for(Listing::class)
-            ->allowedFilters(['title', AllowedFilter::exact('country_id'), AllowedFilter::exact('category_id')])
+            ->allowedFilters([
+                'title',
+                AllowedFilter::exact('country_id'),
+                AllowedFilter::exact('category_id'),
+
+            ])
             ->get();
 
         return view('frontend.all-listings', compact('listings'));

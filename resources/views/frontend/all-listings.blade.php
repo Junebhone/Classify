@@ -18,7 +18,7 @@
                                                 <path class="heroicon-ui"
                                                     d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z" />
                                             </svg>
-                                            <input type="text" placeholder="Title..."
+                                            <input type="text" id="title" placeholder="Title..."
                                                 class="bg-gray-300 max-w-full focus:outline-none text-gray-700" />
                                         </div>
                                         <div class="flex border rounded bg-gray-300 items-center p-2 ">
@@ -64,7 +64,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex justify-center"><button id="filter"
+                                <div class="flex justify-center"><button id="filter" type="button"
                                         class="p-2 border w-1/4 rounded-md bg-gray-800 text-white">Filter</button></div>
                             </form>
 
@@ -94,22 +94,28 @@
                     </div>
                     @endforeach
                 </div>
-            </div>
+            </div>x
         </section>
     </section>
     <x-main-footer></x-main-footer>
     <script>
         function filterResults(){
             let href = 'all-listings?';
-            const title = document.getElementById("title").value;
-            const country = document.getElementById("country").value;
-            const category = document.getElementById("category").value;
+            var title = document.getElementById("title").value;
+            var country = document.getElementById("country").value;
+            var category = document.getElementById("category").value;
             if(title.length){
                 href += 'filter[title]=' + title;
 
             }
             if(category.length){
                 
+                href +='&filter[category_id]=' + category
+            }
+
+            if(country.length){
+                
+                href +='&filter[country_id]=' + country
             }
             document.location.href = href;
         }
