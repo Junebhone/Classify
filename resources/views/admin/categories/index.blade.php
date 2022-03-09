@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="container mx-auto ">
+    <div class="container mx-auto">
         <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:mx-8">
@@ -19,7 +19,7 @@
             </div>
             <div class="overflow-x-auto sm:-mx-6 lg:mx-8">
                 <div class="align-middle inline-block w-full sm:px-6 lg:px-8">
-                    <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                    <div class="shadow overflow-y-hidden overflow-x-auto border-b border-gray-200 sm:rounded-lg">
                         <table class="w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                                 <tr>
@@ -46,14 +46,17 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="flex items-center">
+                                        <div class="flex items-center ">
                                             {{ $category->slug }}
                                         </div>
                                     </td>
                                     <td class="p-6 whitespace-nowrap">
                                         <div class="flex items-center w-24">
+
                                             <img class="rounded-lg"
                                                 src="{{ asset('storage/categories/' . $category->image)}}">
+
+
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

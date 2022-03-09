@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="font-sans antialiased overflow-x-hidden">
+<body class="font-sans antialiased">
     <x-jet-banner />
 
     <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
@@ -29,7 +29,7 @@
             <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
                 <a href="#"
                     class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Classify
-                    Dashboard</a>
+                    Admin</a>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                     <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                         <path x-show="!open" fill-rule="evenodd"
@@ -47,17 +47,27 @@
                 <x-app-link class="bg-green-400 hover:bg-green-700" href="{{ route('listings.create') }}"
                     :active="request()->routeIs('listings.create')">New Listing
                 </x-app-link>
-                <x-app-link class="bg-green-400 hover:bg-green-700" href="{{ route('listings.index') }}"
-                    :active="request()->routeIs('listings.index')">
-                    Listings
+                <x-app-link class="bg-green-400 hover:bg-green-700" href="{{ route('admin.listings.index') }}"
+                    :active="request()->routeIs('admin.listings.index')">
+                    All Listings
                 </x-app-link>
                 <x-app-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard
                 </x-app-link>
-
-                {{-- @role('admin')
-                <x-app-link href="{{ route('') }}" :active="request()->routeIs('dashboard')">Dashboard
-                </x-app-link>
-                @endrole --}}
+                <x-app-link href="{{ route('categories.index') }}" :active="request()->routeIs('categories.index')">
+                    Categories</x-app-link>
+                <x-app-link href="{{ route('admin.subcategories.index') }}"
+                    :active="request()->routeIs('admin.subcategories.index')">
+                    Sub Categories</x-app-link>
+                <x-app-link href="{{ route('admin.childcategories.index') }}"
+                    :active="request()->routeIs('admin.childcategories.index')">
+                    Child Categories</x-app-link>
+                <x-app-link href="{{ route('admin.countries.index') }}"
+                    :active="request()->routeIs('admin.countries.index')">
+                    Countries</x-app-link>
+                <x-app-link href="{{ route('admin.states.index') }}" :active="request()->routeIs('admin.states.index')">
+                    States</x-app-link>
+                <x-app-link href="{{ route('admin.cities.index') }}" :active="request()->routeIs('admin.cities.index')">
+                    Cities</x-app-link>
                 {{-- Profile --}}
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
