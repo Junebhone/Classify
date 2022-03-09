@@ -13,23 +13,23 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
     @livewireStyles
 
     <!-- Scripts -->
-
+    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased">
     <x-jet-banner />
-
     <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
         <div @click.away="open = false"
-            class="flex flex-col flex-shrink-0 w-full shadow-md text-gray-700 bg-white md:w-64 dark-mode:text-gray-200 dark-mode:bg-gray-800"
+            class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-white md:w-64 dark-mode:text-gray-200 dark-mode:bg-gray-800"
             x-data="{ open: false }">
             <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
                 <a href="#"
-                    class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Classify
-                    Admin</a>
+                    class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
+                    Classified Admin</a>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                     <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                         <path x-show="!open" fill-rule="evenodd"
@@ -43,32 +43,38 @@
             </div>
             <nav :class="{'block': open, 'hidden': !open}"
                 class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">
-                {{-- Dashboard Navigation links --}}
-                <x-app-link class="bg-green-400 hover:bg-green-700" href="{{ route('listings.create') }}"
+                <x-app-link class="bg-green-500 hover:bg-green-600" href="{{ route('listings.create') }}"
                     :active="request()->routeIs('listings.create')">New Listing
                 </x-app-link>
-                <x-app-link class="bg-green-400 hover:bg-green-700" href="{{ route('admin.listings.index') }}"
-                    :active="request()->routeIs('admin.listings.index')">
-                    All Listings
+                <x-app-link class="bg-green-500 hover:bg-green-600" href="">All Listings
                 </x-app-link>
-                <x-app-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard
+                <x-app-link href=" {{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard
                 </x-app-link>
-                <x-app-link href="{{ route('categories.index') }}" :active="request()->routeIs('categories.index')">
-                    Categories</x-app-link>
+                @role('admin')
+                <x-app-link href="{{ route('admin.categories.index') }}"
+                    :active="request()->routeIs('admin.categories.index')">
+                    Categories
+                </x-app-link>
                 <x-app-link href="{{ route('admin.subcategories.index') }}"
                     :active="request()->routeIs('admin.subcategories.index')">
-                    Sub Categories</x-app-link>
+                    Sub Categories
+                </x-app-link>
                 <x-app-link href="{{ route('admin.childcategories.index') }}"
                     :active="request()->routeIs('admin.childcategories.index')">
-                    Child Categories</x-app-link>
+                    Child Categories
+                </x-app-link>
                 <x-app-link href="{{ route('admin.countries.index') }}"
                     :active="request()->routeIs('admin.countries.index')">
-                    Countries</x-app-link>
+                    Countries
+                </x-app-link>
                 <x-app-link href="{{ route('admin.states.index') }}" :active="request()->routeIs('admin.states.index')">
-                    States</x-app-link>
+                    States
+                </x-app-link>
                 <x-app-link href="{{ route('admin.cities.index') }}" :active="request()->routeIs('admin.cities.index')">
-                    Cities</x-app-link>
-                {{-- Profile --}}
+                    Cities
+                </x-app-link>
+                @endrole
+                @auth
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
                         class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
@@ -96,18 +102,20 @@
 
                                 <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                                     href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                                                                                this.closest('form').submit();">
                                     Logout
                                 </a>
                             </form>
-
                         </div>
                     </div>
                 </div>
+                @endauth
+
             </nav>
         </div>
 
         <main class="m-2 p-2 w-full">
+            <!-- Page Heading -->
             @if (isset($header))
             <header class="bg-white">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -122,9 +130,6 @@
     @stack('modals')
 
     @livewireScripts
-    <script src="{{ mix('js/app.js') }}"></script>
-    <x-main-alert></x-main-alert>
-    <x-main-file></x-main-file>
 </body>
 
 </html>

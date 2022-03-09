@@ -37,18 +37,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 
-Route::resource('listings', ListingController::class)->middleware('auth');
 
 
 Route::post('upload', [UploadController::class, 'store'])->name('upload');
 Route::delete('upload/delete', [UploadController::class, 'delete'])->name('delete');
 
-Route::group([
-    'prefix' => 'admin',
-    'middleware' => ['auth', 'role:admin']
-], function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-    Route::resource('listings', AdminListingController::class);
+Route::middleware(['auth:sanctum', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::resource('categories', CategoryController::class);
     Route::resource('subcategories', SubCategoryController::class);
     Route::resource('childcategories', ChildCategoryController::class);
@@ -56,3 +51,7 @@ Route::group([
     Route::resource('states', StateController::class);
     Route::resource('cities', CityContoller::class);
 });
+
+
+
+Route::resource('listings', ListingController::class)->middleware('auth');
