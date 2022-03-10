@@ -50,7 +50,7 @@ class CategoryController extends Controller
         ]);
 
 
-        return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Created"]);
+        return redirect()->route('admin.categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Created"]);
     }
 
 
@@ -85,7 +85,7 @@ class CategoryController extends Controller
             }
         }
         $category->update();
-        return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Edited"]);
+        return redirect()->route('admin.categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Edited"]);
     }
 
     /**
@@ -98,6 +98,6 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Deleted"]);
+        return redirect()->route('admin.categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Deleted"]);
     }
 }

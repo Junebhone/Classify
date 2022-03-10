@@ -44,7 +44,7 @@ class CityContoller extends Controller
     {
         City::create($request->validated());
 
-        return redirect()->route('cities.index')->with('noti', ["icon" => "success", "title" => "City Successfully Created"]);
+        return redirect()->route('admin.cities.index')->with('noti', ["icon" => "success", "title" => "City Successfully Created"]);
     }
 
     /**
@@ -82,7 +82,7 @@ class CityContoller extends Controller
     {
         $city->update($request->validated());
 
-        return redirect()->route('cities.index')->with('noti', ["icon" => "success", "title" => "City Successfully Edited"]);
+        return redirect()->route('admin.cities.index')->with('noti', ["icon" => "success", "title" => "City Successfully Edited"]);
     }
 
     /**
@@ -94,6 +94,6 @@ class CityContoller extends Controller
     public function destroy(City $city)
     {
         $city->delete();
-        return redirect()->route('cities.index')->with('noti', ["icon" => "success", "title" => "City Successfully Deleted"]);
+        return redirect()->route('admin.cities.index')->with('noti', ["icon" => "success", "title" => "City Successfully Deleted"]);
     }
 }

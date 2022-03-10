@@ -20,7 +20,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans antialiased overflow-x-hidden">
     <x-jet-banner />
     <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
         <div @click.away="open = false"
@@ -46,9 +46,10 @@
                 <x-app-link class="bg-green-500 hover:bg-green-600" href="{{ route('listings.create') }}"
                     :active="request()->routeIs('listings.create')">New Listing
                 </x-app-link>
-                <x-app-link class="bg-green-500 hover:bg-green-600" href="">All Listings
+                <x-app-link class="bg-green-500 hover:bg-green-600" href="{{ route('admin.listings.index') }}"
+                    :active="request()->routeIs('admin.listings.index')">All Listings
                 </x-app-link>
-                <x-app-link href=" {{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard
+                <x-app-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard
                 </x-app-link>
                 @role('admin')
                 <x-app-link href="{{ route('admin.categories.index') }}"

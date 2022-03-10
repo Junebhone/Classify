@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Edit Sub Category') }}
@@ -11,13 +11,13 @@
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:mx-8">
                 <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
                     <div class="flex justify-start">
-                        <a href="{{ route('subcategories.index') }}"
+                        <a href="{{ route('admin.subcategories.index') }}"
                             class="py-2 px-4 m-2 bg-green-500 hover:bg-green-300 text-gray-50 rounded-md">Back</a>
                     </div>
                 </div>
             </div>
             <div class="overflow-x-auto sm:-mx-6 lg:mx-8">
-                <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
+                <div class="align-middle inline-block w-full sm:px-6 lg:px-8">
                     <div class="overflow-hidden border-b-2  p-7">
                         <div>
                             <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -27,8 +27,8 @@
                                     </div>
                                 </div>
                                 <div class="mt-5 md:mt-0 md:col-span-2">
-                                    <form action="{{ route('subcategories.update',$sub_category->id) }}" method="POST"
-                                        enctype="multipart/form-data">
+                                    <form action="{{ route('admin.subcategories.update',$sub_category->id) }}"
+                                        method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
                                         <div class="shadow sm:rounded-md sm:overflow-hidden">
@@ -61,7 +61,6 @@
                                                                 <option value="{{ $category->id }}" {{ $category->id ==
                                                                     $sub_category->category_id ? 'selected' : '' }}>{{
                                                                     $category->name }}
-
                                                                 </option>
                                                                 @endforeach
                                                             </select>
@@ -107,4 +106,4 @@
         </div>
     </div>
     </div>
-</x-app-layout>
+</x-admin-layout>

@@ -17,10 +17,10 @@
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
+
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans antialiased overflow-x-hidden">
     <x-jet-banner />
     <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
         <div @click.away="open = false"
@@ -111,6 +111,9 @@
     @stack('modals')
 
     @livewireScripts
+    <script src="{{ mix('js/app.js') }}"></script>
+    <x-main-alert></x-main-alert>
+    <x-main-file></x-main-file>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('New Child Category') }}
@@ -11,7 +11,7 @@
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:mx-8">
                 <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
                     <div class="flex justify-start">
-                        <a href="{{ route('childcategories.index') }}"
+                        <a href="{{ route('admin.childcategories.index') }}"
                             class="py-2 px-4 m-2 bg-green-500 hover:bg-green-300 text-gray-50 rounded-md">Back</a>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-5 md:mt-0 md:col-span-2">
-                                    <form action="{{ route('childcategories.store') }}" method="POST"
+                                    <form action="{{ route('admin.childcategories.store') }}" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="shadow sm:rounded-md sm:overflow-hidden">
@@ -69,28 +69,27 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
                                                 <div class="grid grid-cols-3 gap-6">
                                                     <div class="col-span-3 sm:col-span-2">
                                                         <label for="image"
                                                             class="block text-sm font-medium text-gray-700">Image</label>
-                                                        <div class="mt-1 flex rounded-md shadow-sm">
-                                                            <input
-                                                                class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  transition ease-in-out m-0 focus:ring-indigo-500 focus:border-indigo-500 rounded-md sm:text-sm"
-                                                                aria-describedby="user_avatar_help" id="user_avatar"
-                                                                name="image" id="image" type="file">
-                                                            @error('image')
-                                                            <span class="error">{{ $message }}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                        </div>
-                                        <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                            <button type="submit"
-                                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
-                                        </div>
+                                                        <input type="file" name="image" id="user_avater">
+                                                        @error('image')
+                                                        <span class="error">{{ $message }}</span>
+                                                        @enderror
+
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                                                <button type="submit"
+                                                    class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                            </div>
                                     </form>
                                 </div>
 
@@ -104,4 +103,4 @@
         </div>
     </div>
     </div>
-</x-app-layout>
+</x-admin-layout>

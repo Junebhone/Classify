@@ -41,19 +41,6 @@ class SubCategoryController extends Controller
      */
     public function store(StoreSubCategoryRequest $request)
     {
-        // if ($request->hasFile('image')) {
-        //     $path = $request->file('image')->store('public/subcategories');
-        //     SubCategory::create([
-        //         'name' => $request->name,
-        //         'slug' => Str::slug($request->name),
-        //         'category_id' => $request->category_id,
-        //         'image' => $path
-        //     ]);
-
-        //     return redirect()->route('subcategories.index')->with('message', 'Sub Category Created with Image.');
-        // }
-        // dd('no image');
-
         if (Storage::exists('public/temp/' . $request->image)) {
             Storage::move('public/temp/' . $request->image, 'public/subcategories/' . Str::remove('tmp-', $request->image));
         }
@@ -65,11 +52,20 @@ class SubCategoryController extends Controller
         ]);
 
 
-        return redirect()->route('subcategories.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Created"]);
+        return redirect()->route('admin.subcategories.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Created"]);
     }
 
 
-
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -93,23 +89,17 @@ class SubCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $sub_category = SubCategory::find($id);
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('public/subcategories');
-            $sub_category->update([
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
-                'category_id' => $request->category_id,
-                'image' => $path
-            ]);
-            return redirect()->route('subcategories.index')->with('message', 'Sub category Updated with image.');
-        } else {
-            $sub_category->update([
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
-                'category_id' => $request->category_id,
-            ]);
-            return redirect()->route('subcategories.index')->with('message', 'Sub Category Updated.');
+        $sub_category->name = $request->name;
+        $sub_category->slug = Str::slug($request->name);
+        $sub_category->category_id = $request->category_id;
+        if ($request->image) {
+            if (Storage::exists('public/temp/' . $request->image)) {
+                Storage::move('public/temp/' . $request->image, 'public/subcategories/' . Str::remove('tmp-', $request->image));
+                $sub_category->image = Str::remove('tmp-', $request->image);
+            }
         }
+        $sub_category->update();
+        return redirect()->route('admin.subcategories.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Edited"]);
     }
 
     /**
@@ -124,6 +114,6 @@ class SubCategoryController extends Controller
         $sub_category->delete();
 
 
-        return redirect()->route('subcategories.index')->with('message', 'Sub Category Deleted.');
+        return redirect()->route('admin.subcategories.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Edited"]);
     }
 }

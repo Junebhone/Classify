@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('New State') }}
@@ -11,7 +11,7 @@
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:mx-8">
                 <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
                     <div class="flex justify-start">
-                        <a href="{{ route('states.index') }}"
+                        <a href="{{ route('admin.states.index') }}"
                             class="py-2 px-4 m-2 bg-green-500 hover:bg-green-300 text-gray-50 rounded-md">Back</a>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-5 md:mt-0 md:col-span-2">
-                                    <form action="{{ route('states.store') }}" method="POST">
+                                    <form action="{{ route('admin.states.store') }}" method="POST">
                                         @csrf
                                         <div class="shadow sm:rounded-md sm:overflow-hidden">
                                             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
@@ -86,4 +86,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-admin-layout>

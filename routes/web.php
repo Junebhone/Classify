@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\ListingController as FrontendListingController
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Jetstream\Rules\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,7 @@ Route::delete('upload/delete', [UploadController::class, 'delete'])->name('delet
 
 Route::middleware(['auth:sanctum', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
+    Route::resource('listings', AdminListingController::class);
     Route::resource('categories', CategoryController::class);
     Route::resource('subcategories', SubCategoryController::class);
     Route::resource('childcategories', ChildCategoryController::class);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ChildCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ChildCategoryController extends Controller
@@ -38,18 +39,18 @@ class ChildCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('public/childcategories');
-            ChildCategory::create([
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
-                'sub_category_id' => $request->sub_category_id,
-                'image' => $path
-            ]);
-
-            return redirect()->route('childcategories.index')->with('noti', ["icon" => "success", "title" => "Child Category Successfully Created"]);
+        if (Storage::exists('public/temp/' . $request->image)) {
+            Storage::move('public/temp/' . $request->image, 'public/childcategories/' . Str::remove('tmp-', $request->image));
         }
-        dd('no image');
+        ChildCategory::create([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'sub_category_id' => $request->sub_category_id,
+            'image' => Str::remove('tmp-', $request->image)
+        ]);
+
+
+        return redirect()->route('admin.childcategories.index')->with('noti', ["icon" => "success", "title" => "ChildCategory Successfully Created"]);
     }
 
 
@@ -76,23 +77,16 @@ class ChildCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $child_category = ChildCategory::find($id);
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('public/childcategories');
-            $child_category->update([
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
-                'category_id' => $request->category_id,
-                'image' => $path
-            ]);
-            return redirect()->route('childcategories.index')->with('noti', ["icon" => "success", "title" => "Child Category Successfully Edited"]);
-        } else {
-            $child_category->update([
-                'name' => $request->name,
-                'slug' => Str::slug($request->name),
-                'category_id' => $request->category_id,
-            ]);
-            return redirect()->route('childcategories.index')->with('noti', ["icon" => "success", "title" => "Child Category Successfully Edited"]);
+        $child_category->name = $request->name;
+        $child_category->slug = Str::slug($request->name);
+        if ($request->image) {
+            if (Storage::exists('public/temp/' . $request->image)) {
+                Storage::move('public/temp/' . $request->image, 'public/childcategories/' . Str::remove('tmp-', $request->image));
+                $child_category->image = Str::remove('tmp-', $request->image);
+            }
         }
+        $child_category->update();
+        return redirect()->route('admin.childcategories.index')->with('noti', ["icon" => "success", "title" => "Child Category Successfully Edited"]);
     }
 
     /**
@@ -106,6 +100,6 @@ class ChildCategoryController extends Controller
         $child_category = ChildCategory::findOrFail($id);
         $child_category->delete();
 
-        return redirect()->route('childcategories.index')->with('noti', ["icon" => "success", "title" => "Child Category Successfully Deleted"]);
+        return redirect()->route('admin.childcategories.index')->with('noti', ["icon" => "success", "title" => "Child Category Successfully Deleted"]);
     }
 }

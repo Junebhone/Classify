@@ -39,8 +39,7 @@ class CountryController extends Controller
     public function store(StoreCountryRequest $request)
     {
         Country::create($request->validated());
-
-        return redirect()->route('countries.index')->with('message', 'Country Created');
+        return redirect()->route('admin.countries.index')->with('noti', ["icon" => "success", "title" => "Country Successfully Created"]);
     }
 
     /**
@@ -76,7 +75,7 @@ class CountryController extends Controller
     {
         $country->update($request->validated());
 
-        return redirect()->route('countries.index')->with('message', 'Country Updated');
+        return redirect()->route('admin.countries.index')->with('noti', ["icon" => "success", "title" => "Country Successfully Edited"]);
     }
 
     /**
@@ -88,7 +87,7 @@ class CountryController extends Controller
     public function destroy(Country $country)
     {
         $country->delete();
-        
-        return redirect()->route('countries.index')->with('message', 'Country Deleted');
+
+        return redirect()->route('admin.countries.index')->with('noti', ["icon" => "success", "title" => "Country Successfully Deleted"]);
     }
 }

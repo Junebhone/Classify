@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Edit Child Category') }}
@@ -11,24 +11,25 @@
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:mx-8">
                 <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
                     <div class="flex justify-start">
-                        <a href="{{ route('childcategories.index') }}"
-                           class="py-2 px-4 m-2 bg-green-500 hover:bg-green-300 text-gray-50 rounded-md">Back</a>
+                        <a href="{{ route('admin.childcategories.index') }}"
+                            class="py-2 px-4 m-2 bg-green-500 hover:bg-green-300 text-gray-50 rounded-md">Back</a>
                     </div>
                 </div>
             </div>
             <div class="overflow-x-auto sm:-mx-6 lg:mx-8">
-                <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
+                <div class="align-middle inline-block w-full sm:px-6 lg:px-8">
                     <div class="overflow-hidden border-b-2  p-7">
                         <div>
                             <div class="md:grid md:grid-cols-3 md:gap-6">
                                 <div class="md:col-span-1">
                                     <div class="px-4 sm:px-0">
-                                        <h3 class="text-lg font-medium leading-6 text-gray-900">Update Child Category</h3>
+                                        <h3 class="text-lg font-medium leading-6 text-gray-900">Update Child Category
+                                        </h3>
                                     </div>
                                 </div>
                                 <div class="mt-5 md:mt-0 md:col-span-2">
-                                    <form action="{{ route('childcategories.update',$child_category->id) }}" method="POST"
-                                          enctype="multipart/form-data">
+                                    <form action="{{ route('admin.childcategories.update',$child_category->id) }}"
+                                        method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
                                         <div class="shadow sm:rounded-md sm:overflow-hidden">
@@ -36,12 +37,12 @@
                                                 <div class="grid grid-cols-3 gap-6">
                                                     <div class="col-span-3 sm:col-span-2">
                                                         <label for="name"
-                                                               class="block text-sm font-medium text-gray-700"> Name
+                                                            class="block text-sm font-medium text-gray-700"> Name
                                                         </label>
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <input type="text" name="name" id="name"
-                                                                   class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300"
-                                                                   value="{{ $child_category->name }}">
+                                                                class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300"
+                                                                value="{{ $child_category->name }}">
                                                             @error('name')
                                                             <span class="text-red-500">{{ $message }}</span>
                                                             @enderror
@@ -51,14 +52,20 @@
                                                 <div class="grid grid-cols-3 gap-6">
                                                     <div class="col-span-3 sm:col-span-2">
                                                         <label for="name"
-                                                               class="block text-sm font-medium text-gray-700">Sub Category
+                                                            class="block text-sm font-medium text-gray-700">Sub Category
                                                         </label>
                                                         <div class="mt-1 flex rounded-md shadow-sm">
-                                                            <select name="sub_category_id" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full  rounded-md sm:text-sm border-gray-300 form-select appearance-none text-gray-700" aria-label="Default select example">
-                                                                @foreach (App\Models\SubCategory::all() as $sub_category)
-                                                                    <option value="{{ $child_category->id }}" {{ $sub_category->id == $child_category->sub_category_id ? 'selected' : '' }}>{{ $sub_category->name }}
+                                                            <select name="sub_category_id"
+                                                                class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full  rounded-md sm:text-sm border-gray-300 form-select appearance-none text-gray-700"
+                                                                aria-label="Default select example">
+                                                                @foreach (App\Models\SubCategory::all() as
+                                                                $sub_category)
+                                                                <option value="{{ $child_category->id }}" {{
+                                                                    $sub_category->id ==
+                                                                    $child_category->sub_category_id ? 'selected' : ''
+                                                                    }}>{{ $sub_category->name }}
 
-                                                                    </option>
+                                                                </option>
                                                                 @endforeach
                                                             </select>
                                                             @error('sub_category_id')
@@ -70,16 +77,13 @@
                                                 <div class="grid grid-cols-3 gap-6">
                                                     <div class="col-span-3 sm:col-span-2">
                                                         <label for="image"
-                                                               class="block text-sm font-medium text-gray-700">Image</label>
+                                                            class="block text-sm font-medium text-gray-700">Image</label>
 
                                                         <div class="w-full m-2 p-2">
                                                             <img class="rounded-md bg-auto"
-                                                                 src="{{ Storage::url($child_category->image) }}">
+                                                                src="{{ asset('storage/childcategories/' . $child_category->image)}}">
                                                         </div>
-                                                        <input
-                                                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  transition ease-in-out m-0 focus:ring-indigo-500 focus:border-indigo-500 rounded-md sm:text-sm"
-                                                            aria-describedby="user_avatar_help" id="user_avatar"
-                                                            name="image" id="image" type="file">
+                                                        <input type="file" name="image" id="user_avater">
                                                         @error('image')
                                                         <span class="text-red-500">{{ $message }}</span>
                                                         @enderror
@@ -91,7 +95,7 @@
                                         </div>
                                         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                                             <button type="submit"
-                                                    class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                         </div>
                                     </form>
                                 </div>
@@ -106,4 +110,4 @@
         </div>
     </div>
     </div>
-</x-app-layout>
+</x-admin-layout>
