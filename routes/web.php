@@ -47,6 +47,8 @@ Route::middleware(['auth:sanctum', 'role:admin'])->prefix('admin')->name('admin.
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::resource('listings', AdminListingController::class);
     Route::resource('categories', CategoryController::class);
+    Route::get('categories/{category}/add-sub', [CategoryController::class, 'add_sub'])->name('add_sub');
+    Route::post('categories/{category}/add-sub', [CategoryController::class, 'add_sub_store'])->name('add_sub.store');
     Route::resource('subcategories', SubCategoryController::class);
     Route::resource('childcategories', ChildCategoryController::class);
     Route::resource('countries', CountryController::class);

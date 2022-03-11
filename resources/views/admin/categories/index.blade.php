@@ -59,19 +59,25 @@
 
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="{{ route('admin.categories.edit',$category->id) }}"
-                                            class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                        <form method="POST"
-                                            action="{{ route('admin.categories.destroy',$category->id) }}">
-                                            @csrf
-                                            @method('DELETE')
-                                            <a class="text-red-600 hover:text-red-900"
-                                                href="{{ route('admin.categories.destroy',$category->id) }}" onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                                Delete
-                                            </a>
-                                        </form>
+                                    <td class="p-6 whitespace-nowrap text-right text-sm font-medium">
+                                        <div class="flex gap-10 justify-center items-center">
+                                            <a href="{{ route('admin.add_sub',$category->id) }}"
+                                                class="text-indigo-600 hover:text-indigo-900">Add Sub</a>
+                                            <a href="{{ route('admin.categories.edit',$category->id) }}"
+                                                class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                            <form method="POST"
+                                                action="{{ route('admin.categories.destroy',$category->id) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a class="text-red-600 hover:text-red-900"
+                                                    href="{{ route('admin.categories.destroy',$category->id) }}"
+                                                    onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                                    Delete
+                                                </a>
+                                            </form>
+                                        </div>
+
                                     </td>
                                 </tr>
                                 @endforeach

@@ -17,7 +17,6 @@
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased overflow-x-hidden">
@@ -131,6 +130,9 @@
     @stack('modals')
 
     @livewireScripts
+    <script src="{{ mix('js/app.js') }}"></script>
+    <x-main-alert></x-main-alert>
+    <x-main-file></x-main-file>
 </body>
 
 </html>

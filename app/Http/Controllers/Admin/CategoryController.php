@@ -100,4 +100,25 @@ class CategoryController extends Controller
 
         return redirect()->route('admin.categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Deleted"]);
     }
+
+    public function add_sub(Category $category)
+    {
+        return view('admin.categories.add_sub', compact('category'));
+    }
+    public function add_sub_store(Request $request, Category $category)
+    {
+
+        if (Storage::exists('public/temp/' . $request->image)) {
+            Storage::move('public/temp/' . $request->image, 'public/subcategories/' . Str::remove('tmp-', $request->image));
+        }
+        $category->sub_categories()->create([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'category_id' => $category->id,
+            'image' => Str::remove('tmp-', $request->image)
+        ]);
+
+
+        return redirect()->route('admin.categories.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Created"]);
+    }
 }

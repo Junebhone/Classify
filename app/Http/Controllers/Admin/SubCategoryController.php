@@ -99,7 +99,7 @@ class SubCategoryController extends Controller
             }
         }
         $sub_category->update();
-        return redirect()->route('admin.subcategories.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Edited"]);
+        return redirect()->route('admin.subcategories.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Deleted"]);
     }
 
     /**

@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('New Category') }}
+            New Sub Category For {{ $category->name }}
         </h2>
     </x-slot>
 
@@ -23,11 +23,11 @@
                             <div class="md:grid md:grid-cols-3 md:gap-6">
                                 <div class="md:col-span-1">
                                     <div class="px-4 sm:px-0">
-                                        <h3 class="text-lg font-medium leading-6 text-gray-900">Create Category</h3>
+                                        <h3 class="text-lg font-medium leading-6 text-gray-900">Create Sub Category</h3>
                                     </div>
                                 </div>
                                 <div class="mt-5 md:mt-0 md:col-span-2">
-                                    <form action="{{ route('admin.categories.store') }}" method="POST"
+                                    <form action="{{ route('admin.add_sub.store', $category->id) }}" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="shadow sm:rounded-md sm:overflow-hidden">
@@ -41,6 +41,9 @@
                                                             <input type="text" name="name" id="name"
                                                                 class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-md sm:text-sm border-gray-300"
                                                                 placeholder="Name">
+                                                            @error('name')
+                                                            <span class="error">{{ $message }}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -50,27 +53,30 @@
                                                             class="block text-sm font-medium text-gray-700">Image</label>
 
                                                         <input type="file" name="image" id="user_avater">
+                                                        @error('image')
+                                                        <span class="error">{{ $message }}</span>
+                                                        @enderror
 
                                                     </div>
                                                 </div>
                                             </div>
-
 
                                         </div>
                                         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                                             <button type="submit"
                                                 class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
                                         </div>
-
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                     </div>
-
                 </div>
 
             </div>
+
         </div>
+    </div>
     </div>
 </x-admin-layout>
