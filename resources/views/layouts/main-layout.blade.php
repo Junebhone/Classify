@@ -13,11 +13,11 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
+
 </head>
 
 <body class="font-sans antialiased">
@@ -44,8 +44,10 @@
     @stack('modals')
 
     @livewireScripts
-
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
+    <x-main-form></x-main-form>
+    {{-- <script>
         function filterResults(){
             let href = 'all-listings?';
             var title = document.getElementById("title").value;
@@ -71,7 +73,8 @@
             document.location.href = href;
         }
         document.getElementById("filter").addEventListener("click",filterResults);
-    </script>
+    </script> --}}
+
 </body>
 
 </html>
