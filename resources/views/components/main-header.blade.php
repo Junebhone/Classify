@@ -62,21 +62,43 @@
             </a>
             <i
                 class="fa-solid fa-globe mr-1 cursor-pointer rounded-full p-3 text-[12px] text-TextPrimary hover:bg-gray-600"></i>
-            <div class="menu-toggle flex cursor-pointer items-center justify-center gap-5 rounded-3xl bg-TextPrimary py-1 px-4 shadow-lg"
+            <div class="menu-toggle flex cursor-pointer items-center justify-center gap-5 w-12 h-12 overflow-hidden rounded-full shadow-lg"
                 id="menu-toggle">
 
-
-
-                <i class="fa-solid fa-bars text-2xs text-TextSecondary"></i>
                 @guest
-                <i class="fa-solid fa-circle-user text-3xl text-TextSecondary"></i>
+                <i class="fa-solid fa-circle-user text-4xl text-TextPrimary"></i>
+
                 @endguest
                 @auth
-                <div
-                    class="flex items-center overflow-hidden w-[1.875rem] h-[1.875rem] object-cover object-center rounded-full">
-                    <img class="rounded-lg" src="{{ asset('storage/') .'/'. auth()->user()->profile_photo_path }}">
-                </div>
+                {{-- <img class="w-full h-full object-cover object-center"
+                    src="{{ asset('storage/') .'/'. auth()->user()->profile_photo_path }}"> --}}
+                @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                <button
+                    class="w-full h-full border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                    <img class="h-full w-full rounded-full object-cover object-center"
+                        src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                </button>
+                @else
+                <span class="inline-flex rounded-md">
+                    <button type="button"
+                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                        {{ Auth::user()->name }}
+
+                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </span>
+                @endif
+
+
                 @endauth
+
+
+
             </div>
             <div class="menu-items absolute top-full mt-4 flex w-[240px] scale-0 flex-col gap-1 rounded-lg bg-TextPrimary py-3 shadow-lg"
                 id="menu-items">
@@ -89,6 +111,14 @@
                 @auth
                 <a class="menu-link text-2xs w-full cursor-pointer p-2 px-6 hover:bg-gray-300"
                     href="{{ route('dashboard') }}">{{ auth()->user()->name }}</a>
+                <form class="menu-link text-2xs w-full cursor-pointer p-2 px-6 hover:bg-gray-300" method="POST"
+                    action="{{ route('logout') }}">
+                    @csrf
+                    <a class="text-2xs w-full cursor-pointer hover:bg-gray-300" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                this.closest('form').submit();">
+                        Logout
+                    </a>
+                </form>
                 @endauth
                 <hr />
 
@@ -101,7 +131,7 @@
         </div>
     </nav>
     <form action=""
-        class="form-tab relative top-[140px] flex h-[68px] w-max flex-shrink gap-[1px] rounded-[80px] bg-TextPrimary lg:top-20"
+        class="form-tab relative top-[160px] flex h-[68px] w-max flex-shrink gap-[1px] rounded-[80px] bg-TextPrimary lg:top-20"
         id="place">
         <div
             class="location relative flex flex-shrink cursor-pointer flex-col justify-center gap-1 rounded-[80px] bg-TextPrimary pl-10 pr-3 text-xs after:absolute after:left-full after:bottom-[30px] after:h-[2px] after:w-8 after:translate-x-[-50%] after:rotate-[90deg] after:bg-gray-300 hover:bg-gray-300 lg:pr-20 lg:after:bottom-[33px]">
@@ -136,11 +166,13 @@
         <div class="absolute top-full mt-4 flex h-[150px] w-[500px] scale-0 flex-col justify-center gap-4 rounded-[30px] bg-TextPrimary p-6"
             id="listing">
             <p class="uppercase">Go Anywhere, anytime</p>
-            <a class="z-50 flex items-center justify-start rounded-full border-[1px] border-gray-200 p-4 pl-6 shadow-2xl hover:shadow-2xl"
-                href="../src/listing.html" id="listing-page">
+            <a class="z-50 flex items-center justify-start rounded-full border-[1px] border-gray-300 p-4 pl-6 shadow-2xl hover:shadow-xl"
+                href="{{ route('all.listings') }}" id="listing-page">
                 I'm flexible
                 <i class="fa-solid fa-angle-right ml-auto text-3xl font-extralight"></i>
             </a>
         </div>
+
     </form>
+
 </header>
