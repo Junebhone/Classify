@@ -21,9 +21,9 @@
 
 <body class="font-sans antialiased overflow-x-hidden">
     <x-jet-banner />
-    <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
+    <div class="flex-col w-full md:flex md:flex-row md:min-h-screen z-50">
         <div @click.away="open = false"
-            class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-white md:w-64 dark-mode:text-gray-200 dark-mode:bg-gray-800 shadow-md fixed sm:relative top-0"
+            class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-white md:w-64 dark-mode:text-gray-200 dark-mode:bg-gray-800 shadow-md"
             x-data="{ open: false }">
             <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
 
