@@ -31,6 +31,7 @@ module.exports = {
                 TextPrimary: "#F8F9FA",
                 TextSecondary: "black",
                 Primary: "#212529",
+                Rose:"#FF385C"
               },
               aspetRatio: {
                 "0.5/0.5": "0.5/0.5",

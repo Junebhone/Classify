@@ -23,12 +23,23 @@
     <x-jet-banner />
     <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
         <div @click.away="open = false"
-            class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-white md:w-64 dark-mode:text-gray-200 dark-mode:bg-gray-800"
+            class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-white md:w-64 dark-mode:text-gray-200 dark-mode:bg-gray-800 shadow-md fixed sm:relative top-0"
             x-data="{ open: false }">
             <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
+
                 <a href="#"
-                    class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
-                    Classified Admin</a>
+                    class="flex justify-center items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
+                    <svg class="w-9 h-9 mr-2" viewBox="0 0 364 373" fill="none"
+                        xmlns="http://www.w3.org/2000/svg%22%3E">
+                        <path
+                            d="M68 113L0 183L191 373L339 224L184 69L73 183L91 199L184 102L306 224L191 340L35 183L184 36L348 199L364 183L184 0L91 93L96 75H68V113Z"
+                            fill="#FF385C" />
+                        <rect x="149" y="157" width="26" height="26" fill="#FF385C" />
+                        <rect x="189" y="157" width="26" height="26" fill="#FF385C" />
+                        <rect x="149" y="191" width="26" height="26" fill="#FF385C" />
+                        <rect x="189" y="191" width="26" height="26" fill="#FF385C" />
+                    </svg>
+                    Estify Admin</a>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                     <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                         <path x-show="!open" fill-rule="evenodd"
@@ -42,10 +53,10 @@
             </div>
             <nav :class="{'block': open, 'hidden': !open}"
                 class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">
-                <x-app-link class="bg-green-500 hover:bg-green-600" href="{{ route('listings.create') }}"
-                    :active="request()->routeIs('listings.create')">New Listing
+                <x-app-link href="{{ route('listings.create') }}" :active="request()->routeIs('listings.create')">New
+                    Listing
                 </x-app-link>
-                <x-app-link class="bg-green-500 hover:bg-green-600" href="{{ route('admin.listings.index') }}"
+                <x-app-link href="{{ route('admin.listings.index') }}"
                     :active="request()->routeIs('admin.listings.index')">All Listings
                 </x-app-link>
                 <x-app-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard
@@ -131,6 +142,7 @@
 
     @livewireScripts
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <x-main-alert></x-main-alert>
     <x-main-file></x-main-file>
 </body>

@@ -32,9 +32,24 @@
 </header> --}}
 <header class="flex h-[200vh] w-full justify-center bg-black overflow-hidden">
     <nav class="fixed z-10 flex w-full items-center justify-around gap-[40%] p-4 lg:gap-0">
-        <h1 class="cursor-pointer text-center font-serif text-3xl font-bold tracking-widest text-TextPrimary">
-            Estify
-        </h1>
+
+        <div class="flex justify-center items-center">
+
+            <svg class="w-9 h-9" viewBox="0 0 364 373" fill="none" xmlns="http://www.w3.org/2000/svg%22%3E">
+                <path
+                    d="M68 113L0 183L191 373L339 224L184 69L73 183L91 199L184 102L306 224L191 340L35 183L184 36L348 199L364 183L184 0L91 93L96 75H68V113Z"
+                    fill="#F8F9FA" />
+                <rect x="149" y="157" width="26" height="26" fill="#F8F9FA" />
+                <rect x="189" y="157" width="26" height="26" fill="#F8F9FA" />
+                <rect x="149" y="191" width="26" height="26" fill="#F8F9FA" />
+                <rect x="189" y="191" width="26" height="26" fill="#F8F9FA" />
+            </svg>
+
+            <h1
+                class="px-2 flex justify-start font-[Hind Siligurie] text-TextPrimary text-2xl font-sans text-center tracking-widest cursor-pointer">
+                Estify
+            </h1>
+        </div>
         <ul
             class="absolute top-[140%] ml-0 flex flex-shrink items-center justify-center gap-8 lg:relative lg:ml-[135px]">
             <li class="text-2xs list-none text-TextPrimary">
@@ -169,7 +184,11 @@
             <a class="z-50 flex items-center justify-start rounded-full border-[1px] border-gray-300 p-4 pl-6 shadow-2xl hover:shadow-xl"
                 href="{{ route('all.listings') }}" id="listing-page">
                 I'm flexible
-                <i class="fa-solid fa-angle-right ml-auto text-3xl font-extralight"></i>
+                {{-- <i class="fa-solid fa-angle-right ml-auto text-3xl font-extralight"></i> --}}
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 ml-auto" fill="none" viewBox="0 0 24 24"
+                    stroke="#FF385C" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
             </a>
         </div>
 
