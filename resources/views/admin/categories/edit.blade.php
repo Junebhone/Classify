@@ -17,7 +17,7 @@
                                     class="w-6 h-6" hover>
                                 </lottie-player>
                             </a>
-                            <span class="mx-2 text-gray-500 dark:text-gray-300">
+                            <span class="mx-1 text-gray-500 dark:text-gray-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20"
                                     fill="currentColor">
                                     <path fill-rule="evenodd"
@@ -28,7 +28,7 @@
                             <a href="{{ route('admin.categories.index') }}" class="text-black hover:underline">
                                 Categories
                             </a>
-                            <span class="mx-2 text-gray-500 dark:text-gray-300">
+                            <span class="mx-1 text-gray-500 dark:text-gray-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20"
                                     fill="currentColor">
                                     <path fill-rule="evenodd"
@@ -40,7 +40,7 @@
                                 class="text-black hover:underline">
                                 Edit-Category
                             </a>
-                            <span class="mx-2 text-gray-500 dark:text-gray-300">
+                            <span class="mx-1 text-gray-500 dark:text-gray-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20"
                                     fill="currentColor">
                                     <path fill-rule="evenodd"
@@ -137,9 +137,13 @@
                 </div>
 
             </div>
-            <div class="mt-4">
+            <div class="my-4">
                 <div class="overflow-x-auto sm:-mx-6 lg:mx-8 mt-2">
                     <div class="align-middle inline-block w-full sm:px-6 lg:px-8">
+                        <div
+                            class="align-middle mb-5 p-4 rounded-md inline-block w-full font-semibold  text-xl text-gray-800 leading-tight">
+                            <h2>SubCategories For {{ $category->name }}</h2>
+                        </div>
                         <div
                             class="shadow overflow-y-hidden overflow-x-auto border-b border-gray-200 rounded-lg sm:rounded-lg">
                             <table class="w-full divide-y divide-gray-200 ">

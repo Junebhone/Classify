@@ -16,7 +16,7 @@
                                     class="w-6 h-6" hover>
                                 </lottie-player>
                             </a>
-                            <span class="mx-2 text-gray-500 dark:text-gray-300">
+                            <span class="mx-1 text-gray-500 dark:text-gray-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20"
                                     fill="currentColor">
                                     <path fill-rule="evenodd"
@@ -27,7 +27,7 @@
                             <a href="{{ route('admin.subcategories.index') }}" class="text-black hover:underline">
                                 SubCategories
                             </a>
-                            <span class="mx-2 text-gray-500 dark:text-gray-300">
+                            <span class="mx-1 text-gray-500 dark:text-gray-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20"
                                     fill="currentColor">
                                     <path fill-rule="evenodd"
