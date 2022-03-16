@@ -75,8 +75,7 @@
                                         enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
-                                        <div
-                                            class="shadow rounded-md sm:rounded-md ring ring-rose-500 ring-opacity-60 sm:overflow-hidden">
+                                        <div class="shadow rounded-md sm:rounded-md sm:overflow-hidden">
                                             <div class="rounded-md px-4 py-5 bg-white space-y-6 sm:p-6">
                                                 <div class="grid grid-cols-3 gap-6">
                                                     <div class="col-span-3 sm:col-span-3">
@@ -86,7 +85,7 @@
                                                         </label>
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <input type="text" name="name" id="name"
-                                                                class="border-black focus:border-[#FF385C]
+                                                                class="border-gray-300 focus:border-[#FF385C]
                                                                 focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm "
                                                                 placeholder="Name" value="{{ $sub_category->name }}">
                                                         </div>
@@ -99,7 +98,7 @@
                                                         </label>
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <select name="category_id"
-                                                                class=" border-black focus:border-[#FF385C]
+                                                                class=" border-gray-300 focus:border-[#FF385C]
                                                                 focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm form-select text-black"
                                                                 aria-label="Default select example">
                                                                 @foreach (App\Models\Category::all() as $category)
@@ -143,7 +142,7 @@
                                                 </div> --}}
                                             </div>
 
-                                            <div class="px-4 py-3 text-left sm:px-6 flex justify-end">
+                                            <div class="px-4 py-3 text-right sm:px-6 flex justify-end">
                                                 <button type="submit" class="inline-flex items-center px-4 py-2 bg-[#FF385C] border
                                                     border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-rose-600
                                                     active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25
