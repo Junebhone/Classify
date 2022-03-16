@@ -47,7 +47,7 @@
                                 </svg>
                             </span>
                             <a href="{{ route('admin.categories.create') }}" class="text-black hover:underline">
-                                Category-Create
+                                Create-Category
                             </a>
                             <span class="mx-2 text-gray-500 dark:text-gray-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20"
@@ -58,9 +58,9 @@
                                 </svg>
                             </span>
                         </div>
-                        <a href="{{ route('admin.categories.create') }}"
+                        <a href="{{ route('admin.categories.index') }}"
                             class="text-black flex py-4 justify-center items-center">
-                            Back
+                            <span class="text-black hover:underline">Back</span>
                             <lottie-player src="{{ asset('img/Back.json') }}" background="transparent" speed="1"
                                 class="w-16 h-16" hover>
                             </lottie-player>

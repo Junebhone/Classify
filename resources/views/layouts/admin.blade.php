@@ -21,7 +21,7 @@
 
 <body class="font-sans antialiased overflow-x-hidden">
     <x-jet-banner />
-    <div class="flex-col w-full md:flex md:flex-row md:min-h-screen z-50">
+    <div class="flex-col w-full md:flex md:flex-row md:min-h-screen">
         <div @click.away="open = false"
             class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-white md:w-64 dark-mode:text-gray-200 dark-mode:bg-gray-800 shadow-md"
             x-data="{ open: false }">
@@ -125,7 +125,7 @@
             </nav>
         </div>
 
-        <main class="m-2 p-2 w-full">
+        <main class="m-2 p-2 w-full overflow-x-auto">
             <!-- Page Heading -->
             @if (isset($header))
             <header class="bg-white">
