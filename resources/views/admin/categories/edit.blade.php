@@ -74,8 +74,7 @@
                                         enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
-                                        <div
-                                            class="shadow rounded-md sm:rounded-md ring ring-rose-500 ring-opacity-60 sm:overflow-hidden">
+                                        <div class="shadow rounded-md sm:rounded-md sm:overflow-hidden">
                                             <div class="rounded-md px-4 py-5 bg-white space-y-6 sm:p-6">
                                                 <div class="grid grid-cols-3 gap-6">
                                                     <div class="col-span-3 sm:col-span-3">
