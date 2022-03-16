@@ -4,7 +4,6 @@
             {{ __('Categories') }}
         </h2>
     </x-slot>
-
     <div class="container mx-auto overflow-auto">
         <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="flex flex-col">
@@ -83,11 +82,8 @@
                                     </td>
                                     <td class="p-6 whitespace-nowrap">
                                         <div class="flex items-center w-24">
-
                                             <img class="rounded-lg"
                                                 src="{{ asset('storage/categories/' . $category->image)}}">
-
-
                                         </div>
                                     </td>
                                     <td class="whitespace-nowrap text-sm font-medium ">
@@ -106,7 +102,6 @@
                                                 </lottie-player>
                                                 Edit
                                             </a>
-
                                             <form method="POST"
                                                 action="{{ route('admin.categories.destroy',$category->id) }}">
                                                 @csrf
@@ -125,9 +120,6 @@
                                                 </a>
                                             </form>
                                         </div>
-
-
-
                                     </td>
                                 </tr>
                                 @endforeach
@@ -139,6 +131,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </x-admin-layout>
