@@ -59,9 +59,11 @@
                 <x-app-link href="{{ route('admin.listings.index') }}"
                     :active="request()->routeIs('admin.listings.index')">All Listings
                 </x-app-link>
-                <x-app-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard
-                </x-app-link>
+
                 @role('admin')
+                <x-app-link href="{{ route('admin.index') }}" :active="request()->routeIs('admin.index')">
+                    Dashboard
+                </x-app-link>
                 <x-app-link href="{{ route('admin.categories.index') }}"
                     :active="request()->routeIs('admin.categories.index')">
                     Categories
@@ -85,6 +87,8 @@
                     Cities
                 </x-app-link>
                 @endrole
+                <x-app-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">User
+                </x-app-link>
                 @auth
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
