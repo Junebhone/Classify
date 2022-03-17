@@ -68,7 +68,7 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200 ">
-                                @foreach ($sub_categories as $category)
+                                @forelse ($sub_categories as $category)
                                 <tr class="w-full">
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
@@ -121,8 +121,12 @@
                                             </form>
                                         </div>
                                     </td>
+                                    @empty
+                                    <td>
+                                        <div class="m-2 p-2">No Child Categories</div>
+                                    </td>
                                 </tr>
-                                @endforeach
+                                @endforelse
 
                                 <!-- More people... -->
                             </tbody>
