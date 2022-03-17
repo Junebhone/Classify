@@ -42,7 +42,7 @@ class StateController extends Controller
     {
         State::create($request->validated());
 
-        return redirect()->route('admin.states.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Created"]);
+        return redirect()->route('admin.states.index')->with('noti', ["icon" => "success", "title" => "State Successfully Created"]);
     }
 
     /**
@@ -79,7 +79,7 @@ class StateController extends Controller
     public function update(StoreStateRequest $request, State $state)
     {
         $state->update($request->validated());
-        return redirect()->route('admin.states.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Edited"]);
+        return redirect()->route('admin.states.index')->with('noti', ["icon" => "success", "title" => "State Successfully Edited"]);
     }
 
     /**
@@ -91,6 +91,6 @@ class StateController extends Controller
     public function destroy(State $state)
     {
         $state->delete();
-        return redirect()->route('admin.states.index')->with('noti', ["icon" => "success", "title" => "SubCategory Successfully Deleted"]);
+        return redirect()->route('admin.states.index')->with('noti', ["icon" => "success", "title" => "State Successfully Deleted"]);
     }
 }
