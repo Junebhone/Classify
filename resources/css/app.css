@@ -27,3 +27,61 @@
     outline-offset: 2px !important;
     box-shadow: 0 0 0 0 rgb(0, 0, 0) !important;
 }
+
+.imagePreview{
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 0;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+}
+.file-upload{
+    display: inline-block;
+}
+
+.file-select {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.file-select.file-select-box {
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    border-radius: 14px;
+}
+.file-upload-custom-btn {
+    width: 90px;
+    height: 90px;
+    border: none;
+    background-color: #ed192412;
+    color: #ed1924;
+    font-size: 30px;
+    z-index: 1;
+    position: relative;
+}
+.file-select-name{
+    margin-left: 15px;
+}
+.file-select input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.file-select.file-select-box input[type=file]{
+    z-index: 2;
+}
+
+.file-upload + .file-upload{
+    margin-left: 10px;
+}
