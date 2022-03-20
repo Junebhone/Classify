@@ -29,8 +29,8 @@
 }
 
 .imagePreview{
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,7 +41,7 @@
     left: 0;
 }
 .file-upload{
-    display: inline-block;
+    display: flex;
 }
 
 .file-select {
@@ -51,14 +51,14 @@
   align-items: center;
 }
 .file-select.file-select-box {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
     display: inline-block;
     border-radius: 14px;
 }
 .file-upload-custom-btn {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
     border: none;
     background-color: #ed192412;
     color: #ed1924;
@@ -66,9 +66,7 @@
     z-index: 1;
     position: relative;
 }
-.file-select-name{
-    margin-left: 15px;
-}
+
 .file-select input[type=file] {
   position: absolute;
   left: 0;
@@ -82,6 +80,4 @@
     z-index: 2;
 }
 
-.file-upload + .file-upload{
-    margin-left: 10px;
-}
+    
