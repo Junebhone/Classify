@@ -918,9 +918,6 @@ select {
 .h-14 {
   height: 3.5rem;
 }
-.h-\[90px\] {
-  height: 90px;
-}
 .h-28 {
   height: 7rem;
 }
@@ -1004,8 +1001,8 @@ select {
 .w-24 {
   width: 6rem;
 }
-.w-\[90px\] {
-  width: 90px;
+.w-\[150px\] {
+  width: 150px;
 }
 .w-28 {
   width: 7rem;
@@ -1024,9 +1021,6 @@ select {
 }
 .w-\[40\%\] {
   width: 40%;
-}
-.w-\[150px\] {
-  width: 150px;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1488,6 +1482,9 @@ select {
 .p-5 {
   padding: 1.25rem;
 }
+.p-1 {
+  padding: 0.25rem;
+}
 .p-7 {
   padding: 1.75rem;
 }
@@ -1791,15 +1788,15 @@ select {
   --tw-text-opacity: 1;
   color: rgb(249 250 251 / var(--tw-text-opacity));
 }
+.text-Rose {
+  --tw-text-opacity: 1;
+  color: rgb(255 56 92 / var(--tw-text-opacity));
+}
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 .text-\[\#ff385c\] {
-  --tw-text-opacity: 1;
-  color: rgb(255 56 92 / var(--tw-text-opacity));
-}
-.text-Rose {
   --tw-text-opacity: 1;
   color: rgb(255 56 92 / var(--tw-text-opacity));
 }
@@ -3643,6 +3640,10 @@ select {
     padding: 1.5rem;
   }
 
+  .sm\:p-2 {
+    padding: 0.5rem;
+  }
+
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -3908,5 +3909,3 @@ select {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
-
-    

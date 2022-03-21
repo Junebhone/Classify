@@ -94,14 +94,6 @@
                                     <div class="border-t border-gray-200"></div>
                                 </div>
                             </div>
-
-
-
-                            <div class="hidden sm:block" aria-hidden="true">
-                                <div class="py-5">
-                                    <div class="border-t border-gray-200"></div>
-                                </div>
-                            </div>
                             <div class="mt-10 sm:mt-0">
                                 <div class="md:grid md:grid-cols-3 md:gap-6">
                                     <div class="md:col-span-1">
@@ -299,7 +291,11 @@
                                             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                                                 @livewire('image-preview')
                                             </div>
-                                            <p class="mt-2 text-sm text-Rose">Note: The first one is for featured
+                                            <p class="text-sm flex m-4  p-1 justify-center sm:p-2  text-Rose">
+                                                Note: The
+                                                first
+                                                one is for
+                                                featured
                                                 image
                                             </p>
                                         </div>

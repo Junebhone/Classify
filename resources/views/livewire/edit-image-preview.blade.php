@@ -1,103 +1,113 @@
 <div>
-    <div class="col-span-6 md:col-span-3">
-        <label class="block text-sm font-medium text-gray-700">
-            Featured Image
-        </label>
-        <div class="mt-1 flex items-center">
-            <div class="w-full flex">
-                @if ($oldFeaturedImage)
-                <div class="m-2 p-2 flex">
-                    Old Featured Image:
-                    <img class="w-28 h-28 rounded" src="{{ Storage::url($oldFeaturedImage) }}">
-                </div>
-                @endif
-                @if ($featuredImage)
-                <div class="m-2 p-2">
-                    New Featured Image:
-                    <img class="w-28 h-28 rounded" src="{{ $featuredImage->temporaryUrl() }}">
-                </div>
-                @endif
-            </div>
+    <label class="p-2 m-2 flex justify-center text-gray-700">Old Images</label>
+    <div class="flex flex-wrap gap-5 justify-center">
+        @if ($oldFeaturedImage)
+        <div class="flex">
+            <img class="w-[150px] h-[150px] rounded-md" src="{{ Storage::url($oldFeaturedImage) }}">
+        </div>
+        @endif
+        @if ($oldImageOne)
+        <div class="flex">
+            <img class="w-[150px] h-[150px rounded-md" src="{{ Storage::url($oldImageOne) }}">
+        </div>
+        @endif
+        @if ($oldImageTwo)
+        <div class="flex">
+            <img class="w-[150px] h-[150px] rounded-md" src="{{ Storage::url($oldImageTwo) }}">
+        </div>
+        @endif
+        @if ($oldImageThree)
+        <div class="flex">
+            <img class="w-[150px] h-[150px] rounded-md" src="{{ Storage::url($oldImageThree) }}">
+        </div>
+        @endif
+    </div>
+    <label class="p-2 m-4 flex justify-center text-gray-700">New Images</label>
+    <div class="mt-5 flex flex-wrap gap-5 justify-center">
 
-            <input wire:model="featuredImage" type="file" id="featured_image" name="featured_image"
-                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
-            @error('featured_image') <span class="error">{{ $message }}</span>
-            @enderror
-        </div>
-    </div>
-    <div class="col-span-6 md:col-span-3">
-        <label class="block text-sm font-medium text-gray-700">
-            Image One
-        </label>
-        <div class="mt-1 flex items-center">
-            <div class="w-full flex">
-                @if ($oldImageOne)
-                <div class="m-2 p-2 flex">
-                    Old Image One:
-                    <img class="w-28 h-28 rounded" src="{{ Storage::url($oldImageOne) }}">
+        <div class="file-upload">
+            <div class="mt-1 flex items-center">
+                <div class="file-select file-select-box">
+                    @if ($featuredImage)
+                    <div class="imagePreview">
+                        <img class="w-[150px] h-[150px] rounded object-cover object-center relative z-50"
+                            src="{{ $featuredImage->temporaryUrl() }}">
+                    </div>
+                    @endif
+                    <button class="file-upload-custom-btn flex items-center justify-center" id="imagebtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg></button>
+                    <input wire:model="featuredImage" type="file" id="featured_image" name="featured_image"
+                        class="relative z-10" />
+                    @error('featured_image') <span class="error">{{ $message }}</span>
+                    @enderror
                 </div>
-                @endif
+            </div>
+        </div>
+        <div class="file-upload">
+            <div class="file-select file-select-box">
                 @if ($imageOne)
-                <div class="m-2 p-2">
-                    New Image One:
-                    <img class="w-28 h-28 rounded" src="{{ $imageOne->temporaryUrl() }}">
+                <div class="imagePreview">
+                    <img class="w-28 h-28 rounded object-cover object-center relative z-50"
+                        src="{{ $imageOne->temporaryUrl() }}">
                 </div>
                 @endif
+                <button class="file-upload-custom-btn flex justify-center items-center" id="imagebtn"><svg
+                        xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg></button>
+
+                <input wire:model="imageOne" type="file" id="image_one" name="image_one" class="relative z-10" />
+                @error('image_one') <span class="error">{{ $message }}</span>
+                @enderror
             </div>
-            <input wire:model="imageOne" type="file" id="image_one" name="image_one"
-                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
-            @error('image_one') <span class="error">{{ $message }}</span>
-            @enderror
         </div>
-    </div>
-    <div class="col-span-6 md:col-span-3">
-        <label class="block text-sm font-medium text-gray-700">
-            Image Two
-        </label>
-        <div class="mt-1 flex items-center">
-            <div class="w-full flex">
-                @if ($oldImageTwo)
-                <div class="m-2 p-2 flex">
-                    Old Image Two:
-                    <img class="w-28 h-28 rounded" src="{{ Storage::url($oldImageTwo) }}">
-                </div>
-                @endif
+        <div class="file-upload">
+            <div class="file-select file-select-box">
                 @if ($imageTwo)
-                <div class="m-2 p-2">
-                    New Image Two:
-                    <img class="w-28 h-28 rounded" src="{{ $imageTwo->temporaryUrl() }}">
+                <div class="imagePreview">
+                    <img class="w-28 h-28 rounded object-cover object-center" src="{{ $imageTwo->temporaryUrl() }}">
                 </div>
                 @endif
+                <button class="file-upload-custom-btn flex justify-center items-center" id="imagebtn"><svg
+                        xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg></button>
+
+                <input wire:model="imageTwo" type="file" id="image_two" name="image_two"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                @error('image_two') <span class="error">{{ $message }}</span>
+                @enderror
             </div>
-            <input wire:model="imageTwo" type="file" id="image_two" name="image_two"
-                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
-            @error('image_two') <span class="error">{{ $message }}</span>
-            @enderror
         </div>
-    </div>
-    <div class="col-span-6 md:col-span-3">
-        <label class="block text-sm font-medium text-gray-700">
-            Image Three
-        </label>
-        <div class="mt-1 flex items-center">
-            <div class="w-full flex">
-                @if ($oldImageThree)
-                <div class="m-2 p-2 flex">
-                    Old Featured Image:
-                    <img class="w-28 h-28 rounded" src="{{ Storage::url($oldImageThree) }}">
+        <div class="file-upload">
+            <div class="file-select file-select-box">
+                @if ($imageThree)
+                <div class="imagePreview z-10">
+                    <img class="w-28 h-28 rounded object-cover object-center z-50"
+                        src="{{ $imageThree->temporaryUrl() }}">
                 </div>
                 @endif
+                <button class="file-upload-custom-btn flex justify-center items-center" id="imagebtn"><svg
+                        xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 z-10" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg></button>
                 @if ($imageThree)
                 <div class="m-2 p-2">
-                    New Featured Image:
                     <img class="w-28 h-28 rounded" src="{{ $imageThree->temporaryUrl() }}">
                 </div>
                 @endif
+                <input wire:model="imageThree" type="file" id="image_three" name="image_three"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md " />
+                @error('image_three') <span class="error">{{ $message }}</span>
+                @enderror
             </div>
-            <input wire:model="imageThree" type="file" id="image_three" name="image_three"
-                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
-            @error('image_three') <span class="error">{{ $message }}</span>
-            @enderror
         </div>
     </div>
+
 </div>
