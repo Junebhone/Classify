@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
+use function GuzzleHttp\Promise\all;
+
 class ListingController extends Controller
 {
     public function index()
@@ -21,6 +23,7 @@ class ListingController extends Controller
                 AllowedFilter::scope('max_price'),
             ])
             ->get();
+        $listings = Listing::all();
 
         return view('frontend.all-listings', compact('listings'));
     }

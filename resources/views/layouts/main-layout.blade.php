@@ -13,6 +13,7 @@
     <link rel="icon" href="{{ asset('img/favicon.ico') }}">
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link href="https://unpkg.com/swiper@8/swiper-bundle.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     @livewireStyles
 
@@ -46,7 +47,9 @@
     @livewireScripts
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <script src="{{ mix('js/app.js') }}"></script>
-    <x-main-form></x-main-form>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
+
     {{-- <script>
         function filterResults(){
             let href = 'all-listings?';

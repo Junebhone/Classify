@@ -79,3 +79,93 @@
 .file-select.file-select-box input[type=file]{
     z-index: 2;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: white;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    border-radius: 100%;
+    color: #000 !important;
+    fill: black !important;
+    stroke: black !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.swiper-pagination-bullet {
+    background-color: white !important;
+    opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: white !important;
+    opacity: 1 !important;
+}
+
+.heart{
+    fill:white;
+    stroke:#ff385c;
+    stroke-width: 2px;
+    stroke-dasharray: 188;
+    stroke-dashoffset: 188;
+
+    
+    
+}
+.heart.like{
+    animation:  0.5s ease-in forwards like,0.5s linear 0.5s 2 forwards beat;
+}
+.heart.unlike{
+    animation:  0.5s ease-out forwards unlike;
+}
+
+@keyframes like{
+    0%{
+        stroke-dashoffset: 188;
+        fill: white;
+    }
+    70%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: #ff385c;
+
+    }
+}
+
+@keyframes unlike{
+    0%{
+        stroke-dashoffset: 0;
+        fill: #ff385c;
+    }
+    70%{
+        stroke-dashoffset: 0;
+        fill: white;
+    }
+    100%{
+        stroke-dashoffset: 188;
+        fill: white;
+
+    }
+}
+@keyframes beat{
+    0%{
+        transform: scale(1,1);
+    }
+    50%{
+        transform: scale(0.9,0.9);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+
