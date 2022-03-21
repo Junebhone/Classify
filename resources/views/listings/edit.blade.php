@@ -341,7 +341,8 @@
                                                         </label>
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <select name="price_negotiable"
-                                                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                                class="mt-2 border-gray-300 focus:border-[#FF385C]
+                                                                focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm">
                                                                 <option value="fixed" {{ $listing->price_negotiable ==
                                                                     'fixed' ?
                                                                     'selected' : '' }}>
@@ -364,7 +365,8 @@
                                                         </label>
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <select name="condition"
-                                                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                                class="mt-2 border-gray-300 focus:border-[#FF385C]
+                                                                focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm">
 
                                                                 <option value="new" {{ $listing->condition == 'new' ?
                                                                     'selected' : ''
@@ -415,7 +417,8 @@
                                                         </label>
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <select name="is_published"
-                                                                class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                                class="mt-2 border-gray-300 focus:border-[#FF385C]
+                                                                focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm">
                                                                 <option value="0" {{ $listing->is_published == '0' ?
                                                                     'selected' : ''
                                                                     }}>Unpublished

@@ -25,9 +25,20 @@
             class="flex flex-col flex-shrink-0 w-full text-gray-700 bg-white md:w-64 dark-mode:text-gray-200 dark-mode:bg-gray-800"
             x-data="{ open: false }">
             <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
+
                 <a href="#"
-                    class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
-                    Classified Admin</a>
+                    class="flex justify-center items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
+                    <svg class="w-14 h-14 mr-4" viewBox="0 0 364 373" fill="none"
+                        xmlns="http://www.w3.org/2000/svg%22%3E">
+                        <path
+                            d="M68 113L0 183L191 373L339 224L184 69L73 183L91 199L184 102L306 224L191 340L35 183L184 36L348 199L364 183L184 0L91 93L96 75H68V113Z"
+                            fill="#FF385C" />
+                        <rect x="149" y="157" width="26" height="26" fill="#FF385C" />
+                        <rect x="189" y="157" width="26" height="26" fill="#FF385C" />
+                        <rect x="149" y="191" width="26" height="26" fill="#FF385C" />
+                        <rect x="189" y="191" width="26" height="26" fill="#FF385C" />
+                    </svg>
+                    User Dashboard</a>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                     <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                         <path x-show="!open" fill-rule="evenodd"
@@ -56,7 +67,7 @@
                 @auth
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg  focus:text-white md:block hover:bg-Rose hover:text-white focus:bg-Rose focus:outline-none focus:shadow-outline">
                         <span>{{ Auth::user()->name }}</span>
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
                             class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
@@ -72,16 +83,16 @@
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
                         class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
-                        <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-700">
-                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                        <div class="px-2 py-2 bg-white rounded-md shadow ">
+                            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-white  focus:text-white hover:bg-Rose focus:bg-Rose focus:outline-none focus:shadow-outline"
                                 href="{{ route('profile.show') }}">Profile</a>
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg hover:text-white  focus:text-white hover:bg-Rose focus:bg-Rose focus:outline-none focus:shadow-outline"
                                     href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                        this.closest('form').submit();">
+                                                                                this.closest('form').submit();">
                                     Logout
                                 </a>
                             </form>
@@ -112,7 +123,7 @@
     <script src="{{ mix('js/app.js') }}"></script>
     <x-main-alert></x-main-alert>
     <x-main-file></x-main-file>
-    
+
 </body>
 
 </html>

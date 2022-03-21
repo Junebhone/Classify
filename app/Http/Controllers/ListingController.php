@@ -18,7 +18,7 @@ class ListingController extends Controller
     public function index()
     {
         $listings = Listing::where('user_id', auth()->user()->id)->get();
-
+        $listings = Listing::paginate(2);
         return view('listings.index', compact('listings'));
     }
 

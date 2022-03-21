@@ -25,7 +25,7 @@
             <div class="file-select file-select-box">
                 @if ($imageOne)
                 <div class="imagePreview">
-                    <img class="w-28 h-28 rounded object-cover object-center relative z-50"
+                    <img class="w-[150px] h-[150px] rounded object-cover object-center relative z-50"
                         src="{{ $imageOne->temporaryUrl() }}">
                 </div>
                 @endif
@@ -44,7 +44,8 @@
             <div class="file-select file-select-box">
                 @if ($imageTwo)
                 <div class="imagePreview">
-                    <img class="w-28 h-28 rounded object-cover object-center" src="{{ $imageTwo->temporaryUrl() }}">
+                    <img class="w-[150px] h-[150px] rounded object-cover object-center relative z-50"
+                        src="{{ $imageTwo->temporaryUrl() }}">
                 </div>
                 @endif
                 <button class="file-upload-custom-btn flex justify-center items-center" id="imagebtn"><svg
@@ -53,8 +54,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                     </svg></button>
 
-                <input wire:model="imageTwo" type="file" id="image_two" name="image_two"
-                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                <input wire:model="imageTwo" type="file" id="image_two" name="image_two" class="relative z-10" />
                 @error('image_two') <span class="error">{{ $message }}</span>
                 @enderror
             </div>
@@ -63,7 +63,7 @@
             <div class="file-select file-select-box">
                 @if ($imageThree)
                 <div class="imagePreview z-10">
-                    <img class="w-28 h-28 rounded object-cover object-center z-50"
+                    <img class="w-[150px] h-[150px] rounded object-cover object-center relative z-50"
                         src="{{ $imageThree->temporaryUrl() }}">
                 </div>
                 @endif
@@ -74,11 +74,11 @@
                     </svg></button>
                 @if ($imageThree)
                 <div class="m-2 p-2">
-                    <img class="w-28 h-28 rounded" src="{{ $imageThree->temporaryUrl() }}">
+                    <img class="w-[150px] h-[150px] rounded object-cover object-center relative z-50"
+                        src="{{ $imageThree->temporaryUrl() }}">
                 </div>
                 @endif
-                <input wire:model="imageThree" type="file" id="image_three" name="image_three"
-                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md " />
+                <input wire:model="imageThree" type="file" id="image_three" name="image_three" class="relative z-10" />
                 @error('image_three') <span class="error">{{ $message }}</span>
                 @enderror
             </div>

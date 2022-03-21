@@ -29,7 +29,7 @@
 
                 <a href="#"
                     class="flex justify-center items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
-                    <svg class="w-9 h-9 mr-2" viewBox="0 0 364 373" fill="none"
+                    <svg class="w-14 h-14 mr-4" viewBox="0 0 364 373" fill="none"
                         xmlns="http://www.w3.org/2000/svg%22%3E">
                         <path
                             d="M68 113L0 183L191 373L339 224L184 69L73 183L91 199L184 102L306 224L191 340L35 183L184 36L348 199L364 183L184 0L91 93L96 75H68V113Z"
@@ -39,7 +39,7 @@
                         <rect x="149" y="191" width="26" height="26" fill="#FF385C" />
                         <rect x="189" y="191" width="26" height="26" fill="#FF385C" />
                     </svg>
-                    Estify Admin</a>
+                    Admin Dashboard</a>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                     <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                         <path x-show="!open" fill-rule="evenodd"

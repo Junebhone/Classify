@@ -12,6 +12,7 @@ class ListingController extends Controller
     {
 
         $listings = Listing::all();
+        $listings = Listing::paginate(6);
         return view('admin.listings.index', compact('listings'));
     }
 }
