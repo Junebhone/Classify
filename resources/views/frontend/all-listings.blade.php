@@ -72,39 +72,16 @@
             <div class="flex items-center container mx-auto">
                 <ul
                     class="ul-list flex gap-6 text-TextSecondary h-20 items-center transition-all duration-150 ease-linear">
+                    @foreach ($categories as $category )
                     <li
                         class="nav-list relative h-14 gap-2 flex flex-row justify-center items-center border-b-2 border-black transition-all duration-300 ease-linear">
 
                         <a class="" href="#">
-                            Tiny homes
+                            {{ $category->name }}
 
                         </a>
                     </li>
-                    <li
-                        class="nav-list relative h-14 flex flex-col justify-center  items-center border-b-2 border-TextPrimary text-gray-400 transition-all duration-200 ease-linear">
-                        <a href="#">Amazing pools</a>
-                    </li>
-                    <li
-                        class="nav-list relative h-14 flex flex-col justify-center text-gray-400 transition-all duration-200 ease-linear">
-                        <a href="#">Beachfront</a>
-                    </li>
-                    <li
-                        class="nav-list relative h-14 flex flex-col justify-center text-gray-400 transition-all duration-200 ease-linear">
-                        <a href="#">Offbeat</a>
-                    </li>
-                    <li
-                        class="nav-list relative h-14 flex flex-col justify-center text-gray-400 transition-all duration-200 ease-linear">
-                        <a href="#">
-                            Cabins</a>
-                    </li>
-                    <li
-                        class="nav-list relative h-14 flex flex-col justify-center text-gray-400 transition-all duration-200 ease-linear">
-                        <a href="#">Ryokans</a>
-                    </li>
-                    <li
-                        class="nav-list relative h-14 flex flex-col justify-center text-gray-400 transition-all duration-200 ease-linear">
-                        <a href="#">Islands</a>
-                    </li>
+                    @endforeach
                     <li
                         class="nav-list relative h-14 flex flex-col justify-center text-gray-400 transition-all duration-200 ease-linear">
                         <button class="flex items-center gap-2" type="submit">

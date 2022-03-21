@@ -21,10 +21,10 @@
 
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans antialiased ">
     <x-jet-banner />
 
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen  bg-gray-100">
 
 
         <!-- Page Heading -->
@@ -49,7 +49,7 @@
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="{{ mix('js/app.js') }}"></script>
-
+    <x-main-swiper></x-main-swiper>
     {{-- <script>
         function filterResults(){
             let href = 'all-listings?';

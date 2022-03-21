@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\AllowedFilter;
@@ -24,7 +25,8 @@ class ListingController extends Controller
             ])
             ->get();
         $listings = Listing::all();
+        $categories = Category::all();
 
-        return view('frontend.all-listings', compact('listings'));
+        return view('frontend.all-listings', compact('listings', 'categories'));
     }
 }

@@ -96,6 +96,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        Storage::delete('public/categories' . '/' . $category->image);
         $category->delete();
 
         return redirect()->route('admin.categories.index')->with('noti', ["icon" => "success", "title" => "Category Successfully Deleted"]);

@@ -55,19 +55,13 @@
             <li class="text-2xs list-none text-TextPrimary">
                 <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-TextPrimary after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
                     data-tab-target="#placetostay" href="#">
-                    Place to stay
+                    Home
                 </a>
             </li>
             <li class="text-2xs list-none text-TextPrimary">
                 <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-TextPrimary after:transition-all after:duration-200 after:ease-in-out after:hover:w-[10%]"
                     data-tab-target="#experiences" href="#">
-                    Experiences
-                </a>
-            </li>
-            <li class="text-2xs list-none text-TextPrimary">
-                <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-TextPrimary after:transition-all after:duration-200 after:ease-in-out after:hover:w-[10%]"
-                    href="#">
-                    Online Experiences
+                    Listings
                 </a>
             </li>
         </ul>
@@ -145,53 +139,6 @@
             </div>
         </div>
     </nav>
-    <form action=""
-        class="form-tab relative top-[160px] flex h-[68px] w-max flex-shrink gap-[1px] rounded-[80px] bg-TextPrimary lg:top-20"
-        id="place">
-        <div
-            class="location relative flex flex-shrink cursor-pointer flex-col justify-center gap-1 rounded-[80px] bg-TextPrimary pl-10 pr-3 text-xs after:absolute after:left-full after:bottom-[30px] after:h-[2px] after:w-8 after:translate-x-[-50%] after:rotate-[90deg] after:bg-gray-300 hover:bg-gray-300 lg:pr-20 lg:after:bottom-[33px]">
-            <label class="location cursor-pointer text-black ">Location</label>
-            <input
-                class="jj focus:shadow-outline appearance-none rounded border-white bg-transparent leading-tight text-gray-700 focus:outline-none"
-                id="input-location" placeholder="Where are you going?" type="text" />
-        </div>
-        <div
-            class="relative flex flex-shrink cursor-pointer flex-col justify-center gap-1 rounded-[80px] bg-TextPrimary pl-10 pr-8 text-xs after:absolute after:left-full after:bottom-[30px] after:h-[2px] after:w-8 after:translate-x-[-50%] after:rotate-[90deg] after:bg-gray-300 hover:bg-gray-300 lg:pr-20 lg:after:bottom-[33px]">
-            <p class="text-TextSecondary">Check in</p>
-            <span class="text-gray-400">Add dates</span>
-        </div>
-        <div
-            class="relative flex flex-shrink cursor-pointer flex-col justify-center gap-1 rounded-[80px] bg-TextPrimary pl-10 pr-8 text-xs after:absolute after:left-full after:bottom-[30px] after:h-[2px] after:w-8 after:translate-x-[-50%] after:rotate-[90deg] after:bg-gray-300 hover:bg-gray-300 lg:pr-20 lg:after:bottom-[33px]">
-            <p class="text-TextSecondary">Check out</p>
-            <span class="text-gray-400">Add dates</span>
-        </div>
-        <div
-            class="guest relative flex flex-shrink cursor-pointer items-center justify-center gap-10 rounded-[80px] bg-TextPrimary pl-10 text-xs hover:bg-gray-300 lg:gap-16">
-            <div class="flex flex-shrink flex-col gap-1">
-                <p class="text-TextSecondary">Guests</p>
-                <span class="text-gray-400">Add guests</span>
-            </div>
-            <button
-                class="search mr-4 flex flex-shrink items-center justify-center gap-2 rounded-full bg-red-500 p-3 hover:bg-red-600 lg:p-4"
-                id="btn-search" type="submit">
-                <i class="fa-solid fa-magnifying-glass text-xl text-TextPrimary"></i>
-                <Search class="search-text hidden text-xs text-TextPrimary" id="text-search">Search</Search>
-            </button>
-        </div>
-        <div class="absolute top-full mt-4 flex h-[150px] w-[500px] scale-0 flex-col justify-center gap-4 rounded-[30px] bg-TextPrimary p-6"
-            id="listing">
-            <p class="uppercase">Go Anywhere, anytime</p>
-            <a class="z-50 flex items-center justify-start rounded-full border-[1px] border-gray-300 p-4 pl-6 shadow-2xl hover:shadow-xl"
-                href="{{ route('all.listings') }}" id="listing-page">
-                I'm flexible
-                {{-- <i class="fa-solid fa-angle-right ml-auto text-3xl font-extralight"></i> --}}
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 ml-auto" fill="none" viewBox="0 0 24 24"
-                    stroke="#FF385C" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-            </a>
-        </div>
 
-    </form>
 
 </header>
