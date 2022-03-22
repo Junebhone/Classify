@@ -21,7 +21,8 @@
 
 </head>
 
-<body class="font-sans antialiased ">
+<body
+    class="font-sans antialiased scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-black-rgba scrollbar-track-radius-[100%]  overflow-y-scroll">
     <x-jet-banner />
 
     <div class="min-h-screen  bg-gray-100">

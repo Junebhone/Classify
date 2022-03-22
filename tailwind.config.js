@@ -31,7 +31,9 @@ module.exports = {
                 TextPrimary: "#F8F9FA",
                 TextSecondary: "black",
                 Primary: "#212529",
-                Rose:"#FF385C"
+                Rose:"#FF385C",
+                'black-rgba':"rgba(0, 0, 0, 0.2)",
+
               },
               aspetRatio: {
                 "0.5/0.5": "0.5/0.5",
@@ -39,5 +41,5 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms'),],
+    plugins: [require('@tailwindcss/forms'),require('tailwind-scrollbar')],
 };

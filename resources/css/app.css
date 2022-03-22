@@ -169,3 +169,6 @@
     }
 }
 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+} 

@@ -127,11 +127,11 @@
                     </svg>
                 </div>
                 <a class="swiper-wrapper !aspect-square" href="#">
-                    <img alt="image-1" class="swiper-slide object-cover object-center w-full h-full first-image"
+                    <img alt="image-1" class="swiper-slide object-cover object-center w-full min-h-full first-image"
                         src="{{ Storage::url($listing->featured_image) }}" />
-                    <img alt="image-2" class="swiper-slide object-cover object-center w-full h-full"
+                    <img alt="image-2" class="swiper-slide object-cover object-center w-full min-h-full"
                         src="{{ Storage::url($listing->image_one) }}" />
-                    <img alt="images-3" class="swiper-slide object-cover object-center w-full h-full"
+                    <img alt="images-3" class="swiper-slide object-cover object-center w-full min-h-full"
                         src="{{ Storage::url($listing->image_two) }}" />
                 </a>
                 <div class="swiper-pagination"></div>
