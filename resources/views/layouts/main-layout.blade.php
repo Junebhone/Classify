@@ -22,10 +22,10 @@
 </head>
 
 <body
-    class="font-sans antialiased scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-black-rgba scrollbar-track-radius-[100%]  overflow-y-scroll">
+    class="font-sans antialiased scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent scrollbar-track-radius-[100%]  overflow-y-scroll">
     <x-jet-banner />
 
-    <div class="min-h-screen  bg-gray-100">
+    <div class="min-h-screen  bg-white">
 
 
         <!-- Page Heading -->
@@ -47,10 +47,18 @@
 
     @livewireScripts
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-    <script src="{{ mix('js/app.js') }}"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="{{ mix('js/app.js') }}"></script>
-    <x-main-swiper></x-main-swiper>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: "auto",
+          spaceBetween: 30,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+    </script>
     {{-- <script>
         function filterResults(){
             let href = 'all-listings?';

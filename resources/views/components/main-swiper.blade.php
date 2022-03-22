@@ -1,5 +1,5 @@
 <script>
-    const navigation = document.querySelector(".navgation");
+  const navigation = document.querySelector(".navgation");
 const menuToggle = document.getElementById("menu-toggle");
 const menuItems = document.getElementById("menu-items");
 const menuLinks = document.querySelectorAll(".menu-link");

@@ -4,14 +4,13 @@
 @import "../../node_modules/filepond/dist/filepond.css";
 @import "../../node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
 
-
 @layer base{
     .swal2-toast.swal2-icon-success{
         @apply bg-blue-300 !important;
     }
 }
 
-.jj{
+/* .jj{
     appearance:none !important;
     border: white !important;
     background-color: transparent !important;
@@ -21,7 +20,9 @@
     padding: 0px !important;
     font-size: 12px !important;
     opacity:0.7 !important;
-}
+} */
+
+
 .jj:focus{
     outline-width: 2px solid transparent !important;
     outline-offset: 2px !important;

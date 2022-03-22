@@ -20,7 +20,8 @@
 
 </head>
 
-<body class="font-sans antialiased">
+<body
+    class="font-sans antialiased scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent scrollbar-track-radius-[100%]  overflow-y-scroll">
 
     <div class="bg-TextPrimary flex flex-col">
         <div class="h-20 listing-navigation border-b-2 border-gray-200 flex items-center z-50 px-6">
@@ -158,8 +159,8 @@
         @endforeach
 
     </div>
+    <x-main-footer></x-main-footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-    <script src="{{ mix('js/app.js') }}"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="{{ mix('js/app.js') }}"></script>
     <x-main-swiper></x-main-swiper>

@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Category;
 use Illuminate\View\Component;
 
 class MainFeatured extends Component
@@ -15,6 +16,7 @@ class MainFeatured extends Component
      */
     public function render()
     {
-        return view('components.main-featured');
+        $categories = Category::all();
+        return view('components.main-featured', compact('categories'));
     }
 }
