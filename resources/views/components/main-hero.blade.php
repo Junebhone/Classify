@@ -1,4 +1,4 @@
-<header id="form-filter">
+{{-- <header id="form-filter">
     <div class="w-full m-4 p-4">
         <div class="flex items-center justify-center w-full h-full">
             <div class="text-center">
@@ -62,4 +62,18 @@
             </div>
         </div>
     </div>
-</header>
+</header> --}}
+<div class="flex items-center relative justify-center bg-black w-full py-10 text-center ">
+    <div class="w-[95rem] h-[40rem] sm:h-[50rem] px-10 shadow-md rounded-2xl">
+        <img src="{{ asset('img/23b047cd-19c9-42c0-a83b-2f4f6f25717b.webp') }}"
+            class="rounded-2xl w-full h-full object-cover object-center">
+    </div>
+    <div class="w-3/4 flex flex-col items-center bottom-20 gap-5 justify-center absolute">
+        <span class="text-white text-3xl">Let your curiosity do the searching</span>
+        <a class="text-black bg-white py-3 px-6 rounded-full cursor-pointer hover:bg-gray-300"
+            href="{{ route('all-listings') }}">
+            <span class="text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600 font-extrabold">I'm
+                Flexible</span>
+        </a>
+    </div>
+</div>

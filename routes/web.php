@@ -8,7 +8,9 @@ use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\ListingController as AdminListingController;
 use App\Http\Controllers\Admin\StateController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Frontend\ListingController as FrontendListingController;
+use App\Http\Controllers\ListingByCategory;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
@@ -25,18 +27,24 @@ use Laravel\Jetstream\Rules\Role;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/all-listings', [FrontendListingController::class, 'index'])->name('all.listings');
+
+
+Route::get('/', [FrontendListingController::class, 'welcome'])->name('welcome');
+
+
+
+Route::get('/all-listings', [FrontendListingController::class, 'index'])->name('all-listings');
+
+Route::get('/all-listings/{id}', [ListingByCategory::class, 'index'])->name('listingbycategory');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // auth()->user()->assignRole('admin');
     return view('dashboard');
 })->name('dashboard');
-
-
 
 
 

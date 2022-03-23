@@ -19,13 +19,13 @@
 
             <ul class="flex items-center justify-center gap-8">
                 <li class="text-2xs list-none text-TextPrimary">
-                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-TextPrimary after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
+                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
                         data-tab-target="#placetostay" href="#">
                         Home
                     </a>
                 </li>
                 <li class="text-2xs list-none text-TextPrimary">
-                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-TextPrimary after:transition-all after:duration-200 after:ease-in-out after:hover:w-[10%]"
+                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[10%]"
                         data-tab-target="#experiences" href="#">
                         Listings
                     </a>
@@ -105,31 +105,5 @@
                 </div>
             </div>
         </nav>
-    </div>
-</div>
-
-<!-- component -->
-<div class="flex items-center relative justify-center bg-black w-full py-10 text-center ">
-    <div class="w-[95rem] h-[40rem] sm:h-[50rem] px-10 shadow-md rounded-2xl">
-        <img src="{{ asset('img/23b047cd-19c9-42c0-a83b-2f4f6f25717b.webp') }}"
-            class="rounded-2xl w-full h-full object-cover object-center">
-    </div>
-    <div class="w-3/4 flex flex-col items-center bottom-20 gap-5 justify-center absolute">
-        <span class="text-white text-3xl">Let your curiosity do the searching</span>
-        <a class="text-black bg-white py-3 px-6 rounded-full cursor-pointer hover:bg-gray-300"
-            href="{{ route('all.listings') }}">
-            <span class="text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600 font-extrabold">I'm
-                Flexible</span>
-        </a>
-    </div>
-</div>
-
-
-<div class="flex flex-row">
-    <div>
-
-    </div>
-    <div>
-
     </div>
 </div>

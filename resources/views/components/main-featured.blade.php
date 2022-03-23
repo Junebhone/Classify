@@ -1,4 +1,4 @@
-<div class="grid grid-cols-8 gap-x-4 gap-y-1  p-10   bg-white text-base">
+{{-- <div class="grid grid-cols-8 gap-x-4 gap-y-1  p-10   bg-white text-base">
     <!-- Title -->
     <div class="col-span-full mb-6">
         <p class="text-xl text-gray-800 font-semibold">Popular categories for your next property </p>
@@ -15,4 +15,4 @@
             {{ $category->name }}</p>
     </div>
     @endforeach
-</div>
+</div> --}}

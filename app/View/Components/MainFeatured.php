@@ -16,7 +16,7 @@ class MainFeatured extends Component
      */
     public function render()
     {
-        $categories = Category::all();
-        return view('components.main-featured', compact('categories'));
+        // $categories = Category::all();
+        return view('components.main-featured');
     }
 }

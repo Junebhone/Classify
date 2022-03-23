@@ -3,7 +3,7 @@
     <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
             <a href="https://flowbite.com" class="flex gap-4 items-center">
-                <svg class="w-10 h-10 " viewBox="0 0 364 373" fill="none" xmlns="http://www.w3.org/2000/svg%22%3E">
+                <svg class="w-8 h-8 " viewBox="0 0 364 373" fill="none" xmlns="http://www.w3.org/2000/svg%22%3E">
                     <path
                         d="M68 113L0 183L191 373L339 224L184 69L73 183L91 199L184 102L306 224L191 340L35 183L184 36L348 199L364 183L184 0L91 93L96 75H68V113Z"
                         fill="black" />
@@ -12,12 +12,12 @@
                     <rect x="149" y="191" width="26" height="26" fill="black" />
                     <rect x="189" y="191" width="26" height="26" fill="black" />
                 </svg>
-                <span class="self-center text-xl font-semibold whitespace-nowrap ">Estify</span>
+                <span class="self-center text-base sm:text-lg font-semibold whitespace-nowrap ">Estify</span>
             </a>
         </div>
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Resources</h2>
+                <h2 class="mb-6 text-xs font-semibold text-gray-900 uppercase ">Resources</h2>
                 <ul class="text-gray-600 ">
                     <li class="mb-4">
                         <a href="https://flowbite.com" class="text-gray-400 hover:underline">Flowbite</a>
@@ -28,7 +28,7 @@
                 </ul>
             </div>
             <div>
-                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Follow us</h2>
+                <h2 class="mb-6 text-xs font-semibold text-gray-900 uppercase ">Follow us</h2>
                 <ul class="text-gray-600 ">
                     <li class="mb-4">
                         <a href="https://github.com/themesberg/flowbite"
@@ -40,7 +40,7 @@
                 </ul>
             </div>
             <div>
-                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Legal</h2>
+                <h2 class="mb-6 text-xs font-semibold text-gray-900 uppercase ">Legal</h2>
                 <ul class="text-gray-600 ">
                     <li class="mb-4">
                         <a href="#" class="text-gray-400 hover:underline">Privacy Policy</a>
@@ -54,7 +54,7 @@
     </div>
     <hr class="my-6 border-gray-200 sm:mx-auto  lg:my-8">
     <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm text-gray-500 sm:text-center ">© 2022 <a href="https://flowbite.com"
+        <span class="text-xs text-gray-500 sm:text-center ">© 2022 <a href="https://flowbite.com"
                 class="hover:underline">Estify</a>. All Rights Reserved.
         </span>
         <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">

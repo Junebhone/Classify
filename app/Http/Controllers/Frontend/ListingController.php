@@ -24,9 +24,14 @@ class ListingController extends Controller
                 AllowedFilter::scope('max_price'),
             ])
             ->get();
-        $listings = Listing::all();
+
         $categories = Category::all();
 
-        return view('frontend.all-listings', compact('listings', 'categories'));
+        return view('frontend.all-listings', compact('categories'));
+    }
+    public function welcome()
+    {
+
+        return view('welcome');
     }
 }

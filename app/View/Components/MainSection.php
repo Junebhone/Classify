@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Category;
 use Illuminate\View\Component;
 
 class MainSection extends Component
@@ -14,6 +15,7 @@ class MainSection extends Component
      */
     public function render()
     {
-        return view('components.main-section');
+        $categories = Category::inRandomOrder()->limit(4)->get();
+        return view('components.main-section', compact('categories'));
     }
 }
