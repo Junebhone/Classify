@@ -2,7 +2,7 @@
     <div
         class="product-listing mt-4 container pb-20 relative mx-auto overflow-x-hidden grid justify-center items-center
                        xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 gap-y-14 sm:px-0 px-6">
-        @foreach ($listings as $listing )
+        @forelse ($listings as $listing)
         <div class="products rounded-2xl flex flex-col items-center aspect-square">
             <div class="swiper aspect-square rounded-2xl group">
                 <div class="heart w-6 z-50 absolute top-3 right-0 mr-3">
@@ -41,7 +41,9 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        @empty
+        <p class="p-10">No Listing</p>
+        @endforelse
 
     </div>
 </x-main-layout>

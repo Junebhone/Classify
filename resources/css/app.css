@@ -23,6 +23,7 @@
 } */
 
 
+
 .jj:focus{
     outline-width: 2px solid transparent !important;
     outline-offset: 2px !important;
@@ -173,3 +174,4 @@
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
 } 
+

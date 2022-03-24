@@ -33,6 +33,26 @@ $(document).ready(function () {
       })
     );
   });
+  const navigationHeader = $('.navigation').height();
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > navigationHeader) {
+      $(".navigation").addClass("bg-white");
+      $(".navigation").removeClass("bg-black");
+      $(".Logo").removeClass("text-white");
+      $(".Logo").addClass("text-black");
+      $(".logo").removeClass("hover:bg-[#484848]");
+      $(".logo").addClass("hover:bg-gray-100");
+    } else {
+      $(".navigation").addClass("bg-black");
+      $(".navigation").removeClass("bg-white");
+      $(".Logo").removeClass("text-black");
+      $(".Logo").addClass("text-white");
+      $(".logo").addClass("hover:bg-[#484848]");
+      $(".logo").removeClass("hover:bg-gray-100");
+      
+    }
+  });
+
   const yourHeader = $(".listing-navigation").height();
 
   $(window).scroll(function () {
@@ -84,4 +104,5 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
 </script>

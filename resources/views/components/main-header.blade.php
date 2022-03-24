@@ -1,39 +1,39 @@
 <div class="bg-black flex flex-col text-sm sm:text-base">
-    <div class="h-22 listing-navigation flex items-center z-50 px-6">
-        <nav class="navigation container mx-auto flex py-4 justify-between items-center bg-black z-50">
+    <div class="fixed w-full h-22 listing-navigation flex items-center z-50 ">
+        <nav class="navigation w-full mx-auto flex py-4 justify-between items-center bg-black z-50 px-10 shadow-lg">
             <div class="flex justify-center items-center">
                 <svg class="w-10 h-10 " viewBox="0 0 364 373" fill="none" xmlns="http://www.w3.org/2000/svg%22%3E">
                     <path
                         d="M68 113L0 183L191 373L339 224L184 69L73 183L91 199L184 102L306 224L191 340L35 183L184 36L348 199L364 183L184 0L91 93L96 75H68V113Z"
-                        fill="#F8F9FA" />
-                    <rect x="149" y="157" width="26" height="26" fill="#F8F9FA" />
-                    <rect x="189" y="157" width="26" height="26" fill="#F8F9FA" />
-                    <rect x="149" y="191" width="26" height="26" fill="#F8F9FA" />
-                    <rect x="189" y="191" width="26" height="26" fill="#F8F9FA" />
+                        fill="#FF385C" />
+                    <rect x="149" y="157" width="26" height="26" fill="#FF385C" />
+                    <rect x="189" y="157" width="26" height="26" fill="#FF385C" />
+                    <rect x="149" y="191" width="26" height="26" fill="#FF385C" />
+                    <rect x="189" y="191" width="26" height="26" fill="#FF385C" />
                 </svg>
                 <h1
-                    class="px-2  justify-start hidden sm:flex font-[Hind Siligurie] text-white text-2xl font-sans text-center tracking-widest cursor-pointer">
+                    class="px-2 Logo justify-start hidden sm:flex font-[Hind Siligurie] text-white text-2xl font-sans text-center tracking-widest cursor-pointer">
                     Estify
                 </h1>
             </div>
 
-            <ul class="flex items-center justify-center gap-8">
-                <li class="text-2xs list-none text-TextPrimary">
-                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
-                        data-tab-target="#placetostay" href="#">
+            <ul class="flex items-center justify-center gap-4">
+                <li class="text-base list-none text-TextPrimary">
+                    <a class="nav-link Logo relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
+                        data-tab-target="#placetostay" href="{{ route('welcome') }}">
                         Home
                     </a>
                 </li>
-                <li class="text-2xs list-none text-TextPrimary">
-                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[10%]"
-                        data-tab-target="#experiences" href="#">
+                <li class="text-base list-none text-TextPrimary">
+                    <a class="nav-link Logo relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[10%]"
+                        data-tab-target="#experiences" href="{{ route('all-listings') }}">
                         Listings
                     </a>
                 </li>
             </ul>
             <div class="flex items-center relative justify-center gap-1">
-                <a class="rounded-full hover:bg-gray-600 p-2 text-xs sm:text-sm text-TextPrimary "
-                    href="{{ route('dashboard') }}">
+                <a class="rounded-full   Logo logo hover:bg-[#484848] p-3 text-xm sm:text-sm text-white "
+                    href="{{ route('listings.create') }}">
                     Become a Seller
                 </a>
                 <div class="menu-toggle flex cursor-pointer items-center justify-center gap-5 w-12 h-12 overflow-hidden rounded-full shadow-lg"
@@ -67,14 +67,9 @@
                         </button>
                     </span>
                     @endif
-
-
                     @endauth
-
-
-
                 </div>
-                <div class="menu-items absolute top-full  right-4   lg:right-[2rem]  mt-4 flex w-[240px] scale-0 flex-col gap-1 rounded-lg bg-TextPrimary py-3 shadow-lg"
+                <div class="menu-items absolute top-full  right-4   lg:right-[2rem]  mt-6 flex w-[240px] scale-0 flex-col gap-1 rounded-lg bg-TextPrimary py-3 shadow-lg"
                     id="menu-items">
                     @guest
                     <a class="menu-link text-2xs w-full cursor-pointer py-2 px-6 hover:bg-gray-300"
@@ -97,11 +92,10 @@
                     @endauth
                     <hr />
 
-                    <a class="menu-link text-2xs w-full cursor-pointer p-2 px-6 hover:bg-gray-300" href="#">Host your
+                    <a class="menu-link text-2xs w-full cursor-pointer p-2 px-6 hover:bg-gray-300" href="#">Sell your
                         home</a>
-                    <a class="menu-link text-2xs w-full cursor-pointer p-2 px-6 hover:bg-gray-300" href="#">Host an
-                        experience</a>
-                    <a class="menu-link text-2xs w-full cursor-pointer p-2 px-6 hover:bg-gray-300" href="#">help</a>
+                    <a class="menu-link text-2xs w-full cursor-pointer p-2 px-6 hover:bg-gray-300" href="#">Contact
+                        us</a>
                 </div>
             </div>
         </nav>

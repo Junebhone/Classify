@@ -22,7 +22,6 @@
 
 <body
     class="font-sans antialiased scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent scrollbar-track-radius-[100%]  overflow-y-scroll">
-
     <div class="bg-TextPrimary flex flex-col">
         <div class="h-20 listing-navigation border-b-2 border-gray-200 flex items-center z-50 px-6">
             <nav class="navigation container mx-auto flex py-4 justify-between items-center bg-TextPrimary z-50">

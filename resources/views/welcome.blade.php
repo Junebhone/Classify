@@ -4,11 +4,12 @@
         {{--
     </x-slot> --}}
     <x-main-hero></x-main-hero>
-    <section>
-        <x-main-section>
-        </x-main-section>
-        {{-- <x-main-featured></x-main-featured> --}}
-    </section>
+    <x-main-section>
+    </x-main-section>
+    <x-main-country></x-main-country>
+    <x-main-experience></x-main-experience>
+    <x-main-contact></x-main-contact>
+    {{-- <x-main-featured></x-main-featured> --}}
     <x-main-footer></x-main-footer>
 
 </x-main-layout>

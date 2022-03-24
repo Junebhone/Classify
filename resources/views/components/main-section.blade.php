@@ -1,17 +1,18 @@
-<div class="grid grid-cols-8 gap-x-4 gap-y-1  p-10   bg-white text-base">
+<div class="grid grid-cols-2 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-1   p-10   bg-white text-base ">
     <!-- Title -->
     <div class="col-span-full mb-6">
-        <p class="text-xl text-gray-800 font-semibold">Popular categories for your next property </p>
+        <p class="text-xl sm:text-2xl text-black font-extrabold ">Popular categories for your next property
+        </p>
     </div>
     @foreach ($categories as $category)
     <!-- Card 1 -->
-    <div class="col-span-2">
+    <div class="">
         <a href="">
-            <img src="{{ asset('storage/categories/' . $category->image)}}"
-                class="rounded-xl w-[100rem] h-[20rem] object-cover object-center brightness-75 hover:brightness-100" />
+            <img src="{{ asset('storage/categories/' . $category->image) }}"
+                class="rounded-xl w-full h-[200px]  object-cover object-center brightness-75 hover:brightness-100 hover:scale-105 transition-all transform-all" />
         </a>
         <p
-            class="text-base -translate-y-10 capitalize underline decoration-rose-500 text-white font-semibold  sm:text-xl translate-x-3">
+            class="text-base -translate-y-10 capitalize underline decoration-rose-500 text-white font-semibold sm:text-xl translate-x-3">
             {{ $category->name }}</p>
     </div>
     @endforeach
