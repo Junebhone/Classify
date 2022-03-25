@@ -10,8 +10,7 @@ class ListingDetail extends Controller
 {
     public function index($id)
     {
-        $listings = Listing::where("category_id", $id)->latest()->get();
-        $category = Category::all();
-        return view('frontend.details', compact('listings', 'category'));
+        $listings = Listing::where("id", $id)->first();
+        return view('frontend.details', compact('listings'));
     }
 }

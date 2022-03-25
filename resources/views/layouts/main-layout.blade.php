@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link href="https://unpkg.com/swiper@8/swiper-bundle.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
     @livewireStyles
 
     <!-- Scripts -->
@@ -49,8 +50,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+   
     <script src="{{ mix('js/app.js') }}"></script>
     <x-main-swiper></x-main-swiper>
+
     {{-- <script>
         function filterResults(){
             let href = 'all-listings?';

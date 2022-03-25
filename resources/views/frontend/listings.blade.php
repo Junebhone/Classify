@@ -51,7 +51,7 @@
 
         <div class="col-span-full flex justify-center  items-center  text-xl  font-extrabold">
             <lottie-player src="{{ asset('img/lf20_0zomy8eb.json') }}" background="transparent" class="w-[20rem]"
-                speed="1" autoplay loop>
+                speed="1.5" autoplay loop>
             </lottie-player>
         </div>
         <div class="col-span-full flex justify-center  items-center text-xl  font-extrabold">
