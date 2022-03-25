@@ -12,6 +12,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Frontend\ListingController as FrontendListingController;
 use App\Http\Controllers\ListingByCategory;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\ListingDetail;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Rules\Role;
@@ -40,6 +41,8 @@ Route::get('/', [FrontendListingController::class, 'welcome'])->name('welcome');
 Route::get('/all-listings', [FrontendListingController::class, 'index'])->name('all-listings');
 
 Route::get('/all-listings/{id}', [ListingByCategory::class, 'index'])->name('listingbycategory');
+
+Route::get('/all-listings/details/{id}', [ListingDetail::class, 'index'])->name('details');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // auth()->user()->assignRole('admin');

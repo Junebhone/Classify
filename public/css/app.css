@@ -932,9 +932,6 @@ select {
 .h-\[20rem\] {
   height: 20rem;
 }
-.h-40 {
-  height: 10rem;
-}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -992,6 +989,9 @@ select {
 .w-\[40\%\] {
   width: 40%;
 }
+.w-\[20rem\] {
+  width: 20rem;
+}
 .w-\[240px\] {
   width: 240px;
 }
@@ -1018,36 +1018,6 @@ select {
 }
 .w-1\/4 {
   width: 25%;
-}
-.w-40 {
-  width: 10rem;
-}
-.w-\[20rem\] {
-  width: 20rem;
-}
-.w-\[40rem\] {
-  width: 40rem;
-}
-.w-\[30rem\] {
-  width: 30rem;
-}
-.w-\[10rem\] {
-  width: 10rem;
-}
-.w-\[10vw\] {
-  width: 10vw;
-}
-.w-\[100vw\] {
-  width: 100vw;
-}
-.w-\[50vw\] {
-  width: 50vw;
-}
-.w-\[40vw\] {
-  width: 40vw;
-}
-.w-\[40\] {
-  width: 40;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1218,6 +1188,9 @@ select {
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-10 {
+  gap: 2.5rem;
 }
 .gap-y-14 {
   row-gap: 3.5rem;
