@@ -16,14 +16,14 @@ class ListingController extends Controller
     public function index()
     {
 
-        $listings = QueryBuilder::for(Listing::class)
-            ->allowedFilters([
-                'title',
-                AllowedFilter::exact('country_id'),
-                AllowedFilter::exact('category_id'),
-                AllowedFilter::scope('max_price'),
-            ])
-            ->get();
+        // $listings = QueryBuilder::for(Listing::class)
+        //     ->allowedFilters([
+        //         'title',
+        //         AllowedFilter::exact('country_id'),
+        //         AllowedFilter::exact('category_id'),
+        //         AllowedFilter::scope('max_price'),
+        //     ])
+        //     ->get();
 
         $categories = Category::all();
 

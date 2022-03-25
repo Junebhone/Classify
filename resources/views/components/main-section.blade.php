@@ -7,7 +7,7 @@
     @foreach ($categories as $category)
     <!-- Card 1 -->
     <div class="">
-        <a href="">
+        <a href="{{ route('listingbycategory',$category->id) }}">
             <img src="{{ asset('storage/categories/' . $category->image) }}"
                 class="rounded-xl w-full h-[200px]  object-cover object-center brightness-75 hover:brightness-100 hover:scale-105 transition-all transform-all" />
         </a>

@@ -1,7 +1,8 @@
 <x-main-layout>
+    <x-main-heading></x-main-heading>
     <div
         class="product-listing mt-4 container pb-20 relative mx-auto overflow-x-hidden grid justify-center items-center
-                       xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 gap-y-14 sm:px-0 px-6">
+                       xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 gap-y-14 px-6 sm:px-0">
         @forelse ($listings as $listing)
         <div class="products rounded-2xl flex flex-col items-center aspect-square">
             <div class="swiper aspect-square rounded-2xl group">
@@ -42,8 +43,17 @@
             </div>
         </div>
         @empty
-        <p class="p-10">No Listing</p>
+
+        <div class="col-span-full flex justify-center  items-center  text-xl  font-extrabold">
+            <lottie-player src="{{ asset('img/lf20_0zomy8eb.json') }}" background="transparent" class="w-[20rem]"
+                speed="1" autoplay loop>
+            </lottie-player>
+        </div>
+        <div class="col-span-full flex justify-center  items-center text-xl  font-extrabold">
+            No Data Found For {{ $category->name }}
+        </div>
         @endforelse
 
     </div>
+    <x-main-footer></x-main-footer>
 </x-main-layout>
