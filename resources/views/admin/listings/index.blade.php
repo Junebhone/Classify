@@ -120,7 +120,7 @@
                                     </td>
                                     @empty
                                     <td>
-                                        <div class="m-2 p-2">No States</div>
+                                        <div class="m-2 p-2">No Listing</div>
                                     </td>
                                 </tr>
                                 @endforelse

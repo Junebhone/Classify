@@ -26,7 +26,7 @@
             x-data="{ open: false }">
             <div class="flex flex-row items-center justify-between flex-shrink-0 px-8 py-4">
 
-                <a href="#"
+                <a href="{{ route('welcome') }}"
                     class="flex justify-center items-center text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
                     <svg class="w-14 h-14 mr-4" viewBox="0 0 364 373" fill="none"
                         xmlns="http://www.w3.org/2000/svg%22%3E">
@@ -121,6 +121,7 @@
 
     @livewireScripts
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <x-main-alert></x-main-alert>
     <x-main-file></x-main-file>
 

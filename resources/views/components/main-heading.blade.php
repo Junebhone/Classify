@@ -33,11 +33,19 @@
                         Listings
                     </a>
                 </li>
+                @foreach ($categories as $category)
+                <li class="text-base list-none text-black">
+                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%]
+                    after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all
+                    after:duration-200 after:ease-in-out after:hover:w-[30%]" data-tab-target="#experiences"
+                        href="{{ route('listingbycategory',$category->id) }}">
+                        {{ $category->name }}
+                    </a>
+                </li>
+                @endforeach
             </ul>
             <div class="flex items-center relative justify-center gap-1">
-                <a class="rounded-full hover:bg-gray-200 p-3 text-sm text-black " href="{{ route('listings.create') }}">
-                    Become a Seller
-                </a>
+
                 <div class="menu-toggle flex cursor-pointer items-center justify-center gap-5 w-12 h-12 overflow-hidden rounded-full shadow-lg"
                     id="menu-toggle">
 

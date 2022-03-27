@@ -90,22 +90,34 @@
                                                             class="py-2 block text-sm font-medium text-black">
                                                             Name
                                                         </label>
+                                                        @error('name')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <input type="text" name="name" id="name"
                                                                 class="border-gray-300 focus:border-[#FF385C]
                                                                 focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm "
                                                                 placeholder="Name">
                                                         </div>
+
                                                     </div>
                                                 </div>
                                                 <div class="grid grid-cols-3 gap-6">
+
                                                     <div class="col-span-3 sm:col-span-3">
                                                         <label for="image"
                                                             class="py-2 block text-sm font-medium text-black">Image</label>
-
+                                                        @error('image')
+                                                        <span
+                                                            class="flex items-center p-4 text-sm col-span-3 sm:col-span-3 bg-rose-50 text-Rose my-4 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <input type="file" class="z-10" name="image" id="user_avater">
 
                                                     </div>
+
                                                 </div>
                                             </div>
 

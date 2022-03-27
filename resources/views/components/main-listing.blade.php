@@ -1,7 +1,7 @@
 <div
     class="product-listing mt-4 container pb-20 relative mx-auto overflow-x-hidden grid justify-center items-center
                        xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 gap-y-14 sm:px-0 px-6">
-    @foreach ($listings as $listing )
+    @forelse($listings as $listing )
     <div class="products rounded-2xl flex flex-col items-center aspect-square">
         <a href="{{ route('details',$listing->id) }}">
             <div class="swiper aspect-square rounded-2xl group">
@@ -32,7 +32,7 @@
     </div>
     <div class="flex w-full h-[20%] pt-5 flex-wrap">
         <div class="destination flex flex-col justify-center w-[60%] flex-wrap">
-            <p>{{ $listing->title }}</p>
+            <p class="truncate">{{ $listing->title }}</p>
             <p class="opacity-50">{{ $listing->category->name }}</p>
         </div>
         <div class="destination flex flex-col justify-center w-[40%] items-end flex-wrap">
@@ -43,6 +43,16 @@
     </a>
 
 </div>
-@endforeach
+@empty
+
+<div class="col-span-full flex justify-center  items-center  text-xl  font-extrabold">
+    <lottie-player src="{{ asset('img/lf20_0zomy8eb.json') }}" background="transparent" class="w-[20rem]" speed="1.5"
+        autoplay loop>
+    </lottie-player>
+</div>
+<div class="col-span-full flex justify-center  items-center text-xl  font-extrabold">
+    No Data Found For Listings
+</div>
+@endforelse
 
 </div>

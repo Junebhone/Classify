@@ -154,21 +154,40 @@
           var form =  $(this).closest("form");
           var name = $(this).data("name");
           event.preventDefault();
-          Swal.fire({
+          const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: true
+    })
+
+    swalWithBootstrapButtons.fire({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",
   icon: 'warning',
   showCancelButton: true,
+  confirmButtonText: 'Yes, delete it!',
+  cancelButtonText: 'No, cancel!',
   confirmButtonColor: '#3085d6',
   cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
-        }).then((willDelete) => {
-            if (willDelete) {
-              form.submit();
-            }
-          });
-          
+  reverseButtons: true
+    }).then((result) => {
+  if (result.isConfirmed) {
+    form.submit();
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire(
+      'Cancelled',
+      'Your record is safe :)',
+      'error'
+    )
+  }
+})
       });
+
     </script>
 </body>
 

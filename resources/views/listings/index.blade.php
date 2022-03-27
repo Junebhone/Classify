@@ -1,4 +1,4 @@
-<x-admin-layout>
+<x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-black leading-tight">
             {{ __('My Listing') }}
@@ -120,7 +120,7 @@
                                     </td>
                                     @empty
                                     <td>
-                                        <div class="m-2 p-2">No States</div>
+                                        <div class="m-2 p-2">No Listings</div>
                                     </td>
                                 </tr>
                                 @endforelse
@@ -136,4 +136,4 @@
             </div>
         </div>
     </div>
-</x-admin-layout>
+</x-app-layout>

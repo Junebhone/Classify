@@ -4,16 +4,16 @@
         <p class="text-xl sm:text-2xl text-black font-extrabold ">Popular categories for your next property
         </p>
     </div>
-    @foreach ($categories as $category)
+    @foreach ($subcategories as $subcategory)
     <!-- Card 1 -->
     <div class="">
-        <a href="{{ route('listingbycategory',$category->id) }}">
-            <img src="{{ asset('storage/categories/' . $category->image) }}"
+        <a href="">
+            <img src="{{ asset('storage/subcategories/' . $subcategory->image) }}"
                 class="rounded-xl w-full h-[200px]  object-cover object-center brightness-75 hover:brightness-100 hover:scale-105 transition-all transform-all" />
         </a>
         <p
             class="text-base -translate-y-10 capitalize underline decoration-rose-500 text-white font-semibold sm:text-xl translate-x-3">
-            {{ $category->name }}</p>
+            {{ $subcategory->name }}</p>
     </div>
     @endforeach
 </div>

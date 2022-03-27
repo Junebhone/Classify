@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\View\Component;
 
 class MainSection extends Component
@@ -15,7 +15,7 @@ class MainSection extends Component
      */
     public function render()
     {
-        $categories = Category::inRandomOrder()->limit(4)->get();
-        return view('components.main-section', compact('categories'));
+        $subcategories = SubCategory::inRandomOrder()->limit(4)->get();
+        return view('components.main-section', compact('subcategories'));
     }
 }
