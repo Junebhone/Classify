@@ -31,8 +31,11 @@
             </div>
     </div>
     <div class="flex w-full h-[20%] pt-5">
-        <div class="destination flex flex-col  flex-wrap w-[70%]">
-            <p class="truncate text-md w-[100px]">{{ $listing->title }}</p>
+        <div class="destination flex  flex-wrap w-[70%]">
+            <span class="flex w-full">
+                <p class="truncate text-md  w-[100px]">{{ $listing->title }}</p>
+            </span>
+
             <p class="truncate text-md w-[100px]">{{ $listing->category->name }}</p>
         </div>
         <div class="destination flex  w-[30%]  flex-wrap ">

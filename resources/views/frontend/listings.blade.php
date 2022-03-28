@@ -33,14 +33,17 @@
                         <i class="fa-solid fa-angle-right"></i>
                     </div>
                 </div>
-                <div class="flex w-full h-[20%] pt-5 flex-wrap">
-                    <div class="destination flex flex-col justify-center w-[60%] flex-wrap">
-                        <p>{{ $listing->title }}</p>
-                        <p class="opacity-50">{{ $listing->category->name }}</p>
+                <div class="flex w-full h-[20%] pt-5">
+                    <div class="destination flex  flex-wrap w-[70%]">
+                        <span class="flex w-full">
+                            <p class="truncate text-md  w-[180px]">{{ $listing->title }}</p>
+                        </span>
+
+                        <p class="truncate text-md w-[100px] opacity-40">{{ $listing->category->name }}</p>
                     </div>
-                    <div class="destination flex flex-col justify-center w-[40%] items-end flex-wrap">
-                        <p>$90 / night</p>
-                        <p class="opacity-50">Apr 1-8</p>
+                    <div class="destination flex  w-[30%]  flex-wrap ">
+                        <p class="w-full flex justify-end">{{ $listing->price}}$</p>
+                        <p class="opacity-50 w-full flex justify-end">Apr 1-8</p>
                     </div>
                 </div>
             </a>
