@@ -12,6 +12,7 @@ class ListingDetail extends Controller
     public function index($id)
     {
         $listing = Listing::find($id);
-        return view('frontend.details', compact('listing'));
+        $categories = Category::all();
+        return view('frontend.details', compact('listing', 'categories'));
     }
 }
