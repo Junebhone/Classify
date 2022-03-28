@@ -159,6 +159,11 @@
                                                             class="py-2 block text-sm font-medium text-black">
                                                             Name
                                                         </label>
+                                                        @error('name')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <input type="text" name="name" id="name"
                                                                 class="border-gray-300 focus:border-[#FF385C]
@@ -173,6 +178,11 @@
                                                             class="block text-sm font-medium text-gray-700"> Country
                                                             Code
                                                         </label>
+                                                        @error('country_code')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <input type="text" name="country_code" id="country_code"
                                                                 class="border-gray-300 focus:border-[#FF385C]

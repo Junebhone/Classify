@@ -73,7 +73,7 @@
                     @endif
                     @endauth
                 </div>
-                <div class="menu-items absolute top-full  right-4   lg:right-[2rem]  mt-6 flex w-[240px] scale-0 flex-col gap-1 rounded-lg bg-TextPrimary py-3 shadow-lg"
+                <div class="menu-items absolute top-full  right-4   lg:right-[2rem]  mt-6 flex w-[240px] scale-0 flex-col gap-1 rounded-lg bg-white py-3 shadow-lg"
                     id="menu-items">
                     @guest
                     <a class="menu-link text-2xs w-full cursor-pointer py-2 px-6 hover:bg-gray-300"

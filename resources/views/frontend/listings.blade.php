@@ -58,7 +58,6 @@
             No Data Found For {{ $category->name }}
         </div>
         @endforelse
-
     </div>
     <x-main-footer></x-main-footer>
 </x-main-layout>

@@ -186,17 +186,14 @@
                                                 action="{{ route('admin.countries.destroy',$country->id) }}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <a class="flex  items-center text-black hover:underline "
-                                                    aria-details="JOJO"
-                                                    href="{{ route('admin.countries.destroy',$country->id) }}" onclick="event.preventDefault();
-                                                        this.closest('form').submit();">
-
+                                                <button
+                                                    class="flex  show_confirm items-center text-black hover:underline show_confirm">
                                                     <lottie-player
                                                         src="https://assets1.lottiefiles.com/packages/lf20_1zsthhl8.json"
                                                         background="transparent" class="w-10 h-10" speed="1" hover>
                                                     </lottie-player>
                                                     Delete
-                                                </a>
+                                                </button>
                                             </form>
                                         </div>
                                     </td>

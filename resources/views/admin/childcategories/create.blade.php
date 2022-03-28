@@ -80,6 +80,11 @@
                                                             class="py-2 block text-sm font-medium text-black">
                                                             Name
                                                         </label>
+                                                        @error('name')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <input type="text" name="name" id="name"
                                                                 class="border-gray-300 focus:border-[#FF385C]
@@ -93,6 +98,11 @@
                                                         <label for="name"
                                                             class="block text-sm font-medium text-gray-700"> SubCategory
                                                         </label>
+                                                        @error('category_id')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <select name="sub_category_id"
                                                                 class="border-gray-300 focus:border-[#FF385C]
@@ -103,9 +113,7 @@
                                                                 </option>
                                                                 @endforeach
                                                             </select>
-                                                            @error('category_id')
-                                                            <span class="error">{{ $message }}</span>
-                                                            @enderror
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -113,7 +121,11 @@
                                                     <div class="col-span-3 sm:col-span-3">
                                                         <label for="image"
                                                             class="py-2 block text-sm font-medium text-black">Image</label>
-
+                                                        @error('image')
+                                                        <span
+                                                            class="flex items-center p-4 text-sm col-span-3 sm:col-span-3 bg-rose-50 text-Rose my-4 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <input type="file" class="z-10" name="image" id="user_avater">
 
                                                     </div>

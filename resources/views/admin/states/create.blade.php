@@ -172,16 +172,18 @@
                                                             class="py-2 block text-sm font-medium text-black">
                                                             Name
                                                         </label>
+                                                        @error('name')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <input type="text" name="name" id="name"
                                                                 class="border-gray-300 focus:border-[#FF385C]
                                                                 focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm "
                                                                 placeholder="Name">
                                                         </div>
-                                                        @error('name')
-                                                        <span class="flex mt-2 items-center  text-red-500">{{ $message
-                                                            }}</span>
-                                                        @enderror
+
                                                     </div>
                                                 </div>
                                                 <div class="grid grid-cols-3 gap-6">
@@ -189,6 +191,11 @@
                                                         <label for="country"
                                                             class="block text-sm font-medium text-gray-700"> Country
                                                         </label>
+                                                        @error('country_id')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <select name="country_id"
                                                                 class="border-gray-300 focus:border-[#FF385C]
@@ -200,9 +207,7 @@
                                                                 </option>
                                                                 @endforeach
                                                             </select>
-                                                            @error('country_id')
-                                                            <span class="error">{{ $message }}</span>
-                                                            @enderror
+
                                                         </div>
                                                     </div>
                                                 </div>

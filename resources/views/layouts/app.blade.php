@@ -62,6 +62,7 @@
                 </x-app-link>
                 @role('admin')
                 <x-app-link href="{{ route('admin.index') }}" :active="request()->routeIs('admin.index')">Admin
+                    Dashboard   
                 </x-app-link>
                 @endrole
                 @auth

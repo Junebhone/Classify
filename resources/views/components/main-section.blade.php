@@ -1,7 +1,7 @@
 <div class="grid grid-cols-2 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-1   p-10   bg-white text-base ">
     <!-- Title -->
     <div class="col-span-full mb-6">
-        <p class="text-xl sm:text-2xl text-black font-extrabold ">Popular categories for your next property
+        <p class="text-xl sm:text-2xl text-black font-extrabold ">Popular types for your next property
         </p>
     </div>
     @foreach ($subcategories as $subcategory)

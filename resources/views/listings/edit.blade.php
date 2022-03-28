@@ -492,9 +492,11 @@
                                 </div>
 
                             </div>
-                            <div class="px-4 py-3 bg-gray-50 sm:px-6">
-                                <button type="submit"
-                                    class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <div class="p-4 bg-white sm:px-6 rounded-lg flex justify-end">
+                                <button type="submit" class="inline-flex items-center px-6 py-4 bg-[#FF385C] border
+                                    border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-rose-600
+                                    active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25
+                                    transition">
                                     Save
                                 </button>
                             </div>

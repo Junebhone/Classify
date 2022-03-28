@@ -37,7 +37,7 @@ class ListingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreListingRequest $request)
     {
         $featured_image = $request->file('featured_image')->store('public/listings');
         $image_one = $request->file('image_one')->store('public/listings');

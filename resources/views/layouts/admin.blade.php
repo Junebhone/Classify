@@ -87,7 +87,7 @@
                     Cities
                 </x-app-link>
                 @endrole
-                <x-app-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">User
+                <x-app-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">User Dashboard
                 </x-app-link>
                 @auth
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreChildCategoryRequest;
 use App\Models\ChildCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -37,7 +38,7 @@ class ChildCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreChildCategoryRequest $request)
     {
         if (Storage::exists('public/temp/' . $request->image)) {
             Storage::move('public/temp/' . $request->image, 'public/childcategories/' . Str::remove('tmp-', $request->image));

@@ -79,7 +79,7 @@
                     @endif
                     @endauth
                 </div>
-                <div class="menu-items absolute top-full  right-4   lg:right-[2rem]  mt-6 flex w-[240px] scale-0 flex-col gap-1 rounded-lg bg-TextPrimary py-3 shadow-lg"
+                <div class="menu-items absolute top-full  right-4   lg:right-[2rem]  mt-6 flex w-[240px] scale-0 flex-col gap-1 rounded-lg bg-white py-3 shadow-lg"
                     id="menu-items">
                     @guest
                     <a class="menu-link text-2xs w-full cursor-pointer py-2 px-6 hover:bg-gray-300"
@@ -114,12 +114,12 @@
     <nav class="listing-nav-bar overflow-x-hidden w-full h-20 flex items-center bg-white z-10 px-6 shadow-md">
         <div class="flex items-center container mx-auto">
             <ul class="ul-list flex gap-6 text-TextSecondary h-20 items-center transition-all duration-150 ease-linear">
-                @foreach ($categories as $category )
+                @foreach ($subcategories as $subcategory )
                 <li
                     class="nav-list relative h-14 gap-2 flex flex-row justify-center items-center border-b-2 border-black transition-all duration-300 ease-linear">
 
-                    <a class="" href="{{ route('listingbycategory',$category->id) }}">
-                        {{ $category->name }}
+                    <a class="" href="{{ route('listingbycategory',$subcategory->id) }}">
+                        {{ $subcategory->name }}
 
                     </a>
                 </li>

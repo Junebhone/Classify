@@ -29,13 +29,16 @@
                                                     <label for="title" class="block text-sm font-medium text-gray-700">
                                                         Title
                                                     </label>
+                                                    @error('title')
+                                                    <span
+                                                        class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                        $message }}</span>
+                                                    @enderror
                                                     <div class="mt-1 flex rounded-md shadow-sm">
                                                         <input type="text" name="title" id="title"
                                                             class="border-gray-300 focus:border-[#FF385C]
                                                         focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm"
                                                             placeholder="title">
-                                                        @error('title') <span class="error">{{ $message }}</span>
-                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -45,14 +48,18 @@
                                                         class="block text-sm font-medium text-gray-700">
                                                         Descripttion
                                                     </label>
+                                                    @error('description')
+                                                    <span
+                                                        class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                        $message }}</span>
+                                                    @enderror
                                                     <div class="mt-1 flex rounded-md shadow-sm">
                                                         <textarea rows="5" type="text" name="description"
                                                             id="description"
                                                             class="border-gray-300 focus:border-[#FF385C]
                                                         focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm"
                                                             placeholder="Brife Description about your property"></textarea>
-                                                        @error('description') <span class="error">{{ $message }}</span>
-                                                        @enderror
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,14 +120,17 @@
                                                             class="block text-sm font-medium text-gray-700">
                                                             Location
                                                         </label>
+                                                        @error('location')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <input type="text" name="location" id="location"
                                                                 class="border-gray-300 focus:border-[#FF385C]
                                                                 focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm"
                                                                 placeholder="Enter the location of the property">
-                                                            @error('location') <span class="error">{{ $message
-                                                                }}</span>
-                                                            @enderror
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -157,13 +167,16 @@
                                                             class="block text-sm font-medium text-gray-700">
                                                             Price
                                                         </label>
+                                                        @error('price')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <input type="text" name="price" id="price"
                                                                 class="border-gray-300 focus:border-[#FF385C]
                                                         focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm"
                                                                 placeholder="Enter the Price">
-                                                            @error('price') <span class="error">{{ $message }}</span>
-                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-span-3 sm:col-span-2">
@@ -171,6 +184,11 @@
                                                             class="block text-sm font-medium text-gray-700">
                                                             Price Negotiable
                                                         </label>
+                                                        @error('price_negotiable')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <select name="price_negotiable"
                                                                 class="mt-1 border-gray-300 focus:border-[#FF385C]
@@ -179,9 +197,6 @@
                                                                 <option value="fixed">Fixed </option>
                                                                 <option value="negotiable">Negotiable </option>
                                                             </select>
-                                                            @error('price_negotiable') <span class="error">{{ $message
-                                                                }}</span>
-                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-span-1 sm:col-span-1">
@@ -189,6 +204,11 @@
                                                             class="block text-sm font-medium text-gray-700">
                                                             Condition
                                                         </label>
+                                                        @error('condition')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <select name="condition"
                                                                 class="mt-1 border-gray-300 focus:border-[#FF385C]
@@ -196,9 +216,6 @@
                                                                 <option value="new">New </option>
                                                                 <option value="used">Used </option>
                                                             </select>
-                                                            @error('condition') <span class="error">{{ $message
-                                                                }}</span>
-                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -234,6 +251,11 @@
                                                             class="block text-sm font-medium text-gray-700">
                                                             Published
                                                         </label>
+                                                        @error('is_published')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <select name="is_published"
                                                                 class="mt-1 border-gray-300 focus:border-[#FF385C]
@@ -242,9 +264,6 @@
                                                                 <option value="0">Unpublished </option>
                                                                 <option value="1">Published </option>
                                                             </select>
-                                                            @error('is_published') <span class="error">{{ $message
-                                                                }}</span>
-                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-span-6 sm:col-span-3">
@@ -252,14 +271,16 @@
                                                             class="block text-sm font-medium text-gray-700">
                                                             Phone Number
                                                         </label>
+                                                        @error('phone_number')
+                                                        <span
+                                                            class="flex items-center text-sm p-4 w-full bg-rose-50 text-Rose my-2 rounded-lg">{{
+                                                            $message }}</span>
+                                                        @enderror
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <input type="number" name="phone_number" id="phone_number"
                                                                 class="mt-1 border-gray-300 focus:border-[#FF385C]
                                                             focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm"
                                                                 placeholder="Enter Phone Number">
-                                                            @error('phone_number') <span class="error">{{ $message
-                                                                }}</span>
-                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -303,9 +324,11 @@
                                 </div>
 
                             </div>
-                            <div class="px-4 py-3 bg-gray-50 sm:px-6">
-                                <button type="submit"
-                                    class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <div class="p-4 bg-white sm:px-6 rounded-lg flex justify-end">
+                                <button type="submit" class="inline-flex items-center px-6 py-4 bg-[#FF385C] border
+                                    border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-rose-600
+                                    active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25
+                                    transition">
                                     Save
                                 </button>
                             </div>

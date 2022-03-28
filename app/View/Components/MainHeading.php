@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\View\Component;
 
 class MainHeading extends Component
@@ -25,6 +26,7 @@ class MainHeading extends Component
     public function render()
     {
         $categories = Category::all();
-        return view('components.main-heading', compact('categories'));
+        $subcategories = SubCategory::all();
+        return view('components.main-heading', compact('subcategories', 'categories'));
     }
 }

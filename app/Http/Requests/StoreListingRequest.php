@@ -38,7 +38,7 @@ class StoreListingRequest extends FormRequest
             'city_id' => 'required',
             'phone_number' => 'required',
             'is_published' => 'required',
-            'featured_image' => 'image|nullable',
+            'featured_image' => 'image|required',
             'image_one' => 'image|required',
             'image_two' => 'image|required',
             'image_three' => 'image|required',
