@@ -25,20 +25,20 @@
                     </a>
                 </li>
 
+                {{--
+                request()->url() == route('listingbycategory;
+                class={{request()->url() == route('listingbycategory',$category->id) ? "active" : ""}} --}}
+
                 <li class="text-base list-none text-black">
-                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%]
-                    after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all
-                    after:duration-200 after:ease-in-out after:hover:w-[30%]" data-tab-target="#experiences"
+                    <a class="{{ request()->url() == route('all-listings') ? 'relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]' : '' }}  nav-link relative"
                         href="{{ route('all-listings') }}">
                         Listings
                     </a>
                 </li>
                 @foreach ($categories as $category)
                 <li class="text-base list-none text-black">
-                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%]
-                    after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all
-                    after:duration-200 after:ease-in-out after:hover:w-[30%]" data-tab-target="#experiences"
-                        href="{{ route('listingbycategory',$category->id) }}">
+                    <a class="{{ request()->url() == route('listingbycategory',$category->id) ? 'relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]' : '' }}  nav-link relative"
+                        href=" {{ route('listingbycategory',$category->id) }}">
                         {{ $category->name }}
                     </a>
                 </li>

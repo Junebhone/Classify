@@ -36,11 +36,11 @@
                 <p class="truncate text-md  w-[100px]">{{ $listing->title }}</p>
             </span>
 
-            <p class="truncate text-md w-[100px]">{{ $listing->category->name }}</p>
+            <p class="truncate text-md w-[100px]">{{ $listing->subcategory->name }}</p>
         </div>
         <div class="destination flex  w-[30%]  flex-wrap ">
             <p class="w-full flex justify-end">{{ $listing->price}}$</p>
-            <p class="opacity-50 w-full flex justify-end">Apr 1-8</p>
+            <p class="opacity-50 w-full flex justify-end">{{ $listing->created_at->diffForHumans() }}</p>
         </div>
     </div>
     </a>
