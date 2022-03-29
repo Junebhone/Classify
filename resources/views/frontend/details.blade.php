@@ -148,7 +148,7 @@
 
             </div>
             <div class="flex gap-4 ">
-                <div class="flex gap-1 items-center">
+                <div class="flex gap-1 items-center hover:bg-gray-100 p-2 rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -156,7 +156,7 @@
                     </svg>
                     <p class="text-sm underline">Share</p>
                 </div>
-                <div class="flex gap-1 items-center">
+                <div class="flex gap-1 items-center hover:bg-gray-100 p-2 rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -263,7 +263,7 @@
                                 <label for="description"
                                     class="peer-placeholder-shown:opacity-100  text-sm  opacity-75 peer-focus:opacity-75 peer-placeholder-shown:scale-100 scale-75 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 -translate-y-3 peer-focus:-translate-y-3 peer-placeholder-shown:translate-x-0 translate-x-1 peer-focus:translate-x-1 absolute top-0 left-0 px-3 py-5 h-full pointer-events-none transform origin-left transition-all duration-100 ease-in-out">Description</label>
                             </div>
-                            <button class="w-full bg-Rose  text-white p-3 rounded-md">Submit</button>
+                            <button class="w-full bg-Rose hover:bg-rose-500  text-white p-3 rounded-md">Submit</button>
                             <span class="text-xs text-center flex justify-center py-5 text-Rose">Note: You can ask to
                                 owner
                                 directly Or
