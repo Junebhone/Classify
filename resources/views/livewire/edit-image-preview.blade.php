@@ -3,22 +3,26 @@
     <div class="flex flex-wrap gap-5 justify-center">
         @if ($oldFeaturedImage)
         <div class="flex">
-            <img class="w-[150px] h-[150px] rounded-md" src="{{ Storage::url($oldFeaturedImage) }}">
+            <img class="w-[150px] h-[150px] object-cover object-center rounded-md"
+                src="{{ Storage::url($oldFeaturedImage) }}">
         </div>
         @endif
         @if ($oldImageOne)
         <div class="flex">
-            <img class="w-[150px] h-[150px rounded-md" src="{{ Storage::url($oldImageOne) }}">
+            <img class="w-[150px] h-[150px] object-cover object-center rounded-md"
+                src="{{ Storage::url($oldImageOne) }}">
         </div>
         @endif
         @if ($oldImageTwo)
         <div class="flex">
-            <img class="w-[150px] h-[150px] rounded-md" src="{{ Storage::url($oldImageTwo) }}">
+            <img class="w-[150px] h-[150px] object-cover object-center rounded-md"
+                src="{{ Storage::url($oldImageTwo) }}">
         </div>
         @endif
         @if ($oldImageThree)
         <div class="flex">
-            <img class="w-[150px] h-[150px] rounded-md" src="{{ Storage::url($oldImageThree) }}">
+            <img class="w-[150px] h-[150px] object-cover object-center rounded-md"
+                src="{{ Storage::url($oldImageThree) }}">
         </div>
         @endif
     </div>

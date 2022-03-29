@@ -19,7 +19,7 @@
             </a>
             <ul class="flex items-center justify-center gap-4">
                 <li class="text-base list-none text-black">
-                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[10%]"
+                    <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
                         data-tab-target="#placetostay" href="{{ route('welcome') }}">
                         Home
                     </a>
@@ -30,14 +30,14 @@
                 class={{request()->url() == route('listingbycategory',$category->id) ? "active" : ""}} --}}
 
                 <li class="text-base list-none text-black">
-                    <a class="{{ request()->url() == route('all-listings') ? 'relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]' : '' }}  nav-link relative"
+                    <a class="{{ request()->url() == route('all-listings') ? 'relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out' : 'nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]' }}"
                         href="{{ route('all-listings') }}">
                         Listings
                     </a>
                 </li>
                 @foreach ($categories as $category)
                 <li class="text-base list-none text-black">
-                    <a class="{{ request()->url() == route('listingbycategory',$category->id) ? 'relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]' : '' }}  nav-link relative"
+                    <a class="{{ request()->url() == route('listingbycategory',$category->id) ? 'relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out' : 'nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]' }} "
                         href=" {{ route('listingbycategory',$category->id) }}">
                         {{ $category->name }}
                     </a>
@@ -116,11 +116,9 @@
             <ul class="ul-list flex gap-6 text-TextSecondary h-20 items-center transition-all duration-150 ease-linear">
                 @foreach ($subcategories as $subcategory )
                 <li
-                    class="nav-list relative h-14 gap-2 flex flex-row justify-center items-center border-b-2 border-black transition-all duration-300 ease-linear">
-
-                    <a class="" href="{{ route('listingbycategory',$subcategory->id) }}">
+                    class="{{ request()->url() == route('listingbysubcategory',$category->id) ? 'nav-list relative h-14 gap-2 flex flex-row justify-center items-center border-b-2 border-black transition-all duration-300 ease-linear' : '' }}">
+                    <a class="" href="{{ route('listingbysubcategory',$subcategory->id) }}">
                         {{ $subcategory->name }}
-
                     </a>
                 </li>
                 @endforeach

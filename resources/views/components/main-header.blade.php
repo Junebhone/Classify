@@ -25,14 +25,14 @@
                     </a>
                 </li>
                 <li class="text-base list-none text-TextPrimary">
-                    <a class="nav-link Logo relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[10%]"
+                    <a class="nav-link Logo relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
                         data-tab-target="#experiences" href="{{ route('all-listings') }}">
                         Listings
                     </a>
                 </li>
                 @foreach ($categories as $category)
                 <li class="text-base list-none text-TextPrimary">
-                    <a class="nav-link Logo relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[10%]"
+                    <a class="nav-link Logo relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
                         data-tab-target="#experiences" href="{{ route('listingbycategory',$category->id) }}">
                         {{ $category->name }}
                     </a>

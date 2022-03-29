@@ -231,7 +231,6 @@
                     <img class="h-12 w-12 rounded-full object-cover object-center"
                         src="{{ Storage::url($listing->user->profile_photo_path) }}" />
                 </div>
-                <p class="p-10">{{ $listing->subcategory->name }}</p>
                 <div class="py-10 text-justify indent-10">
                     {{ $listing->description }}
                 </div>
