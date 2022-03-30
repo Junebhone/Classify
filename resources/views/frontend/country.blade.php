@@ -61,5 +61,6 @@
         </div>
         @endforelse
     </div>
+
     <x-main-footer></x-main-footer>
 </x-main-layout>
