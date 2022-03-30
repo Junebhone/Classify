@@ -12,74 +12,49 @@
                         </path>
                     </svg>
                 </div>
-                <div class="swiper-wrapper !aspect-square" ">
+                <div class="swiper-wrapper !aspect-square">
                     <img alt=" image-1" class="swiper-slide object-cover object-center w-full min-h-full first-image"
-                    src="{{ Storage::url($listing->featured_image) }}" />
-                <img alt="image-2" class="swiper-slide object-cover object-center w-full min-h-full"
-                    src="{{ Storage::url($listing->image_one) }}" />
-                <img alt="images-3" class="swiper-slide object-cover object-center w-full min-h-full"
-                    src="{{ Storage::url($listing->image_two) }}" />
+                        src="{{ Storage::url($listing->featured_image) }}" />
+                    <img alt="image-2" class="swiper-slide object-cover object-center w-full min-h-full"
+                        src="{{ Storage::url($listing->image_one) }}" />
+                    <img alt="images-3" class="swiper-slide object-cover object-center w-full min-h-full"
+                        src="{{ Storage::url($listing->image_two) }}" />
+                </div>
+                <div class="swiper-pagination"></div>
+                <div
+                    class="swiper-button-prev scale-0 opacity-40 group-hover:scale-100 hover:opacity-100 transition-all 2s ease-linear">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div
+                    class="swiper-button-next scale-0 opacity-40 group-hover:scale-100 hover:opacity-100 transition-all 2s ease-linear">
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div
-                class="swiper-button-prev scale-0 opacity-40 group-hover:scale-100 hover:opacity-100 transition-all 2s ease-linear">
-                <i class="fa-solid fa-angle-left"></i>
+            <div class="flex justify-between p-2 pt-4">
+                <div class="">
+                    <p class="w-[100px] truncate">{{ $listing->title }}</p>
+                    <p class="truncate text-sm opacity-40">{{ $listing->subcategory->name }} , {{
+                        $listing->category->name }}</p>
+                </div>
+                <div class="">
+                    <p class="text-right">{{ $listing->price}} $</p>
+                    <p class="opacity-40 w-full flex justify-end text-sm">{{ $listing->created_at->diffForHumans() }}
+                    </p>
+                </div>
             </div>
-            <div
-                class="swiper-button-next scale-0 opacity-40 group-hover:scale-100 hover:opacity-100 transition-all 2s ease-linear">
-                <i class="fa-solid fa-angle-right"></i>
-            </div>
+        </a>
+
     </div>
-    {{-- <div class="flex w-full p-2 items-center justify-between flex-w">
-        <div class="destination flex w-full">
-            <span class="flex w-full">
-                <p class="truncate text-md ">{{ $listing->title }}</p>
-            </span>
+    @empty
 
-            <p class="truncate text-md w-[100px] opacity-50">{{ $listing->subcategory->name }}</p>
-        </div>
-        <div class="destination flex  w-full">
-            <p class="w-full">{{ $listing->price}} $</p>
-            <p class="opacity-50 w-full">{{ $listing->created_at->diffForHumans() }}</p>
-        </div>
-    </div> --}}
-    {{-- <div class="flex w-full h-[20%] pt-5 flex-wrap">
-        <div class=" flex  flex-wrap w-[70%]">
-            <span class="flex w-full">
-                <p class="truncate text-md w-[180px]">{{ $listing->title }}</p>
-            </span>
-
-            <p class="truncate text-md w-[100px] text-sm opacity-40">{{ $listing->subcategory->name }}</p>
-        </div>
-        <div class=" flex w-full flex-wrap ">
-            <p class="w-full flex justify-end text-md">{{ $listing->price}} $</p>
-            <p class="opacity-50 w-full flex justify-end text-sm">{{ $listing->created_at->diffForHumans() }}</p>
-        </div>
-    </div> --}}
-    <div class="flex justify-between p-2 pt-4">
-        <div class="">
-            <p class="w-[100px] truncate">{{ $listing->title }}</p>
-            <p class="truncate text-sm opacity-40">{{ $listing->subcategory->name }} , {{
-                $listing->category->name }}</p>
-        </div>
-        <div class="">
-            <p class="text-right">{{ $listing->price}} $</p>
-            <p class="opacity-40 w-full flex justify-end text-sm">{{ $listing->created_at->diffForHumans() }}</p>
-        </div>
+    <div class="col-span-full flex justify-center  items-center  text-xl  font-extrabold">
+        <lottie-player src="{{ asset('img/lf20_0zomy8eb.json') }}" background="transparent" class="w-[20rem]"
+            speed="1.5" autoplay loop>
+        </lottie-player>
     </div>
-    </a>
-
-</div>
-@empty
-
-<div class="col-span-full flex justify-center  items-center  text-xl  font-extrabold">
-    <lottie-player src="{{ asset('img/lf20_0zomy8eb.json') }}" background="transparent" class="w-[20rem]" speed="1.5"
-        autoplay loop>
-    </lottie-player>
-</div>
-<div class="col-span-full flex justify-center  items-center text-xl  font-extrabold">
-    No Data Found For Listings
-</div>
-@endforelse
+    <div class="col-span-full flex justify-center  items-center text-xl  font-extrabold">
+        No Data Found For Listings
+    </div>
+    @endforelse
 
 </div>

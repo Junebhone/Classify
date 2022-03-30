@@ -33,17 +33,16 @@
                         <i class="fa-solid fa-angle-right"></i>
                     </div>
                 </div>
-                <div class="flex w-full h-[20%] pt-5">
-                    <div class="destination flex  flex-wrap w-[70%]">
-                        <span class="flex w-full">
-                            <p class="truncate text-md  w-[180px]">{{ $listing->title }}</p>
-                        </span>
-
-                        <p class="truncate text-md w-[100px] opacity-40">{{ $listing->category->name }}</p>
+                <div class="flex justify-between p-2 pt-4">
+                    <div class="">
+                        <p class="w-[100px] truncate">{{ $listing->title }}</p>
+                        <p class="truncate text-sm opacity-40">{{ $listing->subcategory->name }} , {{
+                            $listing->category->name }}</p>
                     </div>
-                    <div class="destination flex  w-[30%]  flex-wrap ">
-                        <p class="w-full flex justify-end">{{ $listing->price}}$</p>
-                        <p class="opacity-50 w-full flex justify-end">Apr 1-8</p>
+                    <div class="">
+                        <p class="text-right">{{ $listing->price}} $</p>
+                        <p class="opacity-40 w-full flex justify-end text-sm">{{ $listing->created_at->diffForHumans()
+                            }}</p>
                     </div>
                 </div>
             </a>

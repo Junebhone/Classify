@@ -20,26 +20,22 @@
                 </a>
                 <ul class="flex items-center justify-center gap-4">
                     <li class="text-base list-none text-black">
-                        <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[10%]"
+                        <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
                             data-tab-target="#placetostay" href="{{ route('welcome') }}">
                             Home
                         </a>
                     </li>
 
                     <li class="text-base list-none text-black">
-                        <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%]
-                        after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all
-                        after:duration-200 after:ease-in-out after:hover:w-[30%]" data-tab-target="#experiences"
+                        <a class="{{ request()->url() == route('all-listings') ? 'relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out' : 'nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]' }}"
                             href="{{ route('all-listings') }}">
                             Listings
                         </a>
                     </li>
                     @foreach ($categories as $category)
                     <li class="text-base list-none text-black">
-                        <a class="nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%]
-                        after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all
-                        after:duration-200 after:ease-in-out after:hover:w-[30%]" data-tab-target="#experiences"
-                            href="{{ route('listingbycategory',$category->id) }}">
+                        <a class="{{ request()->url() == route('listingbycategory',$category->id) ? 'relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out' : 'nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]' }} "
+                            href=" {{ route('listingbycategory',$category->id) }}">
                             {{ $category->name }}
                         </a>
                     </li>
@@ -131,8 +127,8 @@
             content: url("{{ Storage::url($listing->image_three) }}")
         }
     </style>
-    <div class="top-20 container mt-8 max-w-6xl relative mx-auto grid justify-center items-center">
-        <span class="text-xl font-extrabold px-10">{{ $listing->title }}</span>
+    <div class="container top-20 relative mt-8 max-w-6xl  mx-auto flex flex-col">
+        <span class="text-3xl font-extrabold px-10">{{ $listing->title }}</span>
         <div class="flex w-full justify-between mx-auto px-10 mt-4">
             <div class="flex gap-2">
                 <div class="flex items-center gap-1">
@@ -222,21 +218,102 @@
                 </div>
             </div>
         </section>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-10 h-[35rem] border-b border-gray-300">
-            <div class="col-span-2  w-full  h-[400px] cursor-pointer">
-                <div class="flex items-center justify-between border-b pb-10 border-gray-200">
-                    <p class="text-xl font-extrabold">{{ $listing->title }} By <span
-                            class="underline decoration-rose-400">{{
-                            $listing->user->name }}</span> </p>
-                    <img class="h-12 w-12 rounded-full object-cover object-center"
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6  h-full border-b border-gray-300 mx-10">
+            <div class="lg:col-span-2  w-full  h-full cursor-pointer ">
+                <div class="flex items-center justify-between border-b pb-6 border-gray-300">
+                    <div class="flex flex-col">
+                        <p class="text-xl font-extrabold">{{ $listing->title }} By <span
+                                class="underline decoration-rose-400">{{
+                                $listing->user->name }}</span> </p>
+                        <span class="flex text-sm text-black pt-2 gap-4 items-center">
+
+                            <p>
+                                {{ $listing->created_at->format("d-m-Y") }}
+                            </p>
+                            <p> {{ $listing->created_at->diffForHumans() }}</p>
+
+
+                        </span>
+
+                    </div>
+                    <img class="h-14 w-14 rounded-full object-cover object-center"
                         src="{{ Storage::url($listing->user->profile_photo_path) }}" />
                 </div>
-                <div class="py-10 text-justify indent-10">
-                    {{ $listing->description }}
-                </div>
-            </div>
+                <div class="py-10  flex flex-col border-b border-gray-300 gap-6">
+                    <div class="flex items-center justify-center gap-4 font-semibold ">
 
-            <div class=" cursor-pointer col-span-1 h-[400px]">
+                        <lottie-player src="{{ asset('img/lf30_editor_4txkzap0.json') }}" background="transparent"
+                            class="w-12 h-12" speed="1" hover>
+                        </lottie-player>
+                        <span class="flex flex-col w-full">
+                            {{ $listing->price }} $
+                            <p class="text-sm opacity-50">
+                                You can ask the owner yourself
+                            </p>
+                        </span>
+
+                    </div>
+                    <div class="flex items-center justify-center gap-4 font-semibold">
+                        <lottie-player src="{{ asset('img/lf30_editor_vsvohelv.json') }}" background="transparent"
+                            class="w-12 h-12" speed="0.3" hover>
+                        </lottie-player>
+                        <span class="flex flex-col w-full">
+                            {{ $listing->country->name }}
+                            <p class="text-sm opacity-50">
+                                Country
+                            </p>
+                        </span>
+                    </div>
+                    <div class="flex items-center justify-center gap-4 font-semibold">
+                        <lottie-player src="{{ asset('img/lf30_editor_qzbgn1jg.json') }}" background="transparent"
+                            class="w-12 h-12" speed="0.3" hover>
+                        </lottie-player>
+                        <span class="flex flex-col w-full">
+                            {{ $listing->state->name }}
+                            <p class="text-sm opacity-50">
+                                State
+                            </p>
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-4 font-semibold">
+                        <lottie-player src="{{ asset('img/18-location-pin-outline-edited.json') }}"
+                            background="transparent" class="w-12 h-12" speed="1" hover>
+                        </lottie-player>
+                        <span class="flex flex-col w-full">
+                            {{ $listing->city->name }}
+                            <p class="text-sm opacity-50">
+                                City
+                            </p>
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-4 font-semibold">
+                        <lottie-player src="{{ asset('img/146-basket-trolley-shopping-card-outline-edited.json') }}"
+                            background="transparent" class="w-12 h-12" speed="1" hover>
+                        </lottie-player>
+                        <span class="flex flex-col w-full">
+                            {{ $listing->category->name }}
+                            <p class="text-sm opacity-50">
+                                Purchasing Type
+                            </p>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="py-4">
+                    <div class="text-lg pt-4 flex items-center gap-4 font-extrabold">About This Property
+                        <p class="text-sm font-thin text-gray-500">Type : {{
+                            $listing->subcategory->name }} , {{ $listing->childcategory->name }}</p>
+                    </div>
+
+                    <div class="py-4 text-justify indent-10 px-4">
+                        <p class="text-md font-medium">{{ $listing->description }}</p>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="cursor-pointer  w-full h-full">
                 <div class="shadow-lg rounded-lg border-[1px] border-gray-200 h-[22 rem] p-10">
                     <p class="flex items-center text-2xl font-extrabold">Contact To Owner</p>
                     <div class=" mt-6  max-w-xl sm:mx-auto">
@@ -278,7 +355,7 @@
 
             </div>
         </div>
-        <section class="mb-20 mt-10 px-10">
+        <section class=" px-10 mb-20">
             <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8">
                 <h2 class="text-xl font-bold sm:text-2xl">Customer Reviews</h2>
 
@@ -500,8 +577,8 @@
                 </div>
             </div>
         </section>
-    </div>
 
+    </div>
     <x-main-footer></x-main-footer>
     <script>
         //JS to switch slides and replace text in bar//

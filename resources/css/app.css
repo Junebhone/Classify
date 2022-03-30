@@ -115,64 +115,14 @@
 }
 
 .heart{
-    fill:white;
-    stroke:#ff385c;
-    stroke-width: 2px;
-    stroke-dasharray: 188;
-    stroke-dashoffset: 188;
+    fill:rgba(0,0,0,0.2);
+    stroke:white;
+    stroke-width: 3px;
 
     
     
 }
-.heart.like{
-    animation:  0.5s ease-in forwards like,0.5s linear 0.5s 2 forwards beat;
-}
-.heart.unlike{
-    animation:  0.5s ease-out forwards unlike;
-}
 
-@keyframes like{
-    0%{
-        stroke-dashoffset: 188;
-        fill: white;
-    }
-    70%{
-        stroke-dashoffset: 0;
-        fill: white;
-    }
-    100%{
-        stroke-dashoffset: 0;
-        fill: #ff385c;
-
-    }
-}
-
-@keyframes unlike{
-    0%{
-        stroke-dashoffset: 0;
-        fill: #ff385c;
-    }
-    70%{
-        stroke-dashoffset: 0;
-        fill: white;
-    }
-    100%{
-        stroke-dashoffset: 188;
-        fill: white;
-
-    }
-}
-@keyframes beat{
-    0%{
-        transform: scale(1,1);
-    }
-    50%{
-        transform: scale(0.9,0.9);
-    }
-    100%{
-        transform: scale(1,1);
-    }
-}
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;

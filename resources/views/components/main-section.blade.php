@@ -7,9 +7,9 @@
     @foreach ($subcategories as $subcategory)
     <!-- Card 1 -->
     <div class="">
-        <a href="">
-            <img src="{{ asset('storage/subcategories/' . $subcategory->image) }}"
-                class="rounded-xl w-full h-[200px]  object-cover object-center brightness-75 hover:brightness-100 hover:scale-105 transition-all transform-all" />
+        <a href="{{ route('listingbysubcategory',$subcategory->id) }}">
+            <img src=" {{ asset('storage/subcategories/' . $subcategory->image) }}" class="rounded-xl w-full h-[200px] object-cover object-center brightness-75 hover:brightness-100
+            hover:scale-105 transition-all transform-all" />
         </a>
         <p
             class="text-base -translate-y-10 capitalize underline decoration-rose-500 text-white font-semibold sm:text-xl translate-x-3">

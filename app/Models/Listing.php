@@ -41,6 +41,10 @@ class Listing extends Model
     {
         return $this->belongsTo(SubCategory::class, 'sub_category_id');
     }
+    public function childcategory()
+    {
+        return $this->belongsTo(ChildCategory::class, 'child_category_id');
+    }
 
     public function country()
     {
