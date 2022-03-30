@@ -15,7 +15,7 @@ class MainSection extends Component
      */
     public function render()
     {
-        $subcategories = SubCategory::inRandomOrder()->limit(4)->get();
+        $subcategories = SubCategory::all()->take(4);
         return view('components.main-section', compact('subcategories'));
     }
 }

@@ -239,11 +239,11 @@
                     <img class="h-14 w-14 rounded-full object-cover object-center"
                         src="{{ Storage::url($listing->user->profile_photo_path) }}" />
                 </div>
-                <div class="py-10  flex flex-col border-b border-gray-300 gap-6">
+                <div class="py-10 grid grid-cols-1  sm:grid-cols-2 border-b border-gray-300 gap-6">
                     <div class="flex items-center justify-center gap-4 font-semibold ">
 
-                        <lottie-player src="{{ asset('img/lf30_editor_4txkzap0.json') }}" background="transparent"
-                            class="w-12 h-12" speed="1" hover>
+                        <lottie-player src="{{ asset('img/price.json') }}" background="transparent" class="w-12 h-12"
+                            speed="1" hover>
                         </lottie-player>
                         <span class="flex flex-col w-full">
                             {{ $listing->price }} $
@@ -254,8 +254,8 @@
 
                     </div>
                     <div class="flex items-center justify-center gap-4 font-semibold">
-                        <lottie-player src="{{ asset('img/lf30_editor_vsvohelv.json') }}" background="transparent"
-                            class="w-12 h-12" speed="0.3" hover>
+                        <lottie-player src="{{ asset('img/world.json') }}" background="transparent" class="w-12 h-12"
+                            speed="0.3" hover>
                         </lottie-player>
                         <span class="flex flex-col w-full">
                             {{ $listing->country->name }}
@@ -265,8 +265,8 @@
                         </span>
                     </div>
                     <div class="flex items-center justify-center gap-4 font-semibold">
-                        <lottie-player src="{{ asset('img/lf30_editor_qzbgn1jg.json') }}" background="transparent"
-                            class="w-12 h-12" speed="1" hover>
+                        <lottie-player src="{{ asset('img/city.json') }}" background="transparent" class="w-12 h-12"
+                            speed="1" hover>
                         </lottie-player>
                         <span class="flex flex-col w-full">
                             {{ $listing->state->name }}
@@ -276,8 +276,8 @@
                         </span>
                     </div>
                     <div class="flex items-center gap-4 font-semibold">
-                        <lottie-player src="{{ asset('img/18-location-pin-outline-edited.json') }}"
-                            background="transparent" class="w-12 h-12" speed="1" hover>
+                        <lottie-player src="{{ asset('img/location.json') }}" background="transparent" class="w-12 h-12"
+                            speed="1" hover>
                         </lottie-player>
                         <span class="flex flex-col w-full">
                             {{ $listing->city->name }}
@@ -287,8 +287,8 @@
                         </span>
                     </div>
                     <div class="flex items-center gap-4 font-semibold">
-                        <lottie-player src="{{ asset('img/146-basket-trolley-shopping-card-outline-edited.json') }}"
-                            background="transparent" class="w-12 h-12" speed="1" hover>
+                        <lottie-player src="{{ asset('img/shop.json') }}" background="transparent" class="w-12 h-12"
+                            speed="1" hover>
                         </lottie-player>
                         <span class="flex flex-col w-full">
                             {{ $listing->category->name }}
@@ -296,6 +296,64 @@
                                 Purchasing Type
                             </p>
                         </span>
+                    </div>
+                    <div class="flex items-center gap-4 font-semibold">
+                        <lottie-player src="{{ asset('img/hand.json') }}" background="transparent" class="w-12 h-12"
+                            speed="1" hover>
+                        </lottie-player>
+                        <span class="flex flex-col w-full capitalize">
+                            {{ $listing->price_negotiable }}
+                            <p class="text-sm opacity-50">
+                                Price Negotiable
+                            </p>
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-4 font-semibold">
+                        <lottie-player src="{{ asset('img/phone.json') }}" background="transparent" class="w-12 h-12"
+                            speed="0.5" hover>
+                        </lottie-player>
+                        <span class="flex flex-col w-full capitalize">
+                            {{ $listing->phone_number }}
+                            <p class="text-sm opacity-50">
+                                Contact Phone Number
+                            </p>
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-4 font-semibold">
+                        <lottie-player src="{{ asset('img/check.json') }}" background="transparent" class="w-12 h-12"
+                            speed="2" hover>
+                        </lottie-player>
+                        <span class="flex flex-col w-full capitalize">
+                            {{ $listing->condition }}
+                            <p class="text-sm opacity-50">
+                                Contact Phone Number
+                            </p>
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-4 font-semibold">
+                        <lottie-player src="{{ asset('img/mail.json') }}" background="transparent" class="w-12 h-12"
+                            speed="2" hover>
+                        </lottie-player>
+                        <span class="flex flex-col w-full ">
+                            {{ $listing->user->email}}
+                            <p class="text-sm opacity-50">
+                                Online Contact
+                            </p>
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-4 font-semibold">
+                        <lottie-player src="{{ asset('img/info.json') }}" background="transparent" class="w-12 h-12"
+                            speed="2" hover>
+                        </lottie-player>
+                        <div class="flex flex-col w-full capitalize">
+                            <span class="flex gap-2">
+                                <p> {{ $listing->subcategory->name }}</p>,
+                                <p>{{ $listing->childcategory->name }}</p>
+                            </span>
+                            <p class="text-sm opacity-50">
+                                Information
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -310,6 +368,7 @@
 
                     </div>
                 </div>
+
 
 
             </div>

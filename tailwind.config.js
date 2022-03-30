@@ -32,6 +32,8 @@ module.exports = {
                 TextSecondary: "black",
                 Primary: "#212529",
                 Rose:"#FF385C",
+                Rose:"#FF385C",
+                Rose:"#FF385C",
                 'black-rgba':"rgba(0, 0, 0, 0.2)",
 
               },

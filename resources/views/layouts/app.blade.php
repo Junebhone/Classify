@@ -62,7 +62,7 @@
                 </x-app-link>
                 @role('admin')
                 <x-app-link href="{{ route('admin.index') }}" :active="request()->routeIs('admin.index')">Admin
-                    Dashboard   
+                    Dashboard
                 </x-app-link>
                 @endrole
                 @auth
@@ -125,6 +125,46 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <x-main-alert></x-main-alert>
     <x-main-file></x-main-file>
+    <script>
+        $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: true
+    })
+
+    swalWithBootstrapButtons.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Yes, delete it!',
+  cancelButtonText: 'No, cancel!',
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  reverseButtons: true
+    }).then((result) => {
+  if (result.isConfirmed) {
+    form.submit();
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire(
+      'Cancelled',
+      'Your record is safe :)',
+      'error'
+    )
+  }
+})
+      });
+
+    </script>
 
 </body>
 

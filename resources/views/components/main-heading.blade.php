@@ -126,18 +126,7 @@
                 </li>
             </ul>
             <div class="flex ml-auto gap-2">
-                <button
-                    class="flex border-[2px] border-black items-center justify-center gap-2 rounded-full w-[120px] h-[40px]"
-                    type="submit">
-                    Anytime
-                    <i class="fa-solid fa-angle-down"></i>
-                </button>
-                <button
-                    class="flex border-[2px] border-gray-400 hover:border-black items-center justify-center gap-2 rounded-full w-[120px] h-[40px]"
-                    type="submit">
-                    Gusts
-                    <i class="fa-solid fa-angle-down"></i>
-                </button>
+
                 <button
                     class="flex border-[2px] border-gray-400 hover:border-black items-center justify-center gap-2 rounded-full w-[120px] h-[40px]"
                     type="submit">
