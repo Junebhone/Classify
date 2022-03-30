@@ -143,7 +143,6 @@
                     type="submit">
                     <i class="fa-solid fa-sliders"></i>
                     Filter
-
                 </button>
             </div>
         </div>
