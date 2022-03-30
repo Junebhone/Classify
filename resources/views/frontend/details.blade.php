@@ -266,7 +266,7 @@
                     </div>
                     <div class="flex items-center justify-center gap-4 font-semibold">
                         <lottie-player src="{{ asset('img/lf30_editor_qzbgn1jg.json') }}" background="transparent"
-                            class="w-12 h-12" speed="0.3" hover>
+                            class="w-12 h-12" speed="1" hover>
                         </lottie-player>
                         <span class="flex flex-col w-full">
                             {{ $listing->state->name }}
