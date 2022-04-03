@@ -326,7 +326,7 @@
                         <span class="flex flex-col w-full capitalize">
                             {{ $listing->condition }}
                             <p class="text-sm opacity-50">
-                                Contact Phone Number
+                                Condition
                             </p>
                         </span>
                     </div>
@@ -358,7 +358,7 @@
                 </div>
 
                 <div class="py-4">
-                    <div class="text-lg pt-4 flex items-center gap-4 font-extrabold">About This Property
+                    <div class="text-lg  p-4 flex flex-wrap items-center gap-4 font-extrabold">About This Property
                         <p class="text-sm font-thin text-gray-500">Type : {{
                             $listing->subcategory->name }} , {{ $listing->childcategory->name }}</p>
                     </div>
