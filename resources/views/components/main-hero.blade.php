@@ -64,9 +64,9 @@
     </div>
 </header> --}}
 <div class="flex items-center relative justify-center bg-black w-full py-20 text-center">
-    <div class="w-[95rem] h-[40rem] sm:h-[50rem] p-10 shadow-md rounded-2xl">
+    <div class="w-full flex justify-center  h-full p-10 py-12 shadow-md rounded-2xl">
         <img src="{{ asset('img/23b047cd-19c9-42c0-a83b-2f4f6f25717b.webp') }}"
-            class="rounded-2xl w-full h-full object-cover object-center">
+            class="rounded-2xl w-[95rem] h-[50rem] object-cover object-center">
     </div>
     <div class="w-3/4 flex flex-col items-center bottom-40 gap-5 justify-center absolute">
         <span class="text-white text-2xl md:text-5xl sm:text-3xl">Let your curiosity do the searching</span>

@@ -4,6 +4,8 @@ namespace App\View\Components;
 
 use App\Models\Listing;
 use Illuminate\View\Component;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class MainListing extends Component
 {
@@ -24,7 +26,15 @@ class MainListing extends Component
      */
     public function render()
     {
-        $listings = Listing::all();
+
+        $listings = QueryBuilder::for(Listing::class)
+            ->allowedFilters([
+                'title',
+                AllowedFilter::exact('country_id'),
+                AllowedFilter::exact('category_id'),
+                // AllowedFilter::scope('max_price'),
+            ])
+            ->get();
         return view('components.main-listing', compact('listings'));
     }
 }

@@ -44,45 +44,19 @@
         </main>
     </div>
 
+
+
+
     @stack('modals')
 
     @livewireScripts
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <script src="{{ mix('js/app.js') }}"></script>
     <x-main-swiper></x-main-swiper>
-
-
-    {{-- <script>
-        function filterResults(){
-            let href = 'all-listings?';
-            var title = document.getElementById("title").value;
-            var country = document.getElementById("country").value;
-            var category = document.getElementById("category").value;
-            var maxPrice = document.getElementById("maxPrice").value;
-            if(title.length){
-                href += 'filter[title]=' + title;
-
-            }
-            if(category.length){
-                
-                href +='&filter[category_id]=' + category
-            }
-
-            if(country.length){
-                
-                href +='&filter[country_id]=' + country
-            }
-            if(maxPrice.length){
-                href +='&filter[max_price]=' + maxPrice
-            }
-            document.location.href = href;
-        }
-        document.getElementById("filter").addEventListener("click",filterResults);
-    </script> --}}
-
 </body>
 
 </html>

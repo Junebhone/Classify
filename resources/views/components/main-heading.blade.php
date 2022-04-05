@@ -125,11 +125,14 @@
                     </button>
                 </li>
             </ul>
+
+            {{ $slot }}
+
             <div class="flex ml-auto gap-2">
 
                 <button
                     class="flex border-[2px] border-gray-400 hover:border-black items-center justify-center gap-2 rounded-full w-[120px] h-[40px]"
-                    type="submit">
+                    type="submit" id="delete-btn">
                     <i class="fa-solid fa-sliders"></i>
                     Filter
                 </button>
@@ -137,3 +140,298 @@
         </div>
     </nav>
 </div>
+
+<header id="form-filter">
+    <div class="w-full m-4 p-4">
+        <div class="flex items-center justify-center w-full h-full">
+            <div class="text-center">
+                <div class="border border-gray-300 p-6 grid grid-cols-1 gap-6 bg-white shadow-lg rounded-lg">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="grid grid-cols-2 gap-2 border border-gray-200 p-2 rounded">
+                                <div class="flex border rounded bg-gray-300 items-center p-2 ">
+                                    <svg class="fill-current text-gray-800 mr-2 w-5" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="24" height="24">
+                                        <path class="heroicon-ui"
+                                            d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z" />
+                                    </svg>
+                                    <input type="text" placeholder="Title..." name="title" id="title"
+                                        class="bg-gray-300 max-w-full focus:outline-none text-gray-700" />
+                                </div>
+                                <div class="flex border rounded bg-gray-300 items-center p-2 ">
+                                    <svg class="fill-current text-gray-800 mr-2 w-5" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="24" height="24">
+                                        <path class="heroicon-ui"
+                                            d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zM5.68 7.1A7.96 7.96 0 0 0 4.06 11H5a1 1 0 0 1 0 2h-.94a7.95 7.95 0 0 0 1.32 3.5A9.96 9.96 0 0 1 11 14.05V9a1 1 0 0 1 2 0v5.05a9.96 9.96 0 0 1 5.62 2.45 7.95 7.95 0 0 0 1.32-3.5H19a1 1 0 0 1 0-2h.94a7.96 7.96 0 0 0-1.62-3.9l-.66.66a1 1 0 1 1-1.42-1.42l.67-.66A7.96 7.96 0 0 0 13 4.06V5a1 1 0 0 1-2 0v-.94c-1.46.18-2.8.76-3.9 1.62l.66.66a1 1 0 0 1-1.42 1.42l-.66-.67zM6.71 18a7.97 7.97 0 0 0 10.58 0 7.97 7.97 0 0 0-10.58 0z" />
+                                    </svg>
+                                    <select class="bg-gray-300 w-full focus:outline-none text-gray-700" id="category">
+                                        <option selected value="">Categories</option>
+
+                                        @foreach (App\Models\Category::all() as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 border border-gray-200 p-2 rounded">
+                                <div class="flex border rounded bg-gray-300 items-center p-2 ">
+                                    <svg class="fill-current text-gray-800 mr-2 w-5" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="24" height="24">
+                                        <path class="heroicon-ui"
+                                            d="M14 5.62l-4 2v10.76l4-2V5.62zm2 0v10.76l4 2V7.62l-4-2zm-8 2l-4-2v10.76l4 2V7.62zm7 10.5L9.45 20.9a1 1 0 0 1-.9 0l-6-3A1 1 0 0 1 2 17V4a1 1 0 0 1 1.45-.9L9 5.89l5.55-2.77a1 1 0 0 1 .9 0l6 3A1 1 0 0 1 22 7v13a1 1 0 0 1-1.45.89L15 18.12z" />
+                                    </svg>
+                                    <select class="bg-gray-300 w-full focus:outline-none text-gray-700" id="country">
+                                        <option selected value="">Countries</option>
+                                        @foreach (App\Models\Country::all() as $country)
+                                        <option value="{{ $country->id }}">{{ $country->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="flex border rounded bg-gray-300 items-center p-2 ">
+                                    <svg class="fill-current text-gray-800 mr-2 w-5" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="24" height="24">
+                                        <path class="heroicon-ui"
+                                            d="M13.04 14.69l1.07-2.14a1 1 0 0 1 1.2-.5l6 2A1 1 0 0 1 22 15v5a2 2 0 0 1-2 2h-2A16 16 0 0 1 2 6V4c0-1.1.9-2 2-2h5a1 1 0 0 1 .95.68l2 6a1 1 0 0 1-.5 1.21L9.3 10.96a10.05 10.05 0 0 0 3.73 3.73zM8.28 4H4v2a14 14 0 0 0 14 14h2v-4.28l-4.5-1.5-1.12 2.26a1 1 0 0 1-1.3.46 12.04 12.04 0 0 1-6.02-6.01 1 1 0 0 1 .46-1.3l2.26-1.14L8.28 4zm7.43 5.7a1 1 0 1 1-1.42-1.4L18.6 4H16a1 1 0 0 1 0-2h5a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V5.41l-4.3 4.3z" />
+                                    </svg>
+                                    <input type="text" id="maxPrice" name="maxPrice" placeholder="Max Price..."
+                                        class="bg-gray-300 max-w-full focus:outline-none text-gray-700" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center">
+                            <button type="button" id="filter"
+                                class="p-2 border w-1/4 rounded-md bg-gray-800 text-white">Filter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="overlay-container">
+    <div class="bg-black bg-opacity-50 absolute inset-0 hidden justify-center items-center z-50 px-4" id="overlay">
+        <div class=" relative w-screen max-w-lg mx-auto overflow-auto bg-white divide-y divide-gray-100 rounded-lg
+            shadow-2xl" role="dialog" aria-label="Filters">
+            <form id="form-filter">
+                <header class="p-6 text-center flex items-center justify-between">
+                    <p class="text-lg font-medium">Search Listing</p>
+                    <svg class="h-8 w-8 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="close-modal"
+                        fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </header>
+                <main id="form-filter" class="flow-root p-6 overflow-y-auto h-[40rem]">
+                    <div class="-my-8 divide-y divide-gray-100">
+                        <div class="flex border rounded bg-gray-300 items-center p-2 ">
+                            <svg class="fill-current text-gray-800 mr-2 w-5" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" width="24" height="24">
+                                <path class="heroicon-ui"
+                                    d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z" />
+                            </svg>
+                            <input type="text" placeholder="Title..." name="title" id="title"
+                                class="bg-gray-300 max-w-full focus:outline-none text-gray-700" />
+                        </div>
+                        <div class="py-8">
+                            <fieldset>
+                                <legend class="text-xl font-medium">Categories</legend>
+
+                                <div class="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-2">
+                                    <select
+                                        class="border-gray-300 focus:border-[#FF385C]
+                                        focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm"
+                                        id="category">
+                                        @foreach (App\Models\Category::all() as $category )
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="py-8">
+                            <fieldset>
+                                <legend class="text-xl font-medium">Countries</legend>
+
+                                <div class="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-2">
+                                    <select
+                                        class="border-gray-300 focus:border-[#FF385C]
+                                        focus:ring focus:ring-red-300 focus:ring-opacity-50 rounded-md shadow-sm flex-1 block w-full sm:text-sm"
+                                        id="country">
+                                        @foreach (App\Models\Country::all() as $country )
+                                        <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        {{-- <div class="py-8">
+                            <fieldset>
+                                <legend class="text-xl font-medium">Universities</legend>
+
+                                <ul class="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-2">
+                                    <li>
+                                        <label class="flex items-center text-sm">
+                                            <input type="checkbox" class="w-6 h-6 border border-gray-200 rounded-md" />
+                                            <span class="ml-3 font-medium">Aston University</span>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="flex items-center text-sm">
+                                            <input type="checkbox" class="w-6 h-6 border border-gray-200 rounded-md" />
+                                            <span class="ml-3 font-medium">Bangor University</span>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="flex items-center text-sm">
+                                            <input type="checkbox" class="w-6 h-6 border border-gray-200 rounded-md" />
+                                            <span class="ml-3 font-medium">Brunel University London</span>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="flex items-center text-sm">
+                                            <input type="checkbox" class="w-6 h-6 border border-gray-200 rounded-md" />
+                                            <span class="ml-3 font-medium">Glyndwr University</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+
+                            <button class="inline-flex items-center mt-6 text-sm font-medium text-gray-600 underline"
+                                type="button">
+                                Show all universities
+
+                                <svg class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="py-8">
+                            <fieldset>
+                                <legend class="text-xl font-medium">Commitment</legend>
+
+                                <ul class="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-2">
+                                    <li>
+                                        <label class="flex items-center text-sm">
+                                            <input type="checkbox" class="w-6 h-6 border border-gray-200 rounded-md" />
+                                            <span class="ml-3 font-medium">Full Time</span>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="flex items-center text-sm">
+                                            <input type="checkbox" class="w-6 h-6 border border-gray-200 rounded-md" />
+                                            <span class="ml-3 font-medium">Part Time</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </div>
+
+                        <div class="py-8">
+                            <fieldset>
+                                <legend class="text-xl font-medium">University Rating</legend>
+
+                                <ul class="grid grid-cols-1 gap-4 mt-6 sm:grid-cols-2">
+                                    <li>
+                                        <label class="flex items-center text-sm">
+                                            <input type="checkbox" class="w-6 h-6 border border-gray-200 rounded-md" />
+                                            <span class="ml-3 font-medium">Rated 1+</span>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="flex items-center text-sm">
+                                            <input type="checkbox" class="w-6 h-6 border border-gray-200 rounded-md" />
+                                            <span class="ml-3 font-medium">Rated 2+</span>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="flex items-center text-sm">
+                                            <input type="checkbox" class="w-6 h-6 border border-gray-200 rounded-md" />
+                                            <span class="ml-3 font-medium">Rated 3+</span>
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="flex items-center text-sm">
+                                            <input type="checkbox" class="w-6 h-6 border border-gray-200 rounded-md" />
+                                            <span class="ml-3 font-medium">Rated 4+</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </div> --}}
+                    </div>
+                </main>
+                <footer class="flex items-center justify-between p-6">
+                    <button class="text-sm font-medium text-gray-600 underline" type="button">Clear all</button>
+                    <button type="submit" id="filter"
+                        class="p-2 border w-1/4 rounded-md bg-gray-800 text-white">Filter</button>
+                </footer>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () =>{
+        const overlay = document.querySelector('#overlay')
+        const delBtn = document.querySelector('#delete-btn')
+        const closeBtn = document.querySelector('#close-modal')
+
+        const toggleModal = () => {
+            overlay.classList.toggle('hidden')
+            overlay.classList.toggle('flex')
+        }
+
+        delBtn.addEventListener('click', toggleModal)
+
+        closeBtn.addEventListener('click', toggleModal)
+    })
+
+
+
+   
+    function filterResults(){
+            let href = 'all-listings?';
+            var title = document.getElementById("title").value;
+            var country = document.getElementById("country").value;
+            var category = document.getElementById("category").value;
+            var maxPrice = document.getElementById("maxPrice").value;
+            if(title.length){
+                href += 'filter[title]=' + title;
+            }
+            if(category.length){
+                href +='&filter[category_id]=' + category
+            }
+
+            if(country.length){
+                
+                href +='&filter[country_id]=' + country
+            }
+            if(maxPrice.length){
+                href +='&filter[max_price]=' + maxPrice
+            }
+            document.location.href = href;
+        }
+        document.getElementById("filter").addEventListener("click",filterResults);
+</script>

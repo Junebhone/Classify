@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-black leading-tight">
-            {{ __('My Listing') }}
+            {{ __('All Listing') }}
         </h2>
     </x-slot>
     <div class="container mx-auto overflow-auto">
@@ -36,7 +36,7 @@
                                 </svg>
                             </span>
                         </div>
-                        <a href="{{ route('listings.create') }}"
+                        <a href="{{ route('admin.listings.create') }}"
                             class="text-black flex py-4 justify-center items-center">
                             <span class="text-black hover:underline">New Listing</span>
                             <lottie-player src="{{ asset('img/AddCate.json') }}" background="transparent" speed="1"
@@ -101,12 +101,13 @@
                                                 </lottie-player>
                                                 Edit
                                             </a>
-                                            <form method="POST" action="{{ route('listings.destroy',$listing->id) }}">
+                                            <form method="POST"
+                                                action="{{ route('admin.listings.destroy',$listing->id) }}">
                                                 @csrf
                                                 @method('DELETE')
                                                 <a class="flex  items-center text-black hover:underline "
                                                     aria-details="JOJO"
-                                                    href="{{ route('listings.destroy',$listing->id) }}" onclick="event.preventDefault();
+                                                    href="{{ route('admin.listings.destroy',$listing->id) }}" onclick="event.preventDefault();
                                                         this.closest('form').submit();">
 
                                                     <lottie-player

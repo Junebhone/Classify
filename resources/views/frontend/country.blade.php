@@ -1,5 +1,12 @@
 <x-main-layout>
-    <x-main-heading></x-main-heading>
+    <x-main-heading>
+
+        {{ $country->name }}
+
+    </x-main-heading>
+    <div>
+        {{ $country->name }}
+    </div>
     <div
         class="product-listing mt-4 container pb-20 relative mx-auto overflow-x-hidden grid justify-center items-center
                        xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 gap-y-14 px-6 sm:px-0">
@@ -57,7 +64,7 @@
             </lottie-player>
         </div>
         <div class="col-span-full flex justify-center  items-center text-xl  font-extrabold">
-            No Data Found For {{ $country->name }}
+            No Listing Found
         </div>
         @endforelse
     </div>

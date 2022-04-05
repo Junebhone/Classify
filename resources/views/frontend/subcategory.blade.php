@@ -57,7 +57,7 @@
             </lottie-player>
         </div>
         <div class="col-span-full flex justify-center  items-center text-xl  font-extrabold">
-            No Data Found For {{ $subcategory->name }}
+            No Data Found
         </div>
         @endforelse
     </div>

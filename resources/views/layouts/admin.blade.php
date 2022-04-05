@@ -53,7 +53,8 @@
             </div>
             <nav :class="{'block': open, 'hidden': !open}"
                 class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">
-                <x-app-link href="{{ route('listings.create') }}" :active="request()->routeIs('listings.create')">New
+                <x-app-link href="{{ route('admin.listings.create') }}" :active="request()->routeIs('listings.create')">
+                    New
                     Listing
                 </x-app-link>
                 <x-app-link href="{{ route('admin.listings.index') }}"

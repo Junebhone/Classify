@@ -16,14 +16,7 @@ class ListingController extends Controller
     public function index()
     {
 
-        // $listings = QueryBuilder::for(Listing::class)
-        //     ->allowedFilters([
-        //         'title',
-        //         AllowedFilter::exact('country_id'),
-        //         AllowedFilter::exact('category_id'),
-        //         AllowedFilter::scope('max_price'),
-        //     ])
-        //     ->get();
+
         return view('frontend.all-listings');
     }
     public function welcome()
