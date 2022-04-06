@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Country;
 use App\Models\Listing;
 use App\Models\SubCategory;
@@ -14,6 +15,7 @@ class ListingByCountry extends Controller
 
         $listings = Listing::where("country_id", $id)->latest()->get();
         $country = Country::where("id", $id)->first();
-        return view('frontend.country', compact('listings', 'country'));
+        $categories = Category::all();
+        return view('frontend.country', compact('listings', 'country', 'categories'));
     }
 }

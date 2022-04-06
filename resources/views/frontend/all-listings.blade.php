@@ -22,7 +22,10 @@
 
 <body
     class="font-sans antialiased scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent scrollbar-track-radius-[100%]  overflow-y-scroll">
-    <x-main-heading></x-main-heading>
+    <x-main-heading>
+        <x-main-subcategory></x-main-subcategory>
+        <x-main-filter></x-main-filter>
+    </x-main-heading>
     <x-main-listing></x-main-listing>
     <x-main-footer></x-main-footer>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

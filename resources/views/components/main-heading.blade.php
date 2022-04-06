@@ -41,7 +41,10 @@
                 @endforeach
             </ul>
             <div class="flex items-center relative justify-center gap-1">
-
+                <h1
+                    class="px-2 sm:flex hidden justify-start font-[Hind Siligurie] text-white text-xl font-sans text-center tracking-widest cursor-pointer">
+                    Estify
+                </h1>
                 <div class="menu-toggle flex cursor-pointer items-center justify-center gap-5 w-12 h-12 overflow-hidden rounded-full shadow-lg"
                     id="menu-toggle">
 
@@ -107,36 +110,9 @@
             </div>
         </nav>
     </div>
-    <nav class="listing-nav-bar overflow-x-hidden w-full h-20 flex items-center bg-white z-10 px-10 shadow-md">
+    <nav class="listing-nav-bar overflow-x-hidden w-full h-20 flex  items-center bg-white z-10 px-10 shadow-md">
         <div class="flex items-center w-full mx-auto">
-            <ul class="ul-list flex gap-6 text-TextSecondary h-20 items-center transition-all duration-150 ease-linear">
-                @foreach ($subcategories as $subcategory )
-                <li
-                    class="{{ request()->url() == route('listingbysubcategory',$subcategory->id) ? 'nav-list relative h-14 gap-2 flex flex-row justify-center items-center border-b-2 border-black transition-all duration-300 ease-linear' : '' }}">
-                    <a class="" href="{{ route('listingbysubcategory',$subcategory->id) }}">
-                        {{ $subcategory->name }}
-                    </a>
-                </li>
-                @endforeach
-                <li
-                    class="nav-list relative h-14 flex flex-col justify-center text-gray-400 transition-all duration-200 ease-linear">
-                    <button class="flex items-center gap-2" type="submit">
-                        More <i class="fa-solid fa-angle-down text-xs"></i>
-                    </button>
-                </li>
-            </ul>
-
             {{ $slot }}
-
-            <div class="flex ml-auto gap-2">
-
-                <button
-                    class="flex border-[2px] border-gray-400 hover:border-black items-center justify-center gap-2 rounded-full w-[120px] h-[40px]"
-                    type="submit" id="delete-btn">
-                    <i class="fa-solid fa-sliders"></i>
-                    Filter
-                </button>
-            </div>
         </div>
     </nav>
 </div>

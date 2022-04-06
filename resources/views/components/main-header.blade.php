@@ -19,7 +19,7 @@
 
             <ul class="flex items-center justify-center gap-4">
                 <li class="text-base list-none text-TextPrimary">
-                    <a class="nav-link Logo relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
+                    <a class="nav-link Logo  relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]"
                         data-tab-target="#placetostay" href="{{ route('welcome') }}">
                         Home
                     </a>
@@ -40,6 +40,10 @@
                 @endforeach
             </ul>
             <div class="flex items-center relative justify-center gap-1">
+                <h1
+                    class="px-2 Logo justify-start invisible sm:flex font-[Hind Siligurie] text-white text-xl font-sans text-center tracking-widest cursor-pointer">
+                    Estify
+                </h1>
                 <div class="menu-toggle flex cursor-pointer items-center justify-center gap-5 w-12 h-12 overflow-hidden rounded-full shadow-lg"
                     id="menu-toggle">
 
