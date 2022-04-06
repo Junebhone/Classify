@@ -1,7 +1,7 @@
 <x-main-layout>
     <div class="bg-white flex flex-col">
-        <div class="h-20 bg-white fixed w-full listing-navigation shadow-md flex items-center z-50 px-6">
-            <nav class=" container mx-auto flex py-4 justify-between items-center bg-white z-50">
+        <div class="h-20 bg-white fixed w-full listing-navigation shadow-md flex items-center z-50 px-10">
+            <nav class="w-full  mx-auto flex py-4  justify-between items-center bg-white z-50">
                 <a class="flex justify-center items-center" href="{{ route('welcome') }}">
                     <svg class="w-10 h-10 " viewBox="0 0 364 373" fill="none" xmlns="http://www.w3.org/2000/svg%22%3E">
                         <path
@@ -127,7 +127,7 @@
             content: url("{{ Storage::url($listing->image_three) }}")
         }
     </style>
-    <div class="container top-20 relative mt-8 max-w-6xl  mx-auto flex flex-col">
+    <div class="top-20 relative mt-8 max-w-6xl  mx-auto flex flex-col">
         <span class="text-3xl font-extrabold px-10">{{ $listing->title }}</span>
         <div class="flex w-full justify-between mx-auto px-10 mt-4">
             <div class="flex gap-2">

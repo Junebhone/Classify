@@ -1,6 +1,6 @@
 <div class="bg-white flex flex-col">
-    <div class="h-20 listing-navigation border-b-2 border-gray-200 flex items-center z-50 px-6">
-        <nav class=" container mx-auto flex py-4 justify-between items-center bg-white z-50">
+    <div class="h-20 listing-navigation border-b-2 border-gray-200 flex items-center z-50">
+        <nav class="w-full mx-auto flex py-4 justify-between items-center bg-white z-50 px-10">
             <a class="flex justify-center items-center" href="{{ route('welcome') }}">
                 <svg class="w-10 h-10 " viewBox="0 0 364 373" fill="none" xmlns="http://www.w3.org/2000/svg%22%3E">
                     <path
@@ -107,8 +107,8 @@
             </div>
         </nav>
     </div>
-    <nav class="listing-nav-bar overflow-x-hidden w-full h-20 flex items-center bg-white z-10 px-6 shadow-md">
-        <div class="flex items-center container mx-auto">
+    <nav class="listing-nav-bar overflow-x-hidden w-full h-20 flex items-center bg-white z-10 px-10 shadow-md">
+        <div class="flex items-center w-full mx-auto">
             <ul class="ul-list flex gap-6 text-TextSecondary h-20 items-center transition-all duration-150 ease-linear">
                 @foreach ($subcategories as $subcategory )
                 <li

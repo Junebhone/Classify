@@ -1,12 +1,18 @@
 <x-main-layout>
     <x-main-heading>
 
-        {{ $country->name }}
 
+        <div class="w-full flex  justify-center items-center">
+            <div class=" py-3 px-6 flex items-center rounded-full border border-gray-300 shadow-sm  gap-5">
+                <div class="border-r-[1px] pr-5 border-gray-300">
+                    <p class="text-lg font-semibold">Countries</p>
+                </div>
+                <div class="border-b-2 border-Rose">
+                    <p class="text-lg font-semibold">{{ $country->name }}</p>
+                </div>
+            </div>
+        </div>
     </x-main-heading>
-    <div>
-        {{ $country->name }}
-    </div>
     <div
         class="product-listing mt-4 container pb-20 relative mx-auto overflow-x-hidden grid justify-center items-center
                        xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 gap-y-14 px-6 sm:px-0">
