@@ -125,7 +125,7 @@
             <form id="form-filter" class="py-10">
                 <header class="px-10 pb-10 text-center flex items-center justify-between">
                     <p class="text-2xl font-medium">Filter Listing</p>
-                    <svg class="h-8 w-8 cursor-pointer p-1 hover:bg-gray-300 rounded-full" id="close-modal"
+                    <svg class="h-8 w-8 cursor-pointer p-1 hover:bg-gray-100 rounded-full" id="close-modal"
                         fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd"
                             d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -168,14 +168,7 @@
                     </select>
 
 
-                    <div class="relative">
-                        <input type="text" placeholder="Title..." name="title" id="title" placeholder="name@example.com"
-                            autocomplete="off"
-                            class="peer pt-8 border border-black focus:outline-none rounded-md focus:border-[#FF385C] focus:ring focus:ring-rose-400 focus:ring-opacity-40 focus:shadow-sm w-full p-3 h-16 placeholder-transparent" />
 
-                        <label for="Title"
-                            class="peer-placeholder-shown:opacity-100 text-sm  opacity-75 peer-focus:opacity-75 peer-placeholder-shown:scale-100 scale-75 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 -translate-y-3 peer-focus:-translate-y-3 peer-placeholder-shown:translate-x-0 translate-x-1 peer-focus:translate-x-1 absolute top-0 left-0 px-3 py-5 h-full pointer-events-none transform origin-left transition-all duration-100 ease-in-out">Name</label>
-                    </div>
                     <div class="relative">
                         <input type="text" id="maxPrice" name="maxPrice" placeholder="Max Price..." autocomplete="off"
                             class="peer pt-8 border border-black focus:outline-none rounded-md focus:border-[#FF385C] focus:ring focus:ring-rose-400 focus:ring-opacity-40 focus:shadow-sm w-full p-3 h-16 placeholder-transparent" />
@@ -188,7 +181,7 @@
 
                     <div>
                         <button type="button" id="filter"
-                            class="flex w-full rounded-md justify-center items-center text-white bg-Rose p-3">Filter</button>
+                            class="flex w-full rounded-md justify-center items-center text-white bg-Rose hover:bg-rose-600 p-3">Filter</button>
                     </div>
                 </main>
 
