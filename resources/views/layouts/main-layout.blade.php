@@ -23,7 +23,7 @@
 </head>
 
 <body
-    class="font-sans antialiased scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent scrollbar-track-radius-[100%]  overflow-y-scroll">
+    class="font-sans antialiased  scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent scrollbar-track-radius-[100%]  overflow-y-scroll">
     <x-jet-banner />
 
     <div class="min-h-screen  bg-white">
@@ -41,6 +41,8 @@
         <!-- Page Content -->
         <main>
             {{ $slot }}
+
+
         </main>
     </div>
 
@@ -57,6 +59,34 @@
 
     <script src="{{ mix('js/app.js') }}"></script>
     <x-main-swiper></x-main-swiper>
+    <script>
+        function filterResults(){
+
+             window.history.pushState("object or string", "Title", "/all-listings");
+
+            let href = 'all-listings?';
+            var title = document.getElementById("title").value;
+            var country = document.getElementById("country").value;
+            var category = document.getElementById("category").value;
+            var maxPrice = document.getElementById("maxPrice").value;
+            if(title.length){
+                href += 'filter[title]=' + title;
+            }
+            if(category.length){
+                href +='&filter[category_id]=' + category
+            }
+
+            if(country.length){
+                
+                href +='&filter[country_id]=' + country
+            }
+            if(maxPrice.length){
+                href +='&filter[max_price]=' + maxPrice
+            }
+            document.location.href = href;
+        }
+        document.getElementById("filter").addEventListener("click",filterResults);
+    </script>
 </body>
 
 </html>

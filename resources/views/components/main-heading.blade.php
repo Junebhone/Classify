@@ -25,6 +25,7 @@
                     </a>
                 </li>
 
+
                 <li class="text-base list-none text-black">
                     <a class="{{ request()->url() == route('all-listings') ? 'relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[30%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out' : 'nav-link relative after:absolute after:bottom-[-0.8em] after:left-[50%] after:h-[2px] after:w-[0] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-Rose after:transition-all after:duration-200 after:ease-in-out after:hover:w-[30%]' }}"
                         href="{{ route('all-listings') }}">
@@ -40,11 +41,13 @@
                 </li>
                 @endforeach
             </ul>
-            <div class="flex items-center relative justify-center gap-1">
-                <h1
-                    class="px-2 sm:flex hidden justify-start font-[Hind Siligurie] text-white text-xl font-sans text-center tracking-widest cursor-pointer">
-                    Estify
-                </h1>
+            <div class="flex items-center relative justify-center gap-4">
+                <a href="{{ route('listings.create') }}">
+                    <h1
+                        class="px-2 sm:flex hidden justify-start font-[Hind Siligurie] text-white text-xl font-sans text-center tracking-widest cursor-pointer">
+                        Estify
+                    </h1>
+                </a>
                 <div class="menu-toggle flex cursor-pointer items-center justify-center gap-5 w-12 h-12 overflow-hidden rounded-full shadow-lg"
                     id="menu-toggle">
 
@@ -119,7 +122,8 @@
 
 
 <div class="overlay-container">
-    <div class="bg-black bg-opacity-50 absolute inset-0 hidden justify-center items-center z-50 px-4" id="overlay">
+    <div class="bg-black bg-opacity-50 fixed inset-0 hidden h-screen   justify-center items-center z-50 px-4"
+        id="overlay">
         <div class=" relative w-screen max-w-lg mx-auto overflow-auto bg-white divide-y divide-gray-100 rounded-lg
             shadow-2xl" role="dialog" aria-label="Filters">
             <form id="form-filter" class="py-10">
@@ -209,31 +213,4 @@
 
         closeBtn.addEventListener('click', toggleModal)
     })
-
-
-
-   
-    function filterResults(){
-            let href = 'all-listings?';
-            var title = document.getElementById("title").value;
-            var country = document.getElementById("country").value;
-            var category = document.getElementById("category").value;
-            var maxPrice = document.getElementById("maxPrice").value;
-            if(title.length){
-                href += 'filter[title]=' + title;
-            }
-            if(category.length){
-                href +='&filter[category_id]=' + category
-            }
-
-            if(country.length){
-                
-                href +='&filter[country_id]=' + country
-            }
-            if(maxPrice.length){
-                href +='&filter[max_price]=' + maxPrice
-            }
-            document.location.href = href;
-        }
-        document.getElementById("filter").addEventListener("click",filterResults);
 </script>

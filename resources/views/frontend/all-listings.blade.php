@@ -33,7 +33,7 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="{{ mix('js/app.js') }}"></script>
     <x-main-swiper></x-main-swiper>
-    {{-- <script>
+    <script>
         function filterResults(){
             let href = 'all-listings?';
             var title = document.getElementById("title").value;
@@ -59,7 +59,7 @@
             document.location.href = href;
         }
         document.getElementById("filter").addEventListener("click",filterResults);
-    </script> --}}
+    </script>
 
 </body>
 
