@@ -41,7 +41,7 @@
             </ul>
             <div class="flex items-center relative justify-center gap-1">
                 <h1
-                    class="px-2 Logo justify-start invisible sm:flex font-[Hind Siligurie] text-white text-xl font-sans text-center tracking-widest cursor-pointer">
+                    class="px-2 Logo hidden  invisible sm:flex font-[Hind Siligurie] text-white text-xl font-sans text-center tracking-widest cursor-pointer">
                     Estify
                 </h1>
                 <div class="menu-toggle flex cursor-pointer items-center justify-center gap-5 w-12 h-12 overflow-hidden rounded-full shadow-lg"

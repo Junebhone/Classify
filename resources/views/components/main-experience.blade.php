@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 sm:grid-cols-2   gap-6 w-full p-10">
+<div class="grid grid-cols-1 lg:grid-cols-2   gap-6 w-full p-10">
     <div class="col-span-full">
         <p class="text-xl sm:text-2xl text-gray-800 font-extrabold">Discover Estify Experiences</p>
     </div>
