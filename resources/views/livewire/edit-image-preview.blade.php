@@ -54,7 +54,7 @@
             <div class="file-select file-select-box">
                 @if ($imageOne)
                 <div class="imagePreview">
-                    <img class="w-28 h-28 rounded object-cover object-center relative z-50"
+                    <img class="w-[150px] h-[150px] rounded object-cover object-center relative z-50"
                         src="{{ $imageOne->temporaryUrl() }}">
                 </div>
                 @endif
@@ -73,7 +73,8 @@
             <div class="file-select file-select-box">
                 @if ($imageTwo)
                 <div class="imagePreview">
-                    <img class="w-28 h-28 rounded object-cover object-center" src="{{ $imageTwo->temporaryUrl() }}">
+                    <img class="w-[150px] h-[150px] rounded object-cover object-center relative z-50"
+                        src="{{ $imageTwo->temporaryUrl() }}">
                 </div>
                 @endif
                 <button class="file-upload-custom-btn flex justify-center items-center" id="imagebtn"><svg
@@ -92,7 +93,7 @@
             <div class="file-select file-select-box">
                 @if ($imageThree)
                 <div class="imagePreview z-10">
-                    <img class="w-28 h-28 rounded object-cover object-center z-50"
+                    <img class="w-[150px] h-[150px] rounded object-cover object-center relative z-50"
                         src="{{ $imageThree->temporaryUrl() }}">
                 </div>
                 @endif
@@ -103,7 +104,8 @@
                     </svg></button>
                 @if ($imageThree)
                 <div class="m-2 p-2">
-                    <img class="w-28 h-28 rounded" src="{{ $imageThree->temporaryUrl() }}">
+                    <img class="w-[150px] h-[150px] rounded object-cover object-center relative z-50"
+                        src="{{ $imageThree->temporaryUrl() }}">
                 </div>
                 @endif
                 <input wire:model="imageThree" type="file" id="image_three" name="image_three"

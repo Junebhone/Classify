@@ -11,7 +11,7 @@
             </div>
         </div>
     </x-main-heading>
-    <div class="product-listing mt-4 container px-6 relative mx-auto overflow-x-hidden grid justify-center items-center
+    <div class="product-listing mt-4  px-6 relative mx-auto overflow-x-hidden grid justify-center items-center
                        xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 gap-y-14">
         @forelse ($listings as $listing)
 

@@ -33,7 +33,7 @@ class MainListing extends Component
                 AllowedFilter::exact('country_id'),
                 AllowedFilter::exact('category_id'),
                 // AllowedFilter::scope('max_price'),
-            ])
+            ])->where('is_published', true)
             ->get();
         return view('components.main-listing', compact('listings'));
     }

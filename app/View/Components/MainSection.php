@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\View\Component;
 

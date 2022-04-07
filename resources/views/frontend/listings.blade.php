@@ -1,8 +1,18 @@
 <x-main-layout>
     <x-main-heading>
-        <x-main-subcategory></x-main-subcategory>
+        <ul class="ul-list flex gap-6 text-TextSecondary h-20 items-center transition-all duration-150 ease-linear">
+            @foreach ($subcategories as $subcategory )
+            <li
+                class="{{ request()->url() == route('listingbysubcategory',$subcategory->id) ? 'nav-list relative h-14 gap-2 flex flex-row justify-center items-center border-b-2 border-black transition-all duration-300 ease-linear' : '' }}">
+                <a class="text-sm md:text-base" href="{{ route('listingbysubcategory',$subcategory->id) }}">
+                    {{ $subcategory->name }}
+                </a>
+            </li>
+            @endforeach
+        </ul>
+        
     </x-main-heading>
-    <div class="product-listing mt-4 px-6  relative mx-auto overflow-x-hidden grid justify-center items-center
+    <div class="product-listing mt-4 px-6 pb-20  relative mx-auto overflow-x-hidden grid justify-center items-center
                        xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 gap-y-14 ">
         @forelse ($listings as $listing)
 
