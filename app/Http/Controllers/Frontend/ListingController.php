@@ -16,8 +16,8 @@ class ListingController extends Controller
     public function index()
     {
 
-
-        return view('frontend.all-listings');
+        $categories = Category::all();
+        return view('frontend.all-listings', compact('categories'));
     }
     public function welcome()
     {

@@ -10,7 +10,7 @@
             </li>
             @endforeach
         </ul>
-        
+        <x-main-filter></x-main-filter>
     </x-main-heading>
     <div class="product-listing mt-4 px-6 pb-20  relative mx-auto overflow-x-hidden grid justify-center items-center
                        xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 gap-y-14 ">
