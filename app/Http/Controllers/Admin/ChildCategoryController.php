@@ -18,7 +18,7 @@ class ChildCategoryController extends Controller
      */
     public function index()
     {
-        $child_categories = ChildCategory::paginate(2);
+        $child_categories = ChildCategory::paginate(6);
         return view('admin.childcategories.index', compact('child_categories'));
     }
 

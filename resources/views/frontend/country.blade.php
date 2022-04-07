@@ -1,15 +1,26 @@
 <x-main-layout>
     <x-main-heading>
-        <div class="w-full flex justify-center items-center">
-            <div class=" py-3 px-6 flex items-center rounded-full border border-gray-300 shadow-sm  gap-5">
-                <div class="border-r-[1px] pr-5 border-gray-300">
-                    <p class="text-lg font-semibold">Countries</p>
-                </div>
-                <div class="border-b-2 border-Rose">
-                    <p class="text-lg font-semibold">{{ $country->name }}</p>
+        <div class="flex justify-center w-full">
+            <div class="w-full flex items-center">
+                <div class=" py-3 px-6 flex items-center rounded-full border border-gray-300 shadow-sm  gap-5">
+                    <div class="border-r-[1px] pr-5 border-gray-300">
+                        <p class="text-base font-semibold">Countries</p>
+                    </div>
+                    <div class="border-b-2 border-Rose">
+                        <p class="text-base font-semibold">{{ $country->name }}</p>
+                    </div>
                 </div>
             </div>
+            <div class="flex ml-auto gap-2">
+                <button
+                    class="flex border text-sm md:text-base border-gray-300 hover:border-black items-center justify-center gap-2 rounded-full px-6 py-3"
+                    type="submit" id="delete-btn">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span class="">Filter</span>
+                </button>
+            </div>
         </div>
+
     </x-main-heading>
     <div class="product-listing mt-4 pb-20 px-6 relative mx-auto overflow-x-hidden grid justify-center items-center
                        xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 gap-y-14">

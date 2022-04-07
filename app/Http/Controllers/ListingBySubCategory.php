@@ -25,6 +25,7 @@ class ListingBySubCategory extends Controller
 
         // $listings = Listing::where("sub_category_id", $id)->where("is_published", true)->latest()->get();
         $subcategory = SubCategory::where("id", $id)->first();
+
         return view('frontend.subcategory', compact('listings', 'subcategory'));
     }
 }

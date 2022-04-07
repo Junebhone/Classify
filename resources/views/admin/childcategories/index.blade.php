@@ -252,6 +252,9 @@
                                 <!-- More people... -->
                             </tbody>
                         </table>
+                        <div class="p-2 m-2">
+                            {{ $child_categories->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

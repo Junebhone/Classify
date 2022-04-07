@@ -1,6 +1,16 @@
 <x-main-layout>
     <x-main-heading>
-        <x-main-subcategory></x-main-subcategory>
+        <ul
+            class="ul-list flex gap-4 md:gap-6 scrollbar-hide mr-5 overflow-x-auto w-full  text-TextSecondary h-20 items-center transition-all duration-150 ease-linear">
+
+            <li
+                class="nav-list relative h-14 gap-2 flex flex-row justify-center items-center border-b-2 border-black transition-all duration-300 ease-linear">
+                <a class="text-smc w-full flex  md:text-base text-md"
+                    href="{{ route('listingbysubcategory',$subcategory->id) }}">
+                    {{ $subcategory->name }}
+                </a>
+            </li>
+        </ul>
         <x-main-filter></x-main-filter>
     </x-main-heading>
     <div class="product-listing mt-4 r px-6 relative mx-auto overflow-x-hidden grid justify-center items-center
