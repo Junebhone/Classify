@@ -104,7 +104,8 @@
                     @endauth
                     <hr />
 
-                    <a class="menu-link text-2xs w-full cursor-pointer p-2 px-6 hover:bg-gray-300" href="#">Sell
+                    <a class="menu-link text-2xs w-full cursor-pointer p-2 px-6 hover:bg-gray-300"
+                        href="{{ route('listings.create') }}">Sell
                         your
                         home</a>
                     <a class="menu-link text-2xs w-full cursor-pointer p-2 px-6 hover:bg-gray-300" href="#">Contact

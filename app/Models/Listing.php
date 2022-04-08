@@ -53,7 +53,7 @@ class Listing extends Model
 
     public function scopeMaxPrice(Builder $query, $max_price): Builder
     {
-        return $query->where('price', '<', ($max_price));
+        return $query->where('price', '<=', ($max_price));
     }
 
     public function user()
