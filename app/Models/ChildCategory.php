@@ -10,4 +10,9 @@ class ChildCategory extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'slug', 'sub_category_id', 'image'];
+
+    public function subcategory()
+    {
+        return $this->belongsTo(SubCategory::class, 'sub_category_id');
+    }
 }

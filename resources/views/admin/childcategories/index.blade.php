@@ -154,7 +154,7 @@
                                         Name</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
-                                        Slug</th>
+                                        SubCategory</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                                         Image</th>
@@ -164,22 +164,22 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200 ">
-                                @forelse ($child_categories as $category)
+                                @forelse ($child_categories as $childcategory)
                                 <tr class="w-full">
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
-                                            {{ $category->name }}
+                                            {{ $childcategory->name }}
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center ">
-                                            {{ $category->slug }}
+                                            {{ $childcategory->subcategory->name }}
                                         </div>
                                     </td>
                                     <td class="p-6 whitespace-nowrap">
                                         <div class="flex items-center w-24">
                                             <img class="rounded-lg"
-                                                src="{{ asset('storage/childcategories/' . $category->image)}}">
+                                                src="{{ asset('storage/childcategories/' . $childcategory->image)}}">
                                         </div>
                                     </td>
                                     <td class="whitespace-nowrap text-sm font-medium ">
@@ -192,7 +192,7 @@
                                                 Add SubCategory
                                             </a> --}}
                                             <a class="flex  items-center text-black hover:underline "
-                                                href="{{ route('admin.childcategories.edit',$category->id) }}">
+                                                href="{{ route('admin.childcategories.edit',$childcategory->id) }}">
                                                 <lottie-player src="{{ asset('img/EditButton.json') }}"
                                                     background="transparent" class="w-10 h-10" speed="1" hover>
                                                 </lottie-player>
@@ -216,7 +216,7 @@
                                                 </a>
                                             </form> --}}
                                             <form method="POST"
-                                                action="{{ route('admin.childcategories.destroy',$category->id) }}">
+                                                action="{{ route('admin.childcategories.destroy',$childcategory->id) }}">
                                                 @csrf
                                                 @method('DELETE')
                                                 {{-- <a

@@ -208,7 +208,7 @@
                                                 <div class="grid grid-cols-3 gap-6">
                                                     <div class="col-span-3 sm:col-span-3">
                                                         <label for="name"
-                                                            class="block text-sm font-medium text-gray-700"> Category
+                                                            class="block text-sm font-medium text-gray-700">Sub Category
                                                         </label>
                                                         <div class="mt-1 flex rounded-md shadow-sm">
                                                             <select name="sub_category_id"
@@ -217,15 +217,14 @@
                                                                 aria-label="Default select example">
                                                                 @foreach (App\Models\SubCategory::all() as
                                                                 $sub_category)
-                                                                <option value="{{ $child_category->id }}" {{
+                                                                <option value="{{ $sub_category->id }}" {{
                                                                     $sub_category->id ==
                                                                     $child_category->sub_category_id ? 'selected' : ''
-                                                                    }}>{{ $sub_category->name }}
-
-                                                                </option>
+                                                                    }}>
+                                                                    {{ $sub_category->name }}</option>
                                                                 @endforeach
                                                             </select>
-                                                            @error('category_id')
+                                                            @error('sub_category_id')
                                                             <span class="text-red-500">{{ $message }}</span>
                                                             @enderror
                                                         </div>

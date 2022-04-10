@@ -42,7 +42,12 @@
                     @endforeach
                 </ul>
                 <div class="flex items-center relative justify-center gap-1">
-
+                    <a href="{{ route('listings.create') }}">
+                        <h1
+                            class="px-2 sm:flex hidden justify-start font-[Hind Siligurie] text-white text-xl font-sans text-center tracking-widest cursor-pointer">
+                            Estify
+                        </h1>
+                    </a>
                     <div class="menu-toggle flex cursor-pointer items-center justify-center gap-5 w-12 h-12 overflow-hidden rounded-full shadow-lg"
                         id="menu-toggle">
 
@@ -220,8 +225,8 @@
         </section>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6  h-full border-b border-gray-300 mx-10">
             <div class="lg:col-span-2  w-full  h-full cursor-pointer ">
-                <div class="flex items-center justify-between border-b pb-6 border-gray-300">
-                    <div class="flex flex-col">
+                <div class="flex items-center  w-full justify-between border-b pb-6 border-gray-300">
+                    <div class="flex flex-col w-full h-full">
                         <p class="text-xl font-extrabold">{{ $listing->title }} By <span
                                 class="underline decoration-rose-400">{{
                                 $listing->user->name }}</span> </p>
@@ -236,8 +241,11 @@
                         </span>
 
                     </div>
-                    <img class="h-14 w-14 rounded-full object-cover object-center"
-                        src="{{ Storage::url($listing->user->profile_photo_path) }}" />
+                    <div class="w-20 h-20">
+                        <img class=" aspect-square rounded-full object-cover object-center"
+                            src="{{ Storage::url($listing->user->profile_photo_path) }}" />
+                    </div>
+
                 </div>
                 <div class="py-10 grid grid-cols-1  sm:grid-cols-2 border-b border-gray-300 gap-6">
                     <div class="flex items-center justify-center gap-4 font-semibold ">

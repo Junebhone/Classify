@@ -196,3 +196,43 @@
     </div>
 
 </div>
+<script>
+    window.addEventListener('DOMContentLoaded', () =>{
+        const overlay = document.querySelector('#overlay')
+        const delBtn = document.querySelector('#delete-btn')
+        const closeBtn = document.querySelector('#close-modal')
+
+        const toggleModal = () => {
+            overlay.classList.toggle('hidden')
+            overlay.classList.toggle('flex')
+        }
+
+        delBtn.addEventListener('click', toggleModal);
+        closeBtn.addEventListener('click', toggleModal);
+    })
+    function filterResults(){
+        let href = 'all-listings?';
+        var title = document.getElementById("title").value;
+        var country = document.getElementById("country").value;
+        var category = document.getElementById("category").value;
+        var maxPrice = document.getElementById("maxPrice").value;
+        if(title.length){
+            href += 'filter[title]=' + title;
+
+        }
+        if(category.length){
+            
+            href +='&filter[category_id]=' + category
+        }
+
+        if(country.length){
+            
+            href +='&filter[country_id]=' + country
+        }
+        if(maxPrice.length){
+            href +='&filter[max_price]=' + maxPrice
+        }
+        document.location.href = href;
+    }
+    document.getElementById("filter").addEventListener("click",filterResults);
+</script>

@@ -58,7 +58,7 @@
                                         Name</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
-                                        Slug</th>
+                                        Category</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                                         Image</th>
@@ -68,22 +68,22 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200 ">
-                                @forelse ($sub_categories as $category)
+                                @forelse ($sub_categories as $subcategory)
                                 <tr class="w-full">
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
-                                            {{ $category->name }}
+                                            {{ $subcategory->name }}
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center ">
-                                            {{ $category->slug }}
+                                            {{ $subcategory->category->name }}
                                         </div>
                                     </td>
                                     <td class="p-6 whitespace-nowrap">
                                         <div class="flex items-center w-24">
                                             <img class="rounded-lg"
-                                                src="{{ asset('storage/subcategories/' . $category->image)}}">
+                                                src="{{ asset('storage/subcategories/' . $subcategory->image)}}">
                                         </div>
                                     </td>
                                     <td class="whitespace-nowrap text-sm font-medium ">
@@ -96,14 +96,14 @@
                                                 Add SubCategory
                                             </a> --}}
                                             <a class="flex  items-center text-black hover:underline "
-                                                href="{{ route('admin.subcategories.edit',$category->id) }}">
+                                                href="{{ route('admin.subcategories.edit',$subcategory->id) }}">
                                                 <lottie-player src="{{ asset('img/EditButton.json') }}"
                                                     background="transparent" class="w-10 h-10" speed="1" hover>
                                                 </lottie-player>
                                                 Edit
                                             </a>
                                             <form method="POST"
-                                                action="{{ route('admin.subcategories.destroy',$category->id) }}">
+                                                action="{{ route('admin.subcategories.destroy',$subcategory->id) }}">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button
@@ -127,6 +127,9 @@
                                 <!-- More people... -->
                             </tbody>
                         </table>
+                        <div class="p-2 m-2">
+                            {{ $sub_categories->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

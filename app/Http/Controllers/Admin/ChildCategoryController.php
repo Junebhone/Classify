@@ -80,6 +80,7 @@ class ChildCategoryController extends Controller
         $child_category = ChildCategory::find($id);
         $child_category->name = $request->name;
         $child_category->slug = Str::slug($request->name);
+        $child_category->sub_category_id = $request->sub_category_id;
         if ($request->image) {
             if (Storage::exists('public/temp/' . $request->image)) {
                 Storage::move('public/temp/' . $request->image, 'public/childcategories/' . Str::remove('tmp-', $request->image));

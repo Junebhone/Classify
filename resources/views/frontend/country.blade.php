@@ -13,10 +13,10 @@
             </div>
             <div class="flex ml-auto gap-2">
                 <button
-                    class="flex border text-sm md:text-base border-gray-300 hover:border-black items-center justify-center gap-2 rounded-full px-6 py-3"
+                    class="flex border text-sm md:text-base border-gray-400 hover:border-black items-center justify-center gap-2 rounded-full p-4 sm:px-5 sm:py-2"
                     type="submit" id="delete-btn">
                     <i class="fa-solid fa-sliders"></i>
-                    <span class="">Filter</span>
+                    <span class="hidden sm:flex">Filter</span>
                 </button>
             </div>
         </div>
@@ -83,4 +83,32 @@
     </div>
 
     <x-main-footer></x-main-footer>
+    <script>
+        function filterResults(){
+
+             window.history.pushState("object or string", "Title", "/all-listings");
+
+            let href = 'all-listings?';
+            var title = document.getElementById("title").value;
+            var country = document.getElementById("country").value;
+            var category = document.getElementById("category").value;
+            var maxPrice = document.getElementById("maxPrice").value;
+            if(title.length){
+                href += 'filter[title]=' + title;
+            }
+            if(category.length){
+                href +='&filter[category_id]=' + category
+            }
+
+            if(country.length){
+                
+                href +='&filter[country_id]=' + country
+            }
+            if(maxPrice.length){
+                href +='&filter[max_price]=' + maxPrice
+            }
+            document.location.href = href;
+        }
+        document.getElementById("filter").addEventListener("click",filterResults);
+    </script>
 </x-main-layout>
